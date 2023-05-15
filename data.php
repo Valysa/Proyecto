@@ -2,10 +2,12 @@
 
 $Jesse = '2';  
 $Pinkman = 'pinkman';
+echo hash('sha256', '962Crystal');
+$crystal = hash('sha256', '962Crystal');
 
 $list = array (
-   array('Jesse', 'Pinkman', '24/09/1984', 'jessi.pink@cook.com'),
-   array($Jesse, $Pinkman, '24/09/1984', 'jessi.pink@cook.com')
+   array('Jesse', 'Pinkman', '24/09/1984', 'jesse.pink@cook.com','962Crystal'),
+   array($Jesse, $Pinkman, '24/09/1984', 'jesse.pink@cook.com',$crystal)
 );
 
 $fp = fopen('jeunes.csv', 'w');
