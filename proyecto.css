@@ -1,0 +1,98 @@
+
+/*variable depending on the page*/
+
+#referent>* {
+
+  --primary: #11998e;
+  --secondary: #38ef7d;
+  --background: #fff;
+  --inactive: #9b9b9b;
+  }
+
+#jeune>* {
+
+--primary: #11998e;
+--secondary: #38ef7d;
+--background: #fff;
+--inactive: #9b9b9b;
+}
+
+
+/*.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}*/
+
+
+/*Style Input Text*/
+[type="text"]{  
+  font-family: inherit;
+  width: 100%;
+  /*border: 0;*/
+  border: 2px solid var(--inactive);
+  outline: 0;
+  font-size: 1.3rem;
+  
+  padding: 7px 0;
+  background: transparent;
+}
+
+/*placeholders are used to detect if something is written in the input*/
+
+[type="text"]::placeholder {
+    color: transparent;
+  }
+
+
+  [type="text"]:placeholder-shown ~ label {
+    position: absolute;
+    color: blue;
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+
+
+  [type="text"]~ label {
+  position: relative;
+  top: 60px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--inactive);
+}
+/*
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: $primary;
+    font-weight:700;    
+  }
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, $primary,$secondary);
+  border-image-slice: 1;
+}
+/* reset input 
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+/* demo 
+body {
+  font-family: 'Poppins', sans-serif; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color:#222222;
+}
+*/
