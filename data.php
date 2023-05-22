@@ -1,20 +1,18 @@
 <?php
-
-$Jesse = '2';  
-$Pinkman = 'pinkman';
+$password = $_POST["password"];
 echo hash('sha256', '962Crystal');
-$crystal = hash('sha256', '962Crystal');
-
+$hasedPassword = hash('sha256', $password);
+$fname = $_POST["fname"];
+$name = $_POST["name"];
+$birthdate = $_POST["birthday"];
+$mail = $_POST["email"];
 $list = array (
-   array('Jesse', 'Pinkman', '24/09/1984', 'jesse.pink@cook.com','962Crystal'),
-   array($Jesse, $Pinkman, '24/09/1984', 'jesse.pink@cook.com',$crystal)
+   array($fname, $name, $birthdate, $mail, $hasedPassword)
 );
 
-$fp = fopen('jeunes.csv', 'w');
-
+$fp = fopen('BDD/'.$mail[0].'.csv', 'w');
 foreach ($list as $fields) {
     fputcsv($fp, $fields);
 }
-
 fclose($fp);
 ?>

@@ -14,7 +14,9 @@
 <body id="referent">
 
     <ul>
-        <li class="l1"><a href="file:///cergy/homee/l/lopezmateo/Documents/INFO/Ann%C3%A9e2022-2023/semestre2/Projet/jeune.html">JEUNE</a></li>
+        <li class="l1"><a
+                href="file:///cergy/homee/l/lopezmateo/Documents/INFO/Ann%C3%A9e2022-2023/semestre2/Projet/jeune.html">JEUNE</a>
+        </li>
         <li class="active"><a>RÉFÉRENT </a></li>
         <li class="l2"><a href="contact.html">CONSULTANT </a></li>
         <li class="l3"><a href="login.html">PARTENAIRES</a>
@@ -24,30 +26,30 @@
     Confirmez cette expérience et ce que vous avez
     pu constater au contact de ce jeune. <br><br>
 
-<form>
-COMMENTAIRE<input type ="text" name="comments"/>
+    <form>
+        COMMENTAIRE<input type="text" name="comments" />
 
 
 
 
-</form>
-    <form id="info">
+    </form>
+    <form id="info" id="skills" action="data.php" method="POST">
 
         <fieldset>
-            <form id="personal_info" action="data.php" method="POST">
+            
                 <input type="text" name="name" placeholder="Nom" /> <br><br>
                 <input type="text" name="fname" placeholder="PRENOM" /> <br><br>
                 <input type="text" name="birthday" placeholder="Date de naissance" /> <br><br>
                 <input type="email" name="email" placeholder="Mail" />
                 <input type="text" name="password" placeholder="Password" />
-            </form>
+            
         </fieldset>
-        <form id="skills" action="data.php" method="POST">
+        
 
             SES SAVOIRS ETRE
             <br><br>
             Je confirme sa(son)*
-            <form id="skills">
+            
                 <div>
                     <input type="checkbox" name="selfsufficient" checked>
                     <label for="selfsufficient">Ponctualité</label>
@@ -88,7 +90,7 @@ COMMENTAIRE<input type ="text" name="comments"/>
                     <input type="checkbox" name="Optimistic">
                     <label for="Optimistic">Travail</label>
                 </div>
-            </form>
+            
             *faire 4 choix maximum
             <br>
             <button type="submit">Valider</button>
