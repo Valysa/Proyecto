@@ -2,21 +2,24 @@
 <html>
 
 <head>
-    <p>
-        RÉFÉRENT
-    </p>
-    <p>
-        Je confirme la valeur de ton engagement
-    </p>
+    <link rel="stylesheet" type="text/css" href="proyecto.css">
+
 
 </head>
 
 <body id="referent">
+    <p>
+        RÉFÉRENT
+    </p>
+
+    <p>
+        Je confirme la valeur de ton engagement
+    </p>
 
     <ul>
-        <li class="l1"><a href="./jeune.html">JEUNE</a></li>
+        <li class="l1"><a href="file:///cergy/homee/l/lopezmateo/Documents/INFO/Ann%C3%A9e2022-2023/semestre2/Projet/jeune.html">JEUNE</a></li>
         <li class="active"><a>RÉFÉRENT </a></li>
-        <li class="l2"><a href="./consultant.html">CONSULTANT </a></li>
+        <li class="l2"><a href="contact.html">CONSULTANT </a></li>
         <li class="l3"><a href="login.html">PARTENAIRES</a>
         </li>
     </ul>
@@ -24,27 +27,34 @@
     Confirmez cette expérience et ce que vous avez
     pu constater au contact de ce jeune. <br><br>
 
-    <form>
-        COMMENTAIRE<input type="text" name="comments" />
+<form id="tamere">
+    <label for="comments">COMMENTAIRE</label>
+    <input type ="text" name="comments"/>
 
-    </form>
-    <form id="info" id="skills" action="data.php" method="POST">
+
+
+
+</form>
+    <form id="info">
 
         <fieldset>
-            
-                <input type="text" name="name" placeholder="Nom" /> <br><br>
+            <form id="personal_info" action="data.php" method="POST">
+                <div class="input_text">
+                <input type="text" name="name" placeholder="Nom" /> 
+                <label for="name" class="text_label">Nom</label><br><br>
+                </div>
                 <input type="text" name="fname" placeholder="PRENOM" /> <br><br>
-                <input type="date" name="birthday" placeholder="Date de naissance" /> <br><br>
+                <input type="text" name="birthday" placeholder="Date de naissance" /> <br><br>
                 <input type="email" name="email" placeholder="Mail" />
                 <input type="text" name="password" placeholder="Password" />
-            
+            </form>
         </fieldset>
-        
+        <form id="skills" action="data.php" method="POST">
 
             SES SAVOIRS ETRE
             <br><br>
             Je confirme sa(son)*
-            
+            <form id="skills">
                 <div>
                     <input type="checkbox" name="selfsufficient" checked>
                     <label for="selfsufficient">Ponctualité</label>
@@ -63,7 +73,7 @@
                 </div>
                 <div>
                     <input type="checkbox" name="passionated">
-                    <label for="passitionated">Tolérance<Passionné<>/label>
+                    <label for="passitionated">Passionné</label>
                 </div>
                 <div>
                     <input type="checkbox" name="reliable">
@@ -85,8 +95,9 @@
                     <input type="checkbox" name="Optimistic">
                     <label for="Optimistic">Travail</label>
                 </div>
+                *faire 4 choix maximum
+            </form>
             
-            *faire 4 choix maximum
             <br>
             <button type="submit">Valider</button>
         </form>
