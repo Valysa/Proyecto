@@ -18,12 +18,61 @@
 }
 
 
-/*.form__group {
+/*référent style*/
+
+#referent:first-child {
+  background-color: red;
+  
+}
+
+#skills{
+  border: 2px solid;
+  position: fixed;
+  right:10px;
+  margin: auto;
+  top:25%;
+}
+
+#info{
+  position:fixed;
+  left:25%;
+  right:25%;
+}
+
+#tamere{
+  position: fixed;
+  width:200px;
+  left:10px;
+  top:25%;
+}
+
+[name="comments"]{
+  height:180px;
+}
+
+
+[type="submit"]{
+  position: fixed;
+  bottom: 20%;
+  right: 3%;
+  
+}
+
+
+
+
+
+
+
+/*inputs style*/
+
+
+.input_text {
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
   width: 50%;
-}*/
+}
 
 
 /*Style Input Text*/
@@ -48,7 +97,7 @@
 
   [type="text"]:placeholder-shown ~ label {
     position: absolute;
-    color: blue;
+    color: red;
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
@@ -56,8 +105,8 @@
 
 
   [type="text"]~ label {
-  position: relative;
-  top: 60px;
+  position: absolute;
+  top: 0px;
   display: block;
   transition: 0.2s;
   font-size: 1rem;
