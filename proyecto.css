@@ -2,7 +2,8 @@
 /*variable depending on the page*/
 
 #referent>* {
-
+  --headbar2: #9b9b9b;
+  --headbar1: #fff;
   --primary: #11998e;
   --secondary: #38ef7d;
   --background: #fff;
@@ -20,10 +21,6 @@
 
 /*référent style*/
 
-#referent:first-child {
-  background-color: red;
-  
-}
 
 #skills{
   border: 2px solid;
@@ -39,7 +36,7 @@
   right:25%;
 }
 
-#tamere{
+#comment_area{
   position: fixed;
   width:200px;
   left:10px;
@@ -59,7 +56,17 @@
 }
 
 
+#page_head {
+  position: fixed;
+  top:0px;
+  right: 0px;
+  left: 0px;
+  background: radial-gradient(at bottom left, var(--headbar1), var(--headbar2));
+  
+  
+  margin-top: 0px;
 
+}
 
 
 
@@ -76,7 +83,7 @@
 
 
 /*Style Input Text*/
-[type="text"]{  
+.writing{  
   font-family: inherit;
   width: 100%;
   /*border: 0;*/
@@ -90,45 +97,47 @@
 
 /*placeholders are used to detect if something is written in the input*/
 
-[type="text"]::placeholder {
+.writing::placeholder {
     color: transparent;
   }
 
 
-  [type="text"]:placeholder-shown ~ label {
+  .writing:placeholder-shown ~ label {
     position: absolute;
-    color: red;
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
   }
 
 
-  [type="text"]~ label {
-  position: absolute;
+  .writing~ label {
+  position: relative;
   top: 0px;
   display: block;
   transition: 0.2s;
   font-size: 1rem;
   color: var(--inactive);
 }
-/*
-.form__field:focus {
-  ~ .form__label {
+
+.writing:focus {
+
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--primary),var(--secondary));
+  border-image-slice: 1;
+}
+
+.writing:focus ~ label {
     position: absolute;
     top: 0;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: $primary;
+    color: var(--primary);
     font-weight:700;    
   }
-  padding-bottom: 6px;  
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, $primary,$secondary);
-  border-image-slice: 1;
-}
+
 /* reset input 
 .form__field{
   &:required,&:invalid { box-shadow:none; }
