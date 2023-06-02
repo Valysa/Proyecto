@@ -2,13 +2,13 @@
 <html>
 
 <head>
+    
     <link rel="stylesheet" type="text/css" href="proyecto.css">
-
-
+    
 </head>
 
 <body id="referent">
-    <div id="page_head">
+    
     <p>
         RÉFÉRENT
     </p>
@@ -16,7 +16,7 @@
     <p>
         Je confirme la valeur de ton engagement
     </p>
-</div>
+
     <ul>
         <li class="l1"><a href="file:///cergy/homee/l/lopezmateo/Documents/INFO/Ann%C3%A9e2022-2023/semestre2/Projet/jeune.html">JEUNE</a></li>
         <li class="active"><a>RÉFÉRENT </a></li>
@@ -28,9 +28,9 @@
     Confirmez cette expérience et ce que vous avez
     pu constater au contact de ce jeune. <br><br>
 
-<form id="comment_area">
+<form id="tamere">
     <label for="comments">COMMENTAIRE</label>
-    <textarea type ="text" name="comments"></textarea>
+    <input type ="text" name="comments"/>
 
 
 
@@ -41,7 +41,7 @@
         <fieldset>
             <form id="personal_info" action="data.php" method="POST">
                 <div class="input_text">
-                <input class="writing" type="text" name="name" placeholder="Nom" /> 
+                <input type="text" name="name" placeholder="Nom" /> 
                 <label for="name" class="text_label">Nom</label><br><br>
                 </div>
                 <input type="text" name="fname" placeholder="PRENOM" /> <br><br>
@@ -51,58 +51,72 @@
             </form>
         </fieldset>
         <form id="skills" action="data.php" method="POST">
-
+            
             SES SAVOIRS ETRE
             <br><br>
             Je confirme sa(son)*
-            <form id="skills">
-                <div>
-                    <input type="checkbox" name="selfsufficient" checked>
+            
+                <div id="sglcheckbox">
+                    <input type="checkbox"  name="selfsufficient" >
                     <label for="selfsufficient">Ponctualité</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="rational">
+                
+                    <input type="checkbox"  name="rational">
                     <label for="rational">Confiance</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="attentive">
+                
+                    <input type="checkbox"  name="attentive">
                     <label for="attentive">Sérieux</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="organised">
+                
+                    <input type="checkbox"  name="organised">
                     <label for="organised">Honnêteté</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="passionated">
+                
+                    <input type="checkbox"  name="passionated">
                     <label for="passitionated">Passionné</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="reliable">
+                
+                    <input type="checkbox"  name="reliable">
                     <label for="reliable">Bienveillance</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="patient">
+                
+                    <input type="checkbox"  name="patient">
                     <label for="patient">Respect</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="responsible">
+                
+                    <input type="checkbox"  name="responsible">
                     <label for="responsible">Juste</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="Sociable">
+                
+                    <input type="checkbox"  name="Sociable">
                     <label for="Sociable">Impartial</label>
-                </div>
-                <div>
-                    <input type="checkbox" name="Optimistic">
+                
+                    <input type="checkbox"  name="Optimistic">
                     <label for="Optimistic">Travail</label>
                 </div>
                 *faire 4 choix maximum
-            </form>
+                <script>
+                function onlyOneCheckBox() {
+                    var checkboxgroup = document.getElementById('sglcheckbox').getElementsByTagName("input");
+                    
+                    var limit = 4;
+                  
+                    for (var i = 0; i < checkboxgroup.length; i++) {
+                        checkboxgroup[i].onclick = function() {
+                            var checkedcount = 0;
+                                for (var i = 0; i < checkboxgroup.length; i++) {
+                                checkedcount += (checkboxgroup[i].checked) ? 1 : 0;
+                            }
+                            if (checkedcount > limit) {
+                                console.log("You can select maximum of " + limit + " checkbox.");
+                                
+                                this.checked = false;
+                            }
+                        }
+                    }
+                }
+            </script>
+            <script type="text/javascript"> onlyOneCheckBox()</script>
             
             <br>
             <button type="submit">Valider</button>
         </form>
-
+        
 </body>
+
+
 
 </html>
