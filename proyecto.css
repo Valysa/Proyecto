@@ -19,8 +19,76 @@
 }
 
 
-/*référent style*/
+/*Inputs pages style*/
 
+/*PAGE HEAD*/
+
+#page_head {
+  position: fixed;
+  top:0px;
+  right: 0px;
+  left: 0px;
+  height: 20%;
+  background: radial-gradient(at bottom left, var(--headbar1), var(--headbar2));
+  
+  
+  margin-top: 0px;
+}
+
+#module{
+  position: absolute;
+  right: 5px;
+  top: -70px;
+  font-family: sans-serif;
+  color: var(--primary);
+  font-size: 500%;
+  
+}
+
+#tagline{
+  position: absolute;
+  right: 5px;
+  top: 50px;
+  font-family: sans-serif;
+  color: white;
+  font-size: 300%;
+}
+
+#navbar{
+  position:absolute;
+  right: 25%;
+  left: 25%;
+  top: 20%;
+  height: 40px;
+  margin: auto;
+
+
+  list-style: none;
+  background: linear-gradient(180deg, var(--headbar1),var(--headbar2));
+  
+}
+
+#navbar li{
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 150%;
+  margin-top: 7px;
+  margin-right:40px;
+  margin-left:40px;
+  
+}
+#navbar:first-child{
+  
+}
+
+ a:link{
+  text-decoration: none;
+
+ }
+
+
+
+/*Inputs boxes*/
 
 #skills{
   border: 2px solid;
@@ -32,6 +100,7 @@
 
 #info{
   position:fixed;
+  top:40%;
   left:25%;
   right:25%;
 }
@@ -56,17 +125,7 @@
 }
 
 
-#page_head {
-  position: fixed;
-  top:0px;
-  right: 0px;
-  left: 0px;
-  background: radial-gradient(at bottom left, var(--headbar1), var(--headbar2));
-  
-  
-  margin-top: 0px;
 
-}
 
 
 
@@ -106,17 +165,20 @@
     position: absolute;
     font-size: 1.3rem;
     cursor: text;
-    top: 20px;
+    top: 23px;
+    background-color: transparent;
   }
 
 
   .writing~ label {
-  position: relative;
-  top: 0px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
   display: block;
   transition: 0.2s;
   font-size: 1rem;
   color: var(--inactive);
+  background-color: var(--background);
 }
 
 .writing:focus {
@@ -130,27 +192,11 @@
 
 .writing:focus ~ label {
     position: absolute;
-    top: 0;
+    top: 4px;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
     color: var(--primary);
-    font-weight:700;    
+    font-weight:700;  
+    background-color: var(--background);  
   }
-
-/* reset input 
-.form__field{
-  &:required,&:invalid { box-shadow:none; }
-}
-/* demo 
-body {
-  font-family: 'Poppins', sans-serif; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1.5rem;
-  background-color:#222222;
-}
-*/
