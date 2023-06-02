@@ -1,7 +1,8 @@
 <?php
 $mail = $_POST["email"];
 $row = 1;
-if ($mail !== "" && $_POST["password"] !== "" && $_POST["name"] !== "" && $_POST["fname"] !== ""){
+$test = 1;
+if ($mail !== "" && $_POST["password"] !== "" && $_POST["name"] !== "" && $_POST["fname"] !== "" && $_POST["birthday"] !== ""){
     if (($handle = fopen('BDD/'.$mail[0].'.csv', "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             if ($mail == $data[3]){
@@ -26,11 +27,10 @@ if ($test == 1){
     $list = array (
     array($fname, $name, $birthdate, $mail, $hasedPassword)
     );
+    $fp = fopen('BDD/'.$mail[0].'.csv', 'a+');
+    foreach ($list as $fields) {
+        fputcsv($fp, $fields);
+    }
+    fclose($fp);
 }
-
-/*$fp = fopen('BDD/'.$mail[0].'.csv', 'a+');
-foreach ($list as $fields) {
-    fputcsv($fp, $fields);
-}
-fclose($fp);*/
 ?>
