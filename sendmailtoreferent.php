@@ -8,7 +8,7 @@
     $email = $_POST["mailref"];
     $subject = $_POST["subject"];
     $message = $_POST["message"];*/
-    $subject="Demande de référence";
+    $subject="Demande de reference";
     $message="Vous avez reçu une demande de reference";
     $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
