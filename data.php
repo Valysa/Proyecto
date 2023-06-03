@@ -1,4 +1,12 @@
 <?php
+session_start();
+$_SESSION['name']=$_POST["name"];
+$_SESSION['fname']=$_POST["fname"];
+$_SESSION['email']=$_POST["email"];
+$_SESSION['birthday']=$_POST["birthday"];
+$_SESSION['password']=$_POST["password"];
+echo $_SESSION['name'];
+
 $mail = $_POST["email"];
 $row = 1;
 $test = 1;
