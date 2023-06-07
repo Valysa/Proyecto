@@ -12,8 +12,8 @@ $row = 1;
 $test = 1;
 if ($mail !== "" && $_POST["password"] !== "" && $_POST["name"] !== "" && $_POST["fname"] !== "" && $_POST["birthday"] !== ""){
     if (($handle = fopen('BDD/'.$mail[0].'.csv', "r")) !== FALSE) {
-        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-            if ($mail == $data[3]){
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE || $data != "") {
+            if (isset($data) && count($data) > 3 && $mail == $data[3]){
                 echo "compte déjà existant" ;
                 $test = 0;
             }
@@ -28,8 +28,9 @@ else{
 if ($test == 1){
     
     //récupere l'id
-    $handle = fopen('BDD/'.$mail[0].'.csv', "r");
+    $handle = fopen('BDD/'.$mail[0].'.csv', "a+");
     $line = fgetcsv($handle);
+    if($line != ""){
     $firstvalue = $line[0];
     $id  =intval($firstvalue) + 1 ;
     $_SESSION['ID'] = $id;
@@ -37,9 +38,19 @@ if ($test == 1){
     echo $_SESSION['ID'];
     fclose($handle);
     echo 'val is'. $id;
-    $handle = fopen('BDD/'.$mail[0].'.csv', "w+");
+    $handle = fopen('BDD/'.$mail[0].'.csv', "c+");
+    fseek($handle, 0);
     fwrite($handle, $id. PHP_EOL);
     fclose($handle);
+    }
+
+    // cas ou le fichier est initialement vide
+
+    else{
+        fwrite($handle, '1'. PHP_EOL);
+        $id = 1 ;
+        fclose($handle);
+    }
     
     $password = $_POST["password"];
     echo hash('sha256', '962Crystal');
@@ -53,6 +64,7 @@ if ($test == 1){
     array($fname, $name, $birthdate, $mail, $hasedPassword)
     );
     $fp = fopen('BDD/'.$mail[0].'.csv', 'a+');
+    fwrite($fp, $id.',');
     foreach ($list as $fields) {
         fputcsv($fp, $fields);
     }

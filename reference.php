@@ -1,5 +1,5 @@
 <?php
-$handle = fopen('BDD2/reference.csv', "r+");
+$handle = fopen('BDD2/reference.csv', "a+");
 $id = fgetcsv($handle, 1000, ",");
 echo $id[0];
 $id[0]++;
