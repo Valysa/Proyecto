@@ -20,8 +20,14 @@
 
     <form id="main" action="login.php" method="POST">
         <fieldset>
-                <input type="email" name="email" placeholder="Mail" /> <br> <br>
-                <input type="password" name="password" placeholder="Password" />
+            <div class="input_text">
+            <input class="writing" type="email" name="email" placeholder="Mail" />
+            <label for="email" class="text_label"></label><br><br>
+        </div>
+        <div class="input_text">
+            <input class="writing" type="text" name="password" placeholder="Mot de passse" />
+            <label for="password" class="text_label"></label><br><br>
+        </div>
            
         </fieldset>
         
