@@ -17,8 +17,6 @@
 
     <ul>
         <li class="active"><a>Jeune</a></li>
-        <li class="l1"><a href="./referent.html">RÉFÉRENT</a></li>
-        <li class="l2"><a href="./consultant.html">CONSULTANT </a></li>
         <li class="l3"><a href="login.html">PARTENAIRES</a>
         </li>
     </ul>

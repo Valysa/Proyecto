@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="proyecto.css">
+
+</head>
+
+<body id="referent">
+
+    <p>
+        RÉFÉRENT
+    </p>
+
+    <p>
+        Je confirme la valeur de ton engagement
+    </p>
+
+    <ul>
+        <li class="l1"><a href="./signup.html">JEUNE</a></li>
+        <li class="l3"><a href="login.html">PARTENAIRES</a>
+        </li>
+    </ul>
+    <p>
+        Confirmez cette expérience et ce que vous avez
+        pu constater au contact de ce jeune.</p> <br><br>
+
+    <form id="tamere">
+        <label for="comments">COMMENTAIRE</label>
+        <input type="text" name="comments" />
+
+
+
+
+    </form>
+    <form id="info">
+
+        <fieldset>
+            <form id="personal_info" action="data.php" method="POST">
+                <div class="input_text">
+                    <input type="text" name="name" placeholder="Nom" />
+                    <label for="name" class="text_label">Nom</label><br><br>
+                </div>
+                <div class="input_text">
+                    <input type="text" name="fname" placeholder="PRENOM" />
+                    <label for="fname" class="text_label">Prenom</label><br><br>
+                </div>
+                <div class="input_text">
+                <input type="text" name="birthday" placeholder="Date de naissance" />
+                <label for="birthday" class="text_label">Date de naissance</label><br><br>
+                </div>
+                <div class="input_text">
+                <input type="email" name="email" placeholder="Mail" />
+                <label for="email" class="text_label">Mail</label><br><br>
+            </div>
+                <div class="input_text">
+                <input type="text" name="password" placeholder="Mot de passse" />
+                <label for="password" class="text_label">Mot de passe</label><br><br>
+            </div>
+            </form>
+        </fieldset>
+        <form id="skills" action="data.php" method="POST">
+
+            SES SAVOIRS ETRE
+            <br><br>
+            Je confirme sa(son)*
+
+            <div id="sglcheckbox">
+                <input type="checkbox" name="selfsufficient">
+                <label for="selfsufficient">Ponctualité</label>
+                <br>
+                <input type="checkbox" name="rational">
+                <label for="rational">Confiance</label>
+                <br>
+                <input type="checkbox" name="attentive">
+                <label for="attentive">Sérieux</label>
+                <br>
+                <input type="checkbox" name="organised">
+                <label for="organised">Honnêteté</label>
+                <br>
+                <input type="checkbox" name="passionated">
+                <label for="passitionated">Passionné</label>
+                <br>
+                <input type="checkbox" name="reliable">
+                <label for="reliable">Bienveillance</label>
+                <br>
+                <input type="checkbox" name="patient">
+                <label for="patient">Respect</label>
+                <br>
+                <input type="checkbox" name="responsible">
+                <label for="responsible">Juste</label>
+                <br>
+                <input type="checkbox" name="Sociable">
+                <label for="Sociable">Impartial</label>
+                <br>
+                <input type="checkbox" name="Optimistic">
+                <label for="Optimistic">Travail</label>
+            </div>
+            *faire 4 choix maximum
+            <script>
+                function limitCheckBox() {
+                    var checkboxgroup = document.getElementById('sglcheckbox').getElementsByTagName("input");
+
+                    var limit = 4;
+
+                    for (var i = 0; i < checkboxgroup.length; i++) {
+                        checkboxgroup[i].onclick = function () {
+                            var checkedcount = 0;
+                            for (var i = 0; i < checkboxgroup.length; i++) {
+                                checkedcount += (checkboxgroup[i].checked) ? 1 : 0;
+                            }
+                            if (checkedcount > limit) {
+                                this.checked = false;
+                            }
+                        }
+                    }
+                }
+                limitCheckBox()
+            </script>
+
+
+            <br>
+            <button type="submit">Valider</button>
+        </form>
+
+</body>
+
+
+
+</html>
