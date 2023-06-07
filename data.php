@@ -29,6 +29,8 @@ if ($test == 1){
     $password = $_POST["password"];
     echo hash('sha256', '962Crystal');
     $hasedPassword = hash('sha256', $password);
+    $_SESSION['hidden_password']= $hasedPassword;
+    echo $_SESSION['hidden_password'];
     $fname = $_POST["fname"];
     $name = $_POST["name"];
     $birthdate = $_POST["birthday"];

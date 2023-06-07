@@ -25,7 +25,7 @@
 
      <br><br>
 
-    <form id="main" action="modifjeune.php" method="POST">
+    <form id="main" action="modifjeune2.php" method="POST">
         <fieldset>
             
                 <input type="text" name="name" placeholder="Nom" value=<?php echo $_SESSION['name']; ?> onfocus="this.value" /> <br><br>

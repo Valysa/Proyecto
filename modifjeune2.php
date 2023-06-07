@@ -17,7 +17,8 @@ if ($test == 1){
     array($fname, $name, $birthdate, $mail, $hasedPassword)
     );
     $fp = fopen('BDD/'.$mail[0].'.csv', 'a+');
-    file_put_contents("BDD/'.$mail[0].'.csv", str_replace("", "", file_get_contents("BDD/'.$mail[0].'.csv")));
+    //file_put_contents("BDD/'.$mail[0].'.csv", str_replace("$_SESSION['name'], $_SESSION['fname'], $_SESSION['birthday'], $_SESSION['email'], $_SESSION['hidden_password']", "$_POST["name"], $_POST["fname"], $_POST["email"], $_POST["birthday"], $hasedPassword", file_get_contents("BDD/'.$mail[0].'.csv")));
+    file_put_contents("BDD/'.$mail[0].'.csv", str_replace(yes, $_POST["name"], file_get_contents("BDD/'.$mail[0].'.csv")));
     fclose($fp);
 }
 ?>
