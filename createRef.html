@@ -15,65 +15,74 @@
 
     <ul>
         <li class="active"><a>Jeune</a></li>
-        <li class="l1"><a href="./referent.html">RÉFÉRENT</a></li>
-        <li class="l2"><a href="./consultant.html">CONSULTANT </a></li>
         <li class="l3"><a href="login.html">PARTENAIRES</a>
         </li>
     </ul>
 
     Décrivez votre expérience et mettez en avant ce que vous en avez retiré. <br><br>
 
-    <form id="main" action="reference.php" method="POST">
+    <form id="main" action="data.php" method="POST">
         Expérience<textarea type="text" name="exp"></textarea>
-        adresse mail <input type="mail" name="mailref">
-        
-            <p>
-                MES SAVOIRS ETRE
-            </p>
-            Je suis*
-            <div>
-                <input type="checkbox" name="selfsufficient" checked>
-                <label for="selfsufficient">Autonome</label>
-            </div>
+        addresse mail <input type="mail" name="mailref">
 
-            <div>
-                <input type="checkbox" name="rational">
-                <label for="rational">Réfléchi</label>
-            </div>
-            <div>
-                <input type="checkbox" name="attentive">
-                <label for="attentive">A l'écoute</label>
-            </div>
-            <div>
-                <input type="checkbox" name="organised">
-                <label for="organised">Organisé</label>
-            </div>
-            <div>
-                <input type="checkbox" name="passionated">
-                <label for="passitionated">Passionné</label>
-            </div>
-            <div>
-                <input type="checkbox" name="reliable">
-                <label for="reliable">Fiable</label>
-            </div>
-            <div>
-                <input type="checkbox" name="patient">
-                <label for="patient">Patient</label>
-            </div>
-            <div>
-                <input type="checkbox" name="responsible">
-                <label for="responsible">Responsable</label>
-            </div>
-            <div>
-                <input type="checkbox" name="Sociable">
-                <label for="Sociable">Sociable</label>
-            </div>
-            <div>
-                <input type="checkbox" name="Optimistic">
-                <label for="Optimistic">Optimiste</label>
-            </div>
+        <p>
+            MES SAVOIRS ETRE
+        </p>
+        Je suis*
+        <div id="sglcheckbox">
+            <input type="checkbox" name="selfsufficient">
+            <label for="selfsufficient">Autonome</label>
+<br>
+            <input type="checkbox" name="rational">
+            <label for="rational">Réfléchi</label>
+            <br>
+            <input type="checkbox" name="attentive">
+            <label for="attentive">A l'écoute</label>
+            <br>
+            <input type="checkbox" name="organised">
+            <label for="organised">Organisé</label>
+            <br>
+            <input type="checkbox" name="passionated">
+            <label for="passitionated">Passionné</label>
+            <br>
+            <input type="checkbox" name="reliable">
+            <label for="reliable">Fiable</label>
+            <br>
+            <input type="checkbox" name="patient">
+            <label for="patient">Patient</label>
+            <br>
+            <input type="checkbox" name="responsible">
+            <label for="responsible">Responsable</label>
+            <br>
+            <input type="checkbox" name="Sociable">
+            <label for="Sociable">Sociable</label>
+            <br>
+            <input type="checkbox" name="Optimistic">
+            <label for="Optimistic">Optimiste</label>
+        </div>
 
-            *faire 4 choix maximum
+        *faire 4 choix maximum
+        <script>
+            function limitCheckBox() {
+                var checkboxgroup = document.getElementById('sglcheckbox').getElementsByTagName("input");
+
+                var limit = 4;
+
+                for (var i = 0; i < checkboxgroup.length; i++) {
+                    checkboxgroup[i].onclick = function () {
+                        var checkedcount = 0;
+                        for (var i = 0; i < checkboxgroup.length; i++) {
+                            checkedcount += (checkboxgroup[i].checked) ? 1 : 0;
+                        }
+                        if (checkedcount > limit) {
+                            this.checked = false;
+                        }
+                    }
+                }
+            }
+            limitCheckBox()
+        </script>
+        <br>
 
         <button type="submit">Valider</button>
     </form>
