@@ -26,6 +26,18 @@ else{
 }
 
 if ($test == 1){
+    
+    //récupere l'id
+    $handle = fopen('BDD/'.$mail[0].'.csv', "r");
+    $line = fgetcsv($handle);
+    $firstvalue = $line[0];
+    $id  =intval($firstvalue) + 1 ;
+    fclose($handle);
+    echo 'val is'. $id;
+    $handle = fopen('BDD/'.$mail[0].'.csv', "w+");
+    fwrite($handle, $id. PHP_EOL);
+    fclose($handle);
+    
     $password = $_POST["password"];
     echo hash('sha256', '962Crystal');
     $hasedPassword = hash('sha256', $password);
