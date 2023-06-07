@@ -9,26 +9,33 @@
 
 <body id="referent">
 
-    <p>
-        RÉFÉRENT
-    </p>
+    <div id="wrapper">
+        <div id="page_head">
+            <p id="module">
+                RÉFÉRENT
+            </p>
 
-    <p>
-        Je confirme la valeur de ton engagement
-    </p>
-
+            <p id="tagline">
+                Je confirme la valeur de ton engagement
+            </p>
+        </div>
     <ul>
         <li class="l1"><a href="./signup.html">JEUNE</a></li>
         <li class="l3"><a href="login.html">PARTENAIRES</a>
         </li>
     </ul>
-    <p>
+    <p id="description">
         Confirmez cette expérience et ce que vous avez
         pu constater au contact de ce jeune.</p> <br><br>
 
-        <label for="comments">COMMENTAIRE</label>
-        <input type="text" name="comments" />
+    <form id="comment_area">
+            <label for="comments">COMMENTAIRE</label>
+            <textarea type="text" name="comments"></textarea>
 
+
+
+
+    </form>
     <form id="info">
 
         <fieldset>
@@ -42,24 +49,25 @@
                     <label for="fname" class="text_label">Prenom</label><br><br>
                 </div>
                 <div class="input_text">
-                    <input class="writing" type="date" name="birthday" placeholder="Date de naissance" />
-                    <label for="birthday" class="text_label">Date de naissance</label><br><br>
+                <input class="writing" type="text" name="birthday" placeholder="Date de naissance" />
+                <label for="birthday" class="text_label">Date de naissance</label><br><br>
                 </div>
                 <div class="input_text">
-                    <input class="writing" type="email" name="email" placeholder="Mail" />
-                    <label for="email" class="text_label">Mail</label><br><br>
-                </div>
+                <input class="writing" type="email" name="email" placeholder="Mail" />
+                <label for="email" class="text_label">Mail</label><br><br>
+            </div>
                 <div class="input_text">
-                    <input class="writing" type="text" name="password" placeholder="Mot de passse" />
-                    <label for="password" class="text_label">Mot de passe</label><br><br>
-                </div>
+                <input class="writing" type="text" name="password" placeholder="Mot de passse" />
+                <label for="password" class="text_label">Mot de passe</label><br><br>
+            </div>
             </form>
         </fieldset>
+        
         <form id="skills" action="data.php" method="POST">
 
-            SES SAVOIRS ETRE
+            <div id="Be">SES SAVOIRS ETRE</div>
             <br><br>
-            Je confirme sa(son)*
+            <div id="check">Je confirme sa(son)*</div>
 
             <div id="sglcheckbox">
                 <input type="checkbox" name="selfsufficient">
@@ -118,7 +126,7 @@
             <br>
             <button type="submit">Valider</button>
         </form>
-
+    </div>
 </body>
 
 
