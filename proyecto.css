@@ -1,11 +1,43 @@
 
 /*variable depending on the page*/
 
+* {
+  
+  --referent1: #c5e700;
+  --referent2: #3da700;
+
+  --jeune1: #11998e;
+  --jeune2: #38ef7d;
+
+  --partenaire1: #11998e;
+  --partenaire2: #38ef7d;
+
+  --consultant1: #11998e;
+  --consultant2: #38ef7d;
+}
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  height: auto;
+  height: 100%;
+  margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+  height: 142px; /* .push must be the same height as .footer */
+}
+
+
 #referent>* {
   --headbar2: #9b9b9b;
   --headbar1: #fff;
-  --primary: #11998e;
-  --secondary: #38ef7d;
+  --primary:  var(--referent1);
+  --secondary: var(--referent2);
   --background: #fff;
   --inactive: #9b9b9b;
   }
@@ -19,16 +51,38 @@
 }
 
 
-/*Inputs pages style*/
+
+
+
+
+
+
+
+
+
+
+/*============================================Inputs pages style*/
 
 /*PAGE HEAD*/
 
+#description{
+  position: fixed;
+  top: 250px;
+  right: 250px;
+  left: 250px;
+  font-family: sans-serif;
+  color: var(--secondary);
+  font-size: 150%;
+  text-align: center;
+
+}
+
 #page_head {
   position: fixed;
-  top:0px;
+  top: 0px;
   right: 0px;
   left: 0px;
-  height: 20%;
+  height: 194px;
   background: radial-gradient(at bottom left, var(--headbar1), var(--headbar2));
   
   
@@ -36,9 +90,9 @@
 }
 
 #module{
-  position: absolute;
+  position: fixed;
   right: 5px;
-  top: -70px;
+  top: 0px;
   font-family: sans-serif;
   color: var(--primary);
   font-size: 500%;
@@ -46,19 +100,20 @@
 }
 
 #tagline{
-  position: absolute;
+  position: fixed;
   right: 5px;
-  top: 50px;
+  top: 80px;
   font-family: sans-serif;
   color: white;
   font-size: 300%;
+  text-align: right;
 }
 
 #navbar{
-  position:absolute;
+  position:fixed;
   right: 25%;
   left: 25%;
-  top: 20%;
+  top: 194px;
   height: 40px;
   margin: auto;
 
@@ -69,17 +124,28 @@
 }
 
 #navbar li{
+  position: relative;
   display: inline-block;
   font-family: sans-serif;
   font-size: 150%;
-  margin-top: 7px;
-  margin-right:40px;
-  margin-left:40px;
+  margin-top: 0.5%;
   
 }
+
 #navbar:first-child{
-  
+  font: var(--jeune1);
 }
+
+#navbar:first-child:hover{
+  font: var(--jeune1);
+  transition:0.1s;
+}
+
+
+#navbar:nth-child(2){
+  font: var(--color);
+}
+
 
  a:link{
   text-decoration: none;
@@ -88,34 +154,88 @@
 
 
 
-/*Inputs boxes*/
-
-#skills{
-  border: 2px solid;
-  position: fixed;
-  right:10px;
-  margin: auto;
-  top:25%;
-}
-
+/*=================================================Inputs boxes*/
 #info{
   position:fixed;
-  top:40%;
+  top:350px;
   left:25%;
   right:25%;
 }
+
+#info fieldset {
+  border: 2px inset var(--primary);
+  border-radius: 13px;
+  padding:16px;
+  box-shadow: -10px 10px 3px rgba(94, 94, 94, 0.25);
+  
+}
+
+
+#skills{
+  border: 0;
+  position: fixed;
+  right:10px;
+  margin: auto;
+  padding: 5px;
+  top:300px;
+  background: linear-gradient(120deg, transparent,var(--primary));
+
+}
+
+#skills:first-child{
+  background: var(--secondary);
+}
+
+
 
 #comment_area{
   position: fixed;
   width:200px;
   left:10px;
   top:25%;
+
+}
+
+[for="comments"]{
+  background: radial-gradient(at top left, var(--background), var(--primary));
+  
+  color: var(--background);
+  font-family: sans-serif;
+  font-size: 20px;
 }
 
 [name="comments"]{
-  height:180px;
+  resize: none;
+  outline: none;
+  background: radial-gradient(at top left, var(--background), var(--primary));
+  border-radius: 2px;
+  border: 0;
+  
+  width:180px;
+  height:280px;
 }
 
+[name="comments"]:hover{
+  resize: none;
+  outline: none;
+
+  transition: 0.2s;
+  border-radius: 7px;
+  border: 0;
+  
+  width:185px;
+  height: 285px;
+}
+
+[name="comments"]:focus{
+  resize: none;
+  outline: none;
+
+  transition: 0.2s;
+  border-radius: 7px;
+  width:185px;
+  height:285px;
+}
 
 [type="submit"]{
   position: fixed;
@@ -130,7 +250,27 @@
 
 
 
-/*inputs style*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*=================================Special Styling==============================================*/
+
+
+
+
+/*===========================inputs text style*/
+
+
+
 
 
 .input_text {
@@ -156,8 +296,13 @@
 
 /*placeholders are used to detect if something is written in the input*/
 
+.writing{
+  z-index: 2;
+}
+
 .writing::placeholder {
     color: transparent;
+    z-index:1;
   }
 
 
@@ -167,10 +312,12 @@
     cursor: text;
     top: 23px;
     background-color: transparent;
+    z-index: 3;
   }
 
 
   .writing~ label {
+  
   position: absolute;
   top: 4px;
   left: 5px;
@@ -181,12 +328,40 @@
   background-color: var(--background);
 }
 
+.writing:hover {
+
+  padding-bottom: 6px;  
+  border-width: 3px;
+  border-image: linear-gradient(to left, var(--primary),var(--secondary));
+  border-image-slice: 1;
+}
+
+
+.writing ~ label:hover {
+  position: absolute;
+  top: 4px;
+  display: block;
+  font-size: 1rem;
+  color: var(--secondary);
+  font-weight:700;  
+  background-color: var(--background);  
+}
+
+.writing:hover ~ label {
+    position: absolute;
+    top: 4px;
+    display: block;
+    font-size: 1rem;
+    color: var(--secondary);
+    font-weight:700;  
+    background-color: var(--background);  
+  }
+
 .writing:focus {
 
   padding-bottom: 6px;  
-  font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, var(--primary),var(--secondary));
+  border-image: linear-gradient(to left, var(--primary),var(--secondary));
   border-image-slice: 1;
 }
 
@@ -196,7 +371,28 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: var(--primary);
+    color: var(--secondary);
     font-weight:700;  
     background-color: var(--background);  
   }
+
+
+
+/*=======================================button styling*/
+
+
+button {
+  background-color: var(--secondary);
+  padding: 5px;
+	border-width: 3px;
+  border-image: linear-gradient(to right, var(--primary),var(--secondary));
+  border-image-slice: 1;
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+  transition: 0.2s;
+  color: var(--background);
+}
+button:hover{
+  transition: 0.3s;
+  background-image: linear-gradient(to right, var(--primary),var(--secondary));
+}
