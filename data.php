@@ -32,6 +32,9 @@ if ($test == 1){
     $line = fgetcsv($handle);
     $firstvalue = $line[0];
     $id  =intval($firstvalue) + 1 ;
+    $_SESSION['ID'] = $id;
+    echo "\n";
+    echo $_SESSION['ID'];
     fclose($handle);
     echo 'val is'. $id;
     $handle = fopen('BDD/'.$mail[0].'.csv', "w+");
