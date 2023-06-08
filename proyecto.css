@@ -1,6 +1,11 @@
 
 /*variable depending on the page*/
 
+
+/*table, th, td {
+  border: 1px solid black;
+}*/
+
 * {
   
   --referent1: #c5e700;
@@ -66,10 +71,10 @@ html, body {
 /*PAGE HEAD*/
 
 #description{
-  position: fixed;
-  top: 250px;
-  right: 250px;
-  left: 250px;
+  /* position: fixed;
+  top: 250px; */
+  /* right: 250px;
+  left: 250px; */
   font-family: sans-serif;
   color: var(--secondary);
   font-size: 150%;
@@ -78,10 +83,10 @@ html, body {
 }
 
 #page_head {
-  position: fixed;
+  /* position: fixed;
   top: 0px;
   right: 0px;
-  left: 0px;
+  left: 0px; */
   height: 194px;
   background: radial-gradient(at bottom left, var(--headbar1), var(--headbar2));
   
@@ -90,9 +95,10 @@ html, body {
 }
 
 #module{
-  position: fixed;
+  /* position: fixed;
   right: 5px;
-  top: 0px;
+  top: 0px; */
+  text-align: end;
   font-family: sans-serif;
   color: var(--primary);
   font-size: 500%;
@@ -100,9 +106,9 @@ html, body {
 }
 
 #tagline{
-  position: fixed;
+  /* position: fixed;
   right: 5px;
-  top: 80px;
+  top: 80px; */
   font-family: sans-serif;
   color: white;
   font-size: 300%;
@@ -110,13 +116,11 @@ html, body {
 }
 
 #navbar{
-  position:fixed;
-  right: 25%;
-  left: 25%;
-  top: 194px;
+  /* position:fixed; */
+  /* top: 194px; */
   height: 40px;
-  margin: auto;
-
+  margin-right: 25%;
+  margin-left: 25%;
 
   list-style: none;
   background: linear-gradient(180deg, var(--headbar1),var(--headbar2));
@@ -132,8 +136,16 @@ html, body {
   
 }
 
-#navbar:first-child{
-  font: var(--jeune1);
+#navbar tr:first-child{
+  font-size: 200%;
+  text-align: center;
+}
+#navbar [href="./signup.html"]{
+  color: var(--jeune1);
+}
+
+#navbar [href="login.html"]{
+  color: var(--partenaire1);
 }
 
 #navbar:first-child:hover{
@@ -152,12 +164,20 @@ html, body {
 
  }
 
+ #description{
+  font-size: 200%;
+  margin-left: 25%;
+  margin-right:25%;
+
+  padding:25px;
+ }
+
 
 
 /*=================================================Inputs boxes*/
 #info{
-  position:fixed;
-  top:350px;
+  /* position:fixed;
+  top:350px; */
   left:25%;
   right:25%;
 }
@@ -167,32 +187,59 @@ html, body {
   border-radius: 13px;
   padding:16px;
   box-shadow: -10px 10px 3px rgba(94, 94, 94, 0.25);
+  margin:52px;
   
 }
 
+#infos tr:nth-child(2){
+  margin:30px;
+}
 
 #skills{
   border: 0;
-  position: fixed;
-  right:10px;
+  /* position: fixed;
+  right:10px; */
   margin: auto;
+  margin-left: 20%;
   padding: 5px;
-  top:300px;
+  /* top:300px; */
   background: linear-gradient(120deg, transparent,var(--primary));
-
+  accent-color: var(--secondary);
+  font-size:150%;
 }
 
-#skills:first-child{
-  background: var(--secondary);
+
+
+#Be{
+  text-align:center;
+  font-size:150%;
+  color: var(--secondary);
 }
+
+#Be2{
+  padding-left: 10px;
+  height: 30px;
+  font-size:100%;
+  color: var(--background);
+  background: linear-gradient(to left, var(--secondary),var(--primary));
+}
+
+#fourMax{
+  
+  font-size:150%;
+  color: var(--secondary);
+  margin-left: 20%;
+}
+
 
 
 
 #comment_area{
-  position: fixed;
+  /* position: fixed; */
   width:200px;
-  left:10px;
-  top:25%;
+  /* left:10px;
+  top:25%; */
+  
 
 }
 
@@ -205,14 +252,17 @@ html, body {
 }
 
 [name="comments"]{
+  margin-right:20%;
   resize: none;
   outline: none;
   background: radial-gradient(at top left, var(--background), var(--primary));
   border-radius: 2px;
   border: 0;
   
-  width:180px;
-  height:280px;
+  font-size: 150%;
+  font-family: sans-serif;
+  width:380px;
+  height:480px;
 }
 
 [name="comments"]:hover{
@@ -223,8 +273,8 @@ html, body {
   border-radius: 7px;
   border: 0;
   
-  width:185px;
-  height: 285px;
+  width:385px;
+  height: 485px;
 }
 
 [name="comments"]:focus{
@@ -233,14 +283,14 @@ html, body {
 
   transition: 0.2s;
   border-radius: 7px;
-  width:185px;
-  height:285px;
+  width:385px;
+  height:485px;
 }
 
 [type="submit"]{
-  position: fixed;
+  /* position: fixed;
   bottom: 20%;
-  right: 3%;
+  right: 3%; */
   
 }
 
