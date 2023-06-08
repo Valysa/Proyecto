@@ -50,13 +50,13 @@ if ($test == 1) {
         fclose($handle);
     }
 
-    $password = $_POST["password"];
-    echo hash('sha256', '962Crystal');
-    $hasedPassword = hash('sha256', $password);
-    $_SESSION['hidden_password'] = $hasedPassword;
-    echo $_SESSION['hidden_password'];
+   $password = $_POST["password"];
     $fname = $_POST["fname"];
     $name = $_POST["name"];
+    $salt = $name.$fname;
+    $hasedPassword = hash('sha256', $salt.$password);
+    $_SESSION['hidden_password'] = $hasedPassword;
+    echo $_SESSION['hidden_password'];
     $birthdate = $_POST["birthday"];
     $list = array(
         array($fname, $name, $birthdate, $mail, $hasedPassword)
