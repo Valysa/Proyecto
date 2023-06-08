@@ -16,8 +16,9 @@ $exp = $_POST["exp"];
 $name = $_POST["name"];
 $fname = $_POST["fname"];
 $mail = $_POST["mailref"];
+$state = "waiting";
 $list = array(
-    array($exp, $name, $fname, $mail, $_SESSION['ID'])
+    array($exp, $name, $fname, $mail, $_SESSION['ID'], $state)
 );
 // insertion des champs dans BDD2
 $fp = fopen('BDD2/reference.csv', 'a+');
