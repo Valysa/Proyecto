@@ -28,6 +28,23 @@ foreach ($list as $fields) {
 fclose($fp);
 // double chainage (insertion de l'id de la référence dans la table du jeune)
 
+
+    // Genere le lien
+    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+    $url = "https://";   
+    else  
+    $url = "http://";   
+    // Append the host(domain name, ip) to the URL.   
+    $url.= $_SERVER['HTTP_HOST'];   
+
+    // Append the requested resource location to the URL   
+   // $url.= $_SERVER['REQUEST_URI'];    
+
+    $url .= "/referent.php?ref=".$id[0];
+    echo $url;
+
+
+
     //part to sent an email to the referent
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
