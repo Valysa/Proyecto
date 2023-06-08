@@ -32,8 +32,8 @@ if ($test == 1) {
     if ($line != "") {
         $firstvalue = $line[0];
         $id = intval($firstvalue) + 1;
-        $_SESSION['ID'] = $id;
-        echo "\n";
+        $_SESSION['ID'] = $mail[0].$id;
+        echo "......";
         echo $_SESSION['ID'];
         fclose($handle);
         echo 'val is' . $id;
