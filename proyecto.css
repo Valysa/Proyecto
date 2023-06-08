@@ -11,8 +11,8 @@
   --referent1: #c5e700;
   --referent2: #3da700;
 
-  --jeune1: #11998e;
-  --jeune2: #38ef7d;
+  --jeune1: #dc00ca;
+  --jeune2: #fd9bff;
 
   --partenaire1: #11998e;
   --partenaire2: #38ef7d;
@@ -47,12 +47,25 @@ html, body {
   --inactive: #9b9b9b;
   }
 
-#jeune>* {
+#jeune_signup{
+  --headbar2: #9b9b9b;
+  --headbar1: #fff;
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+  --background: #fff;
+  --inactive: #9b9b9b;
 
---primary: #11998e;
---secondary: #38ef7d;
---background: #fff;
---inactive: #9b9b9b;
+}
+
+
+#jeune_signin{
+  --headbar2: #9b9b9b;
+  --headbar1: #fff;
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+  --background: #fff;
+  --inactive: #9b9b9b;
+
 }
 
 
@@ -68,7 +81,13 @@ html, body {
 
 /*============================================Inputs pages style*/
 
-/*PAGE HEAD*/
+/*====================PAGE HEAD=====================*/
+
+
+
+
+
+
 
 #description{
   /* position: fixed;
@@ -127,14 +146,6 @@ html, body {
   
 }
 
-#navbar li{
-  position: relative;
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 150%;
-  margin-top: 0.5%;
-  
-}
 
 #navbar tr:first-child{
   font-size: 200%;
@@ -172,17 +183,52 @@ html, body {
   padding:25px;
  }
 
+.active_jeune{
+  color: #fff;
+  background:var(--primary);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*=================================================Inputs boxes*/
-#info{
+
+
+/*========        MAIN INPUT        ==========*/
+.main_input{
   /* position:fixed;
   top:350px; */
   left:25%;
   right:25%;
 }
 
-#info fieldset {
+.main_input fieldset {
   border: 2px inset var(--primary);
   border-radius: 13px;
   padding:16px;
@@ -194,6 +240,21 @@ html, body {
 #infos tr:nth-child(2){
   margin:30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*========        SKILLS INPUT        ==========*/
 
 #skills{
   border: 0;
@@ -233,6 +294,10 @@ html, body {
 
 
 
+
+
+
+/*========        COMMENT INPUT        ==========*/
 
 #comment_area{
   /* position: fixed; */
@@ -287,12 +352,6 @@ html, body {
   height:485px;
 }
 
-[type="submit"]{
-  /* position: fixed;
-  bottom: 20%;
-  right: 3%; */
-  
-}
 
 
 
@@ -446,3 +505,24 @@ button:hover{
   transition: 0.3s;
   background-image: linear-gradient(to right, var(--primary),var(--secondary));
 }
+
+
+
+
+
+
+
+/*========================== SIGNUP ==============================*/
+#jeune_signup button{
+  margin-left:75%;
+
+}
+
+[type="submit"]{
+  margin-left:75%;
+}
+
+
+
+
+

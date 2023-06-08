@@ -1,32 +1,50 @@
 <!DOCTYPE html>
-<html id="jeune">
+<html>
 
 <head>
-    <p>
-        JEUNE
-    </p>
+    <link rel="stylesheet" type="text/css" href="proyecto.css">
+
 
 </head>
 
-<body>
+<body id="jeune_signin">
 
-    <ul>
-        <li class="active"><a>Jeune</a></li>
-        <li class="l3"><a href="login.html">PARTENAIRES</a>
-        </li>
-    </ul>
+    <div id="page_head">
+        <p id="module">
+            JEUNE
+        </p>
+
+        <p id="tagline">
+            Mon Compte
+        </p>
+    </div>
+
+    <table id="navbar" style="width: 50%;">
+        <tr>
+
+
+            <td style="width: 50%;">
+                <a class="active_jeune"> &nbsp; JEUNE &nbsp;</a>
+            </td>
+            <td style="width: 50%;">
+                <a href="login.html">PARTENAIRES</a>
+            </td>
+
+
+        </tr>
+    </table>
 
      <br><br>
 
-    <form id="main" action="login.php" method="POST">
+    <form id="main" class="main_input" action="login.php" method="POST">
         <fieldset>
             <div class="input_text">
             <input class="writing" type="email" name="email" placeholder="Mail" />
-            <label for="email" class="text_label"></label><br><br>
+            <label for="email" class="text_label">Mail</label><br><br>
         </div>
         <div class="input_text">
             <input class="writing" type="text" name="password" placeholder="Mot de passse" />
-            <label for="password" class="text_label"></label><br><br>
+            <label for="password" class="text_label">Mot de passe</label><br><br>
         </div>
            
         </fieldset>
