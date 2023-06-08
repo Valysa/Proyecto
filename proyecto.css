@@ -11,7 +11,7 @@
   --referent1: #c5e700;
   --referent2: #3da700;
 
-  --jeune1: #dc00ca;
+  --jeune1: #e4006e;
   --jeune2: #fd9bff;
 
   --partenaire1: #11998e;
@@ -23,7 +23,9 @@
 
 * {
   margin: 0;
+  font-family: sans-serif ;
 }
+
 html, body {
   height: 100%;
 }
@@ -57,6 +59,12 @@ html, body {
 
 }
 
+#intro{
+  --headbar2: #9b9b9b;
+  --headbar1: #fff;
+  --background: #fff;
+  --inactive: #9b9b9b;
+}
 
 #jeune_signin{
   --headbar2: #9b9b9b;
@@ -86,7 +94,9 @@ html, body {
 
 
 
-
+#logojeunes{
+  position: absolute;
+}
 
 
 #description{
@@ -125,9 +135,7 @@ html, body {
 }
 
 #tagline{
-  /* position: fixed;
-  right: 5px;
-  top: 80px; */
+  overflow:hidden;
   font-family: sans-serif;
   color: white;
   font-size: 300%;
@@ -169,6 +177,11 @@ html, body {
   font: var(--color);
 }
 
+.active_jeune{
+  color: #fff;
+  background:var(--primary);
+}
+
 
  a:link{
   text-decoration: none;
@@ -183,10 +196,7 @@ html, body {
   padding:25px;
  }
 
-.active_jeune{
-  color: #fff;
-  background:var(--primary);
-}
+
 
 
 
@@ -522,7 +532,102 @@ button:hover{
   margin-left:75%;
 }
 
+/*=========================== INTRO ==================================*/
 
 
 
+#speech{
+  color:#9b9b9b;
+  margin: 10px;
+  text-align: justify;
+}
+#speech #punchline{
+  font-weight: bold;
+}
 
+#speech td{
+  vertical-align:top;
+  width: 30%;
+  padding: 30px;
+}
+#intro h1{
+  font-weight: normal;
+  font-size: 250%;
+  
+}
+
+#intro #steps{
+  
+  margin-top: 100px;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+#intro #steps td{
+  padding: 10px;
+  height: 300px;
+  width: 300px;
+}
+
+
+#step1{
+  border: 3px solid var(--jeune1);
+}
+#step1 a div{
+  background: linear-gradient(to right, #fff, var(--jeune1) 50%);
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  font-size: 150%;
+  
+}
+#step1 a div ~div{
+  background: radial-gradient(at top left, #fff, var(--jeune2) 300%);
+  text-align: justify;
+  color:#9b9b9b;
+  font-size: 120%;
+  padding:5px;
+  height:100px;
+}
+
+#step2{
+  border: 3px solid var(--referent1);
+}
+#step2 a div{
+  background: linear-gradient(to right, #fff, var(--referent2) 50%);
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  font-size: 150%;
+  
+}
+#step2 a div ~div{
+  background: radial-gradient(at top left, #fff, var(--referent2) 300%);
+  text-align: justify;
+  color:#9b9b9b;
+  font-size: 120%;
+  padding:5px;
+  height:100px;
+}
+
+#step3{
+  border: 3px solid var(--consultant1);
+}
+#step3 a div{
+  background: linear-gradient(to right, #fff, var(--consultant1) 50%);
+  color: white;
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  font-size: 150%;
+  
+}
+#step3 a div ~div{
+  background: radial-gradient(at top left, #fff, var(--consultant2) 300%);
+  text-align: justify;
+  color:#9b9b9b;
+  font-size: 120%;
+  padding:5px;
+  height:100px;
+}
