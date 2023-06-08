@@ -62,7 +62,7 @@ if ($test == 1) {
         array($fname, $name, $birthdate, $mail, $hasedPassword)
     );
     $fp = fopen('BDD/' . $mail[0] . '.csv', 'a+');
-    fwrite($fp, $id . ',');
+    fwrite($fp, $mail[0].$id . ',');
     foreach ($list as $fields) {
         fputcsv($fp, $fields);
     }
