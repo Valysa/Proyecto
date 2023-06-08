@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Affichage CSV</title>
     <link rel="stylesheet" href="css/proyecto.css">
 </head>
+
 <body>
     <form action="sendmailtoreferent.php" method="POST">
         <div class="container">
             <?php
+            session_start();
             $file = fopen('BDD2/reference.csv', 'r');
             $data = [];
             $firstLineSkipped = false;
@@ -22,25 +25,27 @@
             fclose($file);
             $counter = 0;
             foreach ($data as $row) {
-                $info1 = $row[3]; // Première colonne du CSV
-                $info2 = $row[2]; // Deuxième colonne du CSV
-                $info3 = $row[1]; // Troisième colonne du CSV
-
-                echo '<div class="row">';
-                echo '<div class="styled-box">';
-                echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
-                echo '<p>' . $info1 . '</p>';
-                echo '<p>' . $info2 . '</p>';
-                echo '<p>' . $info3 . '</p>';
-                echo '</div>';
-                $counter++;
-                if ($counter % 2 == 0) {
+                if ($row[5] == $_SESSION["ID"]) {
+                    $info1 = $row[3]; // Première colonne du CSV
+                    $info2 = $row[2]; // Deuxième colonne du CSV
+                    $info3 = $row[1]; // Troisième colonne du CSV
+            
+                    echo '<div class="row">';
+                    echo '<div class="styled-box">';
+                    echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
+                    echo '<p>' . $info1 . '</p>';
+                    echo '<p>' . $info2 . '</p>';
+                    echo '<p>' . $info3 . '</p>';
                     echo '</div>';
-                    $counter = 0;
+                    $counter++;
+                    if ($counter % 2 == 0) {
+                        echo '</div>';
+                        $counter = 0;
+                    }
                 }
-            }
-            if ($counter % 2 != 0) {
-                echo '</div>';
+                if ($counter % 2 != 0) {
+                    echo '</div>';
+                }
             }
             ?>
             <div class="row">
@@ -49,4 +54,5 @@
         </div>
     </form>
 </body>
+
 </html>
