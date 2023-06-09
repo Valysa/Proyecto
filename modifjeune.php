@@ -5,36 +5,66 @@
 <html id="jeune">
 
 <head>
-    <p>
-        JEUNE
-    </p>
-    <p>
-        Modifie tes informations
-    </p>
+    <link rel="stylesheet" type="text/css" href="proyecto.css">
 </head>
 
 <body>
+<body id="jeune_signin">
 
-    <ul>
-        <li class="active"><a>Jeune</a></li>
-        <li class="l3"><a href="login.html">PARTENAIRES</a>
-        </li>
-    </ul>
+<div id="page_head">
+    <img id="logojeunes" src="./img/logojeunes.PNG">
+    <p id="module">
+        JEUNE
+    </p>
+
+    <p id="tagline">
+        Mon Compte
+    </p>
+</div>
+
+<table id="navbar" style="width: 50%;">
+    <tr>
+
+
+        <td style="width: 50%;">
+            <a class="active_jeune"> &nbsp; JEUNE &nbsp;</a>
+        </td>
+        <td style="width: 50%;">
+            <a href="partenaires.html">PARTENAIRES</a>
+        </td>
+
+
+    </tr>
+</table>
 
      <br><br>
 
-    <form id="main" action="modifjeune2.php" method="POST">
+    <form id="main" class="main_input" action="modifjeune2.php" method="POST">
         <fieldset>
-            
-                <input type="text" name="name" placeholder="Nom" value=<?php echo $_SESSION['name']; ?> onfocus="this.value" /> <br><br>
-                <input type="text" name="fname" placeholder="PRENOM" value=<?php echo $_SESSION['fname']; ?> /> <br><br>
-                <input type="date" name="birthday" placeholder="Date de naissance" value=<?php echo $_SESSION['birthday']; ?> /> <br><br>
-                <input type="email" name="email" placeholder="Mail" value=<?php echo $_SESSION['email']; ?> /> <br> <br>
-                <input type="password" name="password" placeholder="Password"value=<?php echo $_SESSION['password']; ?> />
-           
+            <div class="input_text">
+                <input type="text" class="writing" name="name" placeholder="Nom" value=<?php echo $_SESSION['name']; ?> onfocus="this.value" /> 
+                <label for="name" class="text_label">Nom</label>
+                <br><br>
+                </div>
+                <div class="input_text">
+                <input type="text" class="writing" name="fname" placeholder="PRENOM" value=<?php echo $_SESSION['fname']; ?> />
+                <label for="fname" class="text_label">Prenom</label> <br><br>
+                </div>
+                <div class="input_text">
+                <input type="date" class="writing" name="birthday" placeholder="Date de naissance" value=<?php echo $_SESSION['birthday']; ?> /> 
+                <label for="birthday" class="text_label">Date de naissance</label><br><br>
+                </div>
+                <div class="input_text">
+                <input type="email" class="writing" name="email" placeholder="Mail" value=<?php echo $_SESSION['email']; ?> /> 
+                <label for="email" class="text_label">Mail</label><br> <br>
+                </div>
+                <div class="input_text">
+                <input type="password" class="writing" name="password" placeholder="Password"value=<?php echo $_SESSION['password']; ?> />
+                <label for="password" class="text_label">Mot de passe</label><br><br>
+                </div>
         </fieldset>
         
-        
+        <br>
         <button type="submit" value="modifj">Valider</button>
     </form>
 
