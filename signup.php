@@ -1,13 +1,8 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <link rel="stylesheet" type="text/css" href="proyecto.css">
-
-
 </head>
 
 <body id="jeune_signin">
@@ -24,8 +19,6 @@
 
     <table id="navbar" style="width: 50%;">
         <tr>
-
-
             <td style="width: 50%;">
                 <a class="active_jeune"> &nbsp; JEUNE &nbsp;</a>
             </td>
@@ -34,13 +27,11 @@
             <td style="width: 50%;">
                 <a href="login.html">PARTENAIRES</a>
             </td>
-
-
         </tr>
     </table>
 
-
     <br><br>
+
     <form id="info" class="main_input" action="data.php" method="POST">
         <fieldset>
             <div class="input_text">
@@ -60,7 +51,7 @@
                 <label for="email" class="text_label">Mail</label><br><br>
             </div>
             <div class="input_text">
-                <input class="writing" type="password" name="password" placeholder="Mot de passse" />
+                <input class="writing" type="password" name="password" placeholder="Mot de passe" />
                 <label for="password" class="text_label">Mot de passe</label><br><br>
             </div>
             <?php 
@@ -74,12 +65,12 @@
             <button type="submit" value="loginj">Valider</button>
             <br>
             <br>
-    </form>
-    <a href="./login.html">
-        <button>Déjà inscrit?</button>
-    </a>
-    </table>
+        </table>
 
+        <a href="loginAffichage.php">
+            <button type="button">Déjà inscrit?</button>
+        </a>
+    </form>
 
 </body>
 

@@ -52,7 +52,7 @@
 
      <br><br>
 
-    <form id="main" class="main_input" action="login.php" method="POST">
+<form id="main" class="main_input" action="login.php" method="POST">
         <fieldset>
             <div class="input_text">
             <input class="writing" type="email" name="email" placeholder="Mail" />
