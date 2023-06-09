@@ -113,10 +113,7 @@ html, body {
 
 
 #description{
-  /* position: fixed;
-  top: 250px; */
-  /* right: 250px;
-  left: 250px; */
+
   font-family: sans-serif;
   color: var(--secondary);
   font-size: 150%;
@@ -125,10 +122,7 @@ html, body {
 }
 
 #page_head {
-  /* position: fixed;
-  top: 0px;
-  right: 0px;
-  left: 0px; */
+
   height: 194px;
   background: radial-gradient(at bottom left, var(--headbar1), var(--headbar2));
   
@@ -137,9 +131,7 @@ html, body {
 }
 
 #module{
-  /* position: fixed;
-  right: 5px;
-  top: 0px; */
+
   text-align: end;
   font-family: sans-serif;
   color: var(--primary);
@@ -156,8 +148,7 @@ html, body {
 }
 
 #navbar{
-  /* position:fixed; */
-  /* top: 194px; */
+
   height: 40px;
   margin-right: 25%;
   margin-left: 25%;
@@ -514,7 +505,7 @@ html, body {
   border: 0;
   border-bottom: 4px dotted var(--primary);
   width:auto;
-  height:5px;
+  height:auto;
   font-size:120%;
   font-family: "Lucida Handwriting";
 
@@ -575,7 +566,7 @@ button:hover{
 
 
 #speech{
-  color:#9b9b9b;
+  color:var(--inactive);
   margin: 10px;
   text-align: justify;
 }
@@ -613,7 +604,7 @@ button:hover{
 
 #step1 a div{
   background: linear-gradient(to right, #fff, var(--primary) 50%);
-  color: white;
+  color: var(--background);
   text-align: center;
   padding-top: 10%;
   padding-bottom: 10%;
@@ -768,3 +759,6 @@ button:hover{
   padding-top: 3px;
   padding-bottom:3px;
 }
+
+
+/*============= CONSULTANT ============*/
