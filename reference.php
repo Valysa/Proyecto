@@ -28,7 +28,36 @@
     }
     fclose($fp);
     // double chainage (insertion de l'id de la référence dans la table du jeune)
-
+    $mailj = $_SESSION['email'];
+    $fpj = fopen("BDD/$mailj[0].csv", 'a+');
+    $i = substr($_SESSION['ID'], -1);
+    $j = 1;
+    echo $i;
+    fseek($fpj, 0);
+    $c=fgetc($fpj); 
+    while($j != 1){
+        while($c != PHP_EOL){
+            ++$count;
+            fseek($fpj, $count);
+            $c=fgetc($fpj); 
+        }
+        ++$count;
+        ++$count;
+        fseek($fp, $count);
+        $c=fgetc($fp); 
+        if($c == $i){
+            $j = 1;
+        } 
+    }
+    while($c != PHP_EOL){
+        ++$count;
+        fseek($fpj, $count);
+        $c=fgetc($fpj); 
+    }
+    --$count;
+    fseek($fpj, $count);
+    fwrite($fpj, ',' . $id[0]);
+    fclose($fpj);
 
     // Genere le lien
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
