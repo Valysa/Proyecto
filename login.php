@@ -1,4 +1,5 @@
 <?php
+session_start();
 $mail = $_POST["email"];
 $row = 1;
 $test = 0;
@@ -22,6 +23,25 @@ if (($handle = fopen('BDD/'.$mail[0].'.csv', "r")) !== FALSE) {
     }
     fclose($handle);
 }
+
+    $ligne = 1; // compteur de ligne
+    $fic = fopen("BDD/$mail[0].csv", "a+");
+    while($tab=fgetcsv($fic,1024,',')){
+        $champs = count($tab);//nombre de champ dans la ligne en question
+        for($i=0; $i<$champs; $i ++) {
+            if(strcmp($tab[$i], $mail) == 0){
+                $_SESSION['email']=$tab[$i];
+                $_SESSION['hidden_password']=$tab[$i+1];
+                $_SESSION['birthday']=$tab[$i-1];
+                $_SESSION['name']=$tab[$i-2];
+                $_SESSION['fname']=$tab[$i-3];
+                $_SESSION['ID']=$tab[$i-4];
+                $_SESSION['password']=$_POST["password"];
+            }
+        }
+    }
+echo $_SESSION['ID'];
+
 if($test == 1){
     header("Location: monEspace.php");
 }
