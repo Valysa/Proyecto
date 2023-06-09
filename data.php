@@ -67,5 +67,9 @@ if ($test == 1) {
         fputcsv($fp, $fields);
     }
     fclose($fp);
+    header("Location: monEspace.html");
+}
+else{
+    header("Location: signup.php?error=1");
 }
 ?>
