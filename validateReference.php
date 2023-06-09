@@ -1,5 +1,4 @@
 <?php
-session_start();
 // Récupérer la valeur de $_GET['ref']
 $ref = $_GET['ref'];
 
