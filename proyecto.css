@@ -507,6 +507,34 @@ html, body {
 
 
 
+
+/*=========================== DOTTED INPUTS ============================*/
+
+.input_text2 .writing {
+  border: 0;
+  border-bottom: 4px dotted var(--primary);
+  width:auto;
+  height:5px;
+  font-size:120%;
+  font-family: "Lucida Handwriting";
+
+}
+.input_text2 .writing::placeholder{
+  color: transparent;
+}
+.input_text2 label{
+  font-size:150%;
+  display: inline;
+  color: var(--primary);
+}
+.input_text2 .writing:focus{
+  outline:none;
+}
+
+
+
+
+
 /*=======================================button styling*/
 
 
