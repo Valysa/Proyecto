@@ -56,7 +56,7 @@
     $subject = $_POST["subject"];
     $message = $_POST["message"];*/
     $subject="Demande de reference";
-    $message="Vous avez reçu une demande de reference";
+    $message="Vous avez reçu une demande de reference".$url;
     $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
     try { 

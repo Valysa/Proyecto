@@ -18,7 +18,7 @@
         $mail->SMTPAuth = true;
         $mail->Username = 'engagementjeunes64@outlook.fr';
         $mail->Password = 'EngJeunes64&';
-        $mail->SMTSecure = 'tls';
+        $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
     // Set other email parameters (to, subject, message, headers)
