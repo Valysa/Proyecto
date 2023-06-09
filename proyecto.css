@@ -14,11 +14,17 @@
   --jeune1: #e4006e;
   --jeune2: #fd9bff;
 
-  --partenaire1: #11998e;
+  --partenaire1: #464646;
   --partenaire2: #38ef7d;
 
-  --consultant1: #1f1fff;
+  --consultant1: #007cc4;
   --consultant2: #50dcff;
+
+  --headbar2: #9b9b9b;
+  --headbar1: #fff;
+
+  --background: #fff;
+  --inactive: #9b9b9b;
 }
 
 * {
@@ -41,63 +47,52 @@ html, body {
 
 
 #referent>* {
-  --headbar2: #9b9b9b;
-  --headbar1: #fff;
   --primary:  var(--referent1);
   --secondary: var(--referent2);
-  --background: #fff;
-  --inactive: #9b9b9b;
   }
 
 #jeune_signup{
-  --headbar2: #9b9b9b;
-  --headbar1: #fff;
   --primary:  var(--jeune1);
   --secondary: var(--jeune2);
-  --background: #fff;
-  --inactive: #9b9b9b;
-
 }
 
 #intro{
-  --headbar2: #9b9b9b;
-  --headbar1: #fff;
-  --background: #fff;
-  --inactive: #9b9b9b;
   --primary:  var(--jeune1);
   --secondary: var(--jeune2);
 }
 
 #intro_consultant{
-  --headbar2: #9b9b9b;
-  --headbar1: #fff;
-  --background: #fff;
-  --inactive: #9b9b9b;
+
   --primary:  var(--consultant1);
   --secondary: var(--consultant2);
 }
 
 #jeune_signin{
-  --headbar2: #9b9b9b;
-  --headbar1: #fff;
   --primary:  var(--jeune1);
   --secondary: var(--jeune2);
-  --background: #fff;
-  --inactive: #9b9b9b;
+
+}
+
+#mySpace{
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
 
 }
 
 #intro_referent{
-  --headbar2: #9b9b9b;
-  --headbar1: #fff;
-  --background: #fff;
-  --inactive: #9b9b9b;
   --primary:  var(--referent2);
   --secondary: var(--referent1);
 }
 
+#consID{
+  --primary:  var(--consultant1);
+  --secondary: var(--consultant2);
+}
 
-
+#createRef{
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+}
 
 
 
@@ -286,12 +281,9 @@ html, body {
 
 #skills{
   border: 0;
-  /* position: fixed;
-  right:10px; */
   margin: auto;
   margin-left: 20%;
   padding: 5px;
-  /* top:300px; */
   background: linear-gradient(120deg, transparent,var(--primary));
   accent-color: var(--secondary);
   font-size:150%;
@@ -570,7 +562,7 @@ button:hover{
 }
 #intro h1{
   font-weight: normal;
-  font-size: 250%;
+  font-size: 200%;
   
 }
 
@@ -620,4 +612,131 @@ button:hover{
   font-size: 120%;
   padding:5px;
   height:100px;
+}
+
+/*============    HOME PAGE   ==========*/
+
+#home #grey{
+  color: #34157d;
+  width:100%;
+  height:90%;
+  background: linear-gradient(to right, var(--headbar1), var(--headbar2) 150%);
+}
+
+#home img{
+  position: relative;
+  width:30%;
+}
+
+#home table{
+  position:fixed;
+  top:10%;
+  text-align: center;
+  
+  width:100%;
+  background-color: transparent;
+}
+#home table tr:first-child{
+  font-size: 200%;
+
+}
+
+#home table tr:nth-child(2) td{
+  padding: 0px;
+}
+
+#home table tr:nth-child(3){
+
+  font-size: 150%;
+}
+
+#home table tr:nth-child(4) td{
+  padding:20px;
+}
+
+#home a{
+  color: red;
+  font-size: 200%;
+
+}
+
+#home a:hover{
+  font-size:210%;
+  transition:0.2s;
+}
+
+#home #disclaimer{
+  margin-top:20px;
+  text-align: center;
+  font-size:70%;
+  color: var(--inactive);
+
+}
+
+
+/*====================MY SPACE==================*/
+
+#mySpace #option{
+  position:fixed;
+  top:50%;
+}
+
+#mySpace #option td{
+  width: 33%;
+  padding:10px;
+  
+}
+#mySpace #option div{
+  height: 100%;
+  width: 100%;
+  color: var(--primary);
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  text-align: center;
+}
+#mySpace #option td:hover div{
+  transition:0.5s;
+  color: var(--primary);
+  border-image: linear-gradient(to right, var(--primary),var(--secondary));
+  border-image-slice: 1;
+  border-radius: 5px;
+}
+
+
+
+
+/*============= REFERENCE ===============*/
+
+#ref td{
+  width: 25%;
+  padding:30px;
+
+}
+#ref legend{
+  color: var(--primary);
+}
+#ref td:first-child{
+  padding-left:5px;
+  color: var(--primary);
+  text-align: center;
+}
+
+
+[name="exp"]{
+  margin-right:20%;
+  resize: none;
+  outline: none;
+  background: radial-gradient(at top left, var(--background), var(--primary));
+  border-radius: 2px;
+  border: 0;
+  
+  font-size: 150%;
+  font-family: sans-serif;
+  width:380px;
+  height:480px;
+}
+
+#ref #Be2{
+  padding-top: 3px;
+  padding-bottom:3px;
 }
