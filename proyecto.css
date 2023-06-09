@@ -6,6 +6,10 @@
   border: 1px solid black;
 }*/
 
+a{
+  text-decoration: none;
+}
+
 * {
   
   --referent1: #c5e700;
@@ -147,6 +151,10 @@ html, body {
   text-align: right;
 }
 
+
+
+/*======== NAVBAR =======*/
+
 #navbar{
 
   height: 40px;
@@ -159,16 +167,9 @@ html, body {
 }
 
 
-#navbar tr:first-child{
+#navbar{
   font-size: 200%;
   text-align: center;
-}
-#navbar [href="./signup.html"]{
-  color: var(--jeune1);
-}
-
-#navbar [href="partenaires.html"]{
-  color: var(--partenaire1);
 }
 
 #navbar:first-child:hover{
@@ -177,15 +178,49 @@ html, body {
 }
 
 
-#navbar:nth-child(2){
-  font: var(--color);
+#navbar td:nth-child(1){
+  color: var(--jeune1);
 }
 
-.active_jeune{
-  color: #fff;
-  background:var(--primary);
+#navbar td:nth-child(2){
+  color: var(--referent2);
 }
 
+#navbar td:nth-child(3){
+  color: var(--consultant1);
+}
+
+#navbar td:nth-child(4){
+  color: var(--partenaire1);
+}
+
+#navbar td:nth-child(1):hover{
+  color: var(--jeune2);
+}
+
+#navbar td:nth-child(4):hover{
+  color: var(--partenaire2);
+}
+
+
+#navbar td:nth-child(1).active div{
+  color: var(--background);
+  background:var(--jeune1);
+  border-radius: 12px;
+  
+}
+
+#navbar table td:nth-child(2).active div{
+  color: var(--background);
+  background:var(--consultant1);
+  
+}
+
+#navbar table td:nth-child(3).active div{
+  color: var(--background);
+  background:var(--partenaire1);
+  
+}
 
  a:link{
   text-decoration: none;
