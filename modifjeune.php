@@ -69,7 +69,7 @@
                 <label for="birthday" class="text_label">Date de naissance</label><br><br>
                 </div>
                 <div class="input_text">
-                <input type="email" class="writing" name="email" placeholder="Mail" value=<?php echo $_SESSION['email']; ?> /> 
+                <input type="email" class="writing" name="email" placeholder="Mail" value=<?php echo $_SESSION['email']; ?>  READONLY/> 
                 <label for="email" class="text_label">Mail</label><br> <br>
                 </div>
                 <div class="input_text">
