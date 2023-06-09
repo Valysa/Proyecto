@@ -52,7 +52,7 @@
     <tr>
         <td></td>
     <td>
-    <a href="./createRef.html">
+    <a href="./createRef.php">
         <div>Créer une demande de référence</div>
     </a>
     </td>

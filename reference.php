@@ -1,4 +1,5 @@
 <?php
+    session_start();
     echo $_SESSION['ID']; 
     $handle = fopen('BDD2/reference.csv', "a+");
     $id = fgetcsv($handle, 1000, ",");
