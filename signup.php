@@ -59,7 +59,7 @@
                 <label for="password" class="text_label">Mot de passe</label><br><br>
             </div>
             <?php 
-            if($_GET["error"] == 1){
+            if(isset($_GET['error']) && $_GET["error"] == 1){
                 echo "Certains champs ne sont pas bons";
             }
             ?>
