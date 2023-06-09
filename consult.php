@@ -28,14 +28,24 @@
                     $info1 = $row[3]; // Première colonne du CSV
                     $info2 = $row[2]; // Deuxième colonne du CSV
                     $info3 = $row[1]; // Troisième colonne du CSV
-            
-                    echo '<div class="row">';
-                    echo '<div class="styled-box">';
-                    echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
-                    echo '<p>' . $info1 . '</p>';
-                    echo '<p>' . $info2 . '</p>';
-                    echo '<p>' . $info3 . '</p>';
-                    echo '</div>';
+                    if($row[6] == "validated"){
+                        echo '<div class="row">';
+                        echo '<div class="styled-box">';
+                        echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
+                        echo '<p>' . $info1 . '</p>';
+                        echo '<p>' . $info2 . '</p>';
+                        echo '<p>' . $info3 . '</p>';
+                        echo '</div>';
+                    }
+                    else{
+                        echo '<div class="row">';
+                        echo '<div class="styled-box">';
+                        echo 'Cette référence est en attente de validation';
+                        echo '<p>' . $info1 . '</p>';
+                        echo '<p>' . $info2 . '</p>';
+                        echo '<p>' . $info3 . '</p>';
+                        echo '</div>';
+                    }
                 }
             }
             ?>
