@@ -1,5 +1,4 @@
 <?php
-echo session_status();
 $mail = $_POST["email"];
 $row = 1;
 $test = 0;

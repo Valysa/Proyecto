@@ -12,8 +12,6 @@
     }
     
     if ( is_session_started() === FALSE ) session_start();
-
-    echo session_status();
 ?>
 <!DOCTYPE html>
 <html>
