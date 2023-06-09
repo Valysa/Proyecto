@@ -23,4 +23,10 @@ if (($handle = fopen('BDD/'.$mail[0].'.csv', "r")) !== FALSE) {
     }
     fclose($handle);
 }
+if($test == 1){
+    header("Location: monEspace.php");
+}
+else{
+    header("Location: login.html?error=1");
+}
 ?>
