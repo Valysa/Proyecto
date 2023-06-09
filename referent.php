@@ -25,6 +25,8 @@
             <td style="width: 50%">
                 <a href="./signup.html">JEUNE</a>
             </td>
+            <td style="width: 50%">RÉFÉRENT</td>
+            <td style="width: 50%">CONSULTANT</td>
             <td style="width: 50%;">
                 <a href="login.html">PARTENAIRES</a>
             </td>
