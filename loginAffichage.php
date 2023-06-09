@@ -1,3 +1,6 @@
+<?php    
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -65,5 +68,4 @@
     </form>
 
 </body>
-
 </html>

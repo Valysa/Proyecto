@@ -1,5 +1,5 @@
 <?php
-session_start();
+echo session_status();
 $mail = $_POST["email"];
 $row = 1;
 $test = 0;
@@ -27,6 +27,6 @@ if($test == 1){
     header("Location: monEspace.php");
 }
 else{
-    header("Location: login.html?error=1");
+    header("Location: loginAffichage.php?error=1");
 }
 ?>

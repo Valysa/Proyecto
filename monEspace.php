@@ -11,7 +11,6 @@
         return FALSE;
     }
     
-    // Example
     if ( is_session_started() === FALSE ) session_start();
 
     echo session_status();
