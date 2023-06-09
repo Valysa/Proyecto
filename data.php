@@ -11,9 +11,9 @@ $mail = $_POST["email"];
 $row = 1;
 $test = 1;
 if ($mail !== "" && $_POST["password"] !== "" && $_POST["name"] !== "" && $_POST["fname"] !== "" && $_POST["birthday"] !== "") {
-    if (($handle = fopen('BDD/' . $mail[0] . '.csv', "r")) !== FALSE) {
+    if (($handle = fopen('BDD/' . $mail[0] . '.csv', "r+")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE || $data != "") {
-            if (isset($data) && count($data) > 3 && $mail == $data[3]) {
+            if ($mail == $data[4]) {
                 echo "compte déjà existant";
                 $test = 0;
             }
@@ -50,10 +50,10 @@ if ($test == 1) {
         fclose($handle);
     }
 
-   $password = $_POST["password"];
+    $password = $_POST["password"];
     $fname = $_POST["fname"];
     $name = $_POST["name"];
-    $salt = $name.$fname;
+    $salt = $mail[0].$id;
     $hasedPassword = hash('sha256', $salt.$password);
     $_SESSION['hidden_password'] = $hasedPassword;
     echo $_SESSION['hidden_password'];

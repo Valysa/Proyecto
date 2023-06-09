@@ -23,7 +23,6 @@
                 $data[] = $row;
             }
             fclose($file);
-            $counter = 0;
             foreach ($data as $row) {
                 if ($row[5] == $_SESSION["ID"]) {
                     $info1 = $row[3]; // Première colonne du CSV
@@ -36,14 +35,6 @@
                     echo '<p>' . $info1 . '</p>';
                     echo '<p>' . $info2 . '</p>';
                     echo '<p>' . $info3 . '</p>';
-                    echo '</div>';
-                    $counter++;
-                    if ($counter % 2 == 0) {
-                        echo '</div>';
-                        $counter = 0;
-                    }
-                }
-                if ($counter % 2 != 0) {
                     echo '</div>';
                 }
             }

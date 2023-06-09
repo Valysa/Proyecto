@@ -6,7 +6,7 @@ if (($handle = fopen('BDD/'.$mail[0].'.csv', "r")) !== FALSE) {
     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         if ($mail == $data[4]){
             $test = 1;
-            $salt = $data[2].$data[1];
+            $salt = $data[0];
             $password = hash('sha256', $salt.$_POST["password"]);
             echo $password;
             if ($password == $data[5]){
