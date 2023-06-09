@@ -38,7 +38,8 @@
         
         <td style="width: 50%">
             <a class="active_jeune"> JEUNE</a>
-            </td>
+            </td><td style="width: 50%">RÉFÉRENT</td>
+            <td style="width: 50%">CONSULTANT</td>
         <td style="width: 50%;">
                 <a href="./partenaires.html">PARTENAIRES</a>
             </td>
