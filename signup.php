@@ -24,13 +24,13 @@
         <tr>
 
 
-            <td style="width: 25%;">
-                <a class="active_jeune"> &nbsp; JEUNE &nbsp;</a>
+            <td class="active">
+                <div>JEUNE</div>
             </td>
-            <td style="width: 25%">RÉFÉRENT</td>
-        <td style="width: 25%">CONSULTANT</td>
-            <td style="width: 25%;">
-                <a href="login.html">PARTENAIRES</a>
+            <td><div>RÉFÉRENT</div></td>
+            <td><div>CONSULTANT</div></td>
+            <td >
+                <a href="./partenaires.html">PARTENAIRES</a>
             </td>
 
 
