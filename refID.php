@@ -44,14 +44,16 @@
 
         <table id="navbar" style="width: 50%;">
             <tr>
-                <td style="width: 50%">
-                    <a href="./signup.html">JEUNE</a>
-                </td>
-                <td style="width: 50%">RÉFÉRENT</td>
-            <td style="width: 50%">CONSULTANT</td>
-                <td style="width: 50%;">
-                    <a href="./partenaires.html">PARTENAIRES</a>
-                </td>
+
+            <td>
+                <div><a href="./signup.html">JEUNE</a></div>
+            </td>
+            <td><div>RÉFÉRENT</div></td>
+            <td class="active"><div>CONSULTANT</div></td>
+            <td >
+                <a href="./partenaires.html">PARTENAIRES</a>
+            </td>
+                
             </tr>
         </table>
         <table style="width: 100%;">
