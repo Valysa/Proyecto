@@ -5,7 +5,7 @@ $mail = $_POST["email"];
 $row = 1;
 $test = 1;
 if ($mail !== "" && $_POST["password"] !== "" && $_POST["name"] !== "" && $_POST["fname"] !== "" && $_POST["birthday"] !== "") {
-    if (($handle = fopen('BDD/' . $mail[0] . '.csv', "r+")) !== FALSE) {
+    if (($handle = fopen('BDD/' . $mail[0] . '.csv', "c+")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE || $data != "") {
             if ($mail == $data[4]) {
                 echo "compte déjà existant";
