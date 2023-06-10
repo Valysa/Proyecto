@@ -22,7 +22,17 @@
 
 <body>
 <body id="jeune_signin">
-
+    <script>
+        // Vérifier si le paramètre 'error' est présent dans l'URL et a une valeur de 1
+        var urlParams = new URLSearchParams(window.location.search);
+        var errorParam = urlParams.get('error');
+        if (errorParam === '2') {
+            // Afficher le message d'erreur
+            window.onload = function() {
+                alert("Tous les champs ne sont pas valides. Veuillez recommencer");
+            };
+        }
+    </script>
 <div id="page_head">
     <img id="logojeunes" src="./img/logojeunes.PNG">
     <p id="module">

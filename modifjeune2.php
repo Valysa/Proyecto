@@ -48,5 +48,11 @@
         $_SESSION['birthday'] = $_POST["birthday"];
         $_SESSION['password'] = $_POST["password"];
         $_SESSION['hidden_password'] = $hasedPassword;
+
+        header("Location: monEspace.php");
+        //alert("Les modifications ont été enregistrées");
     }
+    else{
+        header("Location: modifjeune.php?error=2");
+    } 
 ?>
