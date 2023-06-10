@@ -48,8 +48,8 @@
             <td>
                 <div><a href="./signup.html">JEUNE</a></div>
             </td>
-            <td><div>RÉFÉRENT</div></td>
-            <td class="active"><div>CONSULTANT</div></td>
+            <td class="active"><div>RÉFÉRENT</div></td>
+            <td><div>CONSULTANT</div></td>
             <td >
                 <a href="./partenaires.html">PARTENAIRES</a>
             </td>
