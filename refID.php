@@ -91,37 +91,37 @@
                             <div id="Be">SES SAVOIRS ETRE</div>
                             <form id="skills" action="validateReference.php" method="POST">
                                 <div id="Be2">Je confirme sa(son)*</div>
-                                <div id="sglcheckbox">
-                                    <input type="checkbox" name="selfsufficient">
-                                    <label for="selfsufficient">Ponctualité</label>
-                                    <br>
-                                    <input type="checkbox" name="rational">
-                                    <label for="rational">Confiance</label>
-                                    <br>
-                                    <input type="checkbox" name="attentive">
-                                    <label for="attentive">Sérieux</label>
-                                    <br>
-                                    <input type="checkbox" name="organised">
-                                    <label for="organised">Honnêteté</label>
-                                    <br>
-                                    <input type="checkbox" name="passionated">
-                                    <label for="passitionated">Passionné</label>
-                                    <br>
-                                    <input type="checkbox" name="reliable">
-                                    <label for="reliable">Bienveillance</label>
-                                    <br>
-                                    <input type="checkbox" name="patient">
-                                    <label for="patient">Respect</label>
-                                    <br>
-                                    <input type="checkbox" name="responsible">
-                                    <label for="responsible">Juste</label>
-                                    <br>
-                                    <input type="checkbox" name="Sociable">
-                                    <label for="Sociable">Impartial</label>
-                                    <br>
-                                    <input type="checkbox" name="Optimistic">
-                                    <label for="Optimistic">Travail</label>
-                                </div>
+                               <div id="sglcheckbox" action="checked.php" method="POST">
+                            <input type="checkbox" name="skill[]" value="0">
+                            <label for="0">Ponctualité</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="1">
+                            <label for="1">Confiance</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="2">
+                            <label for="2">Sérieux</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="3">
+                            <label for="3">Honnêteté</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="4">
+                            <label for="4">Passionné</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="5">
+                            <label for="5">Bienveillance</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="6">
+                            <label for="6">Respect</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="7">
+                            <label for="7e">Juste</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="8">
+                            <label for="8">Impartial</label>
+                            <br>
+                            <input type="checkbox" name="skill[]" value="9">
+                            <label for="9">Travail</label>
+                        </div>
                                 <script>
                                     function limitCheckBox() {
                                         var checkboxgroup = document.getElementById('sglcheckbox').getElementsByTagName("input");
