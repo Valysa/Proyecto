@@ -48,14 +48,15 @@
     <tr>
 
 
-        <td style="width: 50%;">
-            <a class="active_jeune"> &nbsp; JEUNE &nbsp;</a>
-        </td>
-        <td style="width: 50%">RÉFÉRENT</td>
-            <td style="width: 50%">CONSULTANT</td>
-        <td style="width: 50%;">
-            <a href="partenaires.html">PARTENAIRES</a>
-        </td>
+
+            <td class="active">
+                <div>JEUNE</div>
+            </td>
+            <td><div>RÉFÉRENT</div></td>
+            <td><div>CONSULTANT</div></td>
+            <td >
+                <a href="./partenaires.html">PARTENAIRES</a>
+            </td>
 
 
     </tr>
