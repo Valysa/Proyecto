@@ -22,13 +22,14 @@
         <tr>
 
 
-            <td style="width: 50%">
-                <a href="./signup.html">JEUNE</a>
+
+            <td>
+                <div><a href="./signup.html">JEUNE</a></div>
             </td>
-            <td style="width: 50%">RÉFÉRENT</td>
-            <td style="width: 50%">CONSULTANT</td>
-            <td style="width: 50%;">
-                <a href="login.html">PARTENAIRES</a>
+            <td class="active"><div>RÉFÉRENT</div></td>
+            <td><div>CONSULTANT</div></td>
+            <td >
+                <a href="./partenaires.html">PARTENAIRES</a>
             </td>
 
 
