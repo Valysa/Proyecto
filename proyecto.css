@@ -98,6 +98,10 @@ html, body {
   --secondary: var(--jeune2);
 }
 
+#consult{
+  --primary: var(--jeune1);
+  --secondary: var(--jeune2)
+}
 
 
 
@@ -157,7 +161,7 @@ html, body {
 
 #navbar{
 
-  height: 40px;
+  max-height: 10px;
   margin-right: 25%;
   margin-left: 25%;
 
@@ -167,9 +171,11 @@ html, body {
 }
 
 
-#navbar{
+#navbar td{
   font-size: 200%;
   text-align: center;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 #navbar:first-child:hover{
@@ -587,7 +593,7 @@ button:hover{
 
 
 /*========================== SIGNUP ==============================*/
-#jeune_signup button{
+ button{
   margin-left:75%;
 
 }
@@ -796,4 +802,46 @@ button:hover{
 }
 
 
-/*============= CONSULTANT ============*/
+/*============= CONSULT REFERENCES ============*/
+
+#consult #references, #consult #references table {
+  width:100%;
+  min-height: 70px;
+}
+
+#consult #references div{
+  border-radius: 15px;
+  padding:5px;
+}
+
+#consult #references div.validated{
+  background: radial-gradient(at top left, var(--background), var(--inactive) 90%);
+}
+
+#consult #references div.unvalidated{
+  background: radial-gradient(at top left, var(--background), var(--jeune1) 130%);
+}
+
+#consult .unvalid_msg{
+  background: radial-gradient(at top left, var(--background), var(--secondary) );
+  border-radius: 30px;
+  font-style: italic;
+  padding-top: 3px;
+  padding-bottom:3px;
+  padding-right:8px;
+  padding-left:2px;
+
+
+}
+
+#consult #references td td {
+  vertical-align:top;
+  
+}
+
+#consult #references td td:last-child {
+  vertical-align:top;
+  text-align: end;
+  min-height: 70px;
+}
+

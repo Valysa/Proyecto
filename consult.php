@@ -4,10 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Affichage CSV</title>
-    <link rel="stylesheet" href="css/proyecto.css">
+    <link rel="stylesheet" type="text/css" href="proyecto.css">
 </head>
 
-<body>
+<body id="consult">
+<div id="page_head">
+        <img id="logojeunes" src="./img/logojeunes.PNG">
+        <p id="module">
+            JEUNE
+        </p>
+        <p id="tagline">
+            Je donne de la valeur à mon engagement
+        </p>
+    </div>
+
+    <table id="navbar" style="width: 50%;">
+        <tr>
+
+
+            <td class="active">
+                <div > JEUNE </div>
+            </td>
+            <td >RÉFÉRENT</td>
+            <td >CONSULTANT</td>
+            <td >
+                <a href="./partenaires.html">PARTENAIRES</a>
+            </td>
+
+
+        </tr>
+    </table>
+
     <form action="sendmailtoreferent.php" method="POST">
         <div class="container">
             <?php
@@ -24,7 +51,7 @@
             }
             fclose($file);
             $i = 1;
-            echo '<table>';
+            echo '<table id="references">';
             foreach ($data as $row) {
                 if ($row[5] == $_SESSION["ID"]) {
                     $i++;
@@ -34,21 +61,23 @@
                         $info3 = $row[1]; // Troisième colonne du CSV
                         if ($row[6] == "validated") {
                             echo '<tr><td>';
-                            echo '<div class="styled-box">';
-                            echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
+                            echo '<div class="validated"><table><tr><td>';
                             echo '<p>' . $info1 . '</p>';
                             echo '<p>' . $info2 . '</p>';
                             echo '<p>' . $info3 . '</p>';
-                            echo '</div>';
+                            echo '</td><td>';
+                            echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
+                            echo '</td></tr></table></div>';
                             echo '</td>' ;
                         } else {
                             echo '<tr><td>';
-                            echo '<div class="styled-box">';
-                            echo 'cette reference est en attente de validation';
+                            echo '<div class="unvalidated"><table><tr><td>';
                             echo '<p>' . $info1 . '</p>';
                             echo '<p>' . $info2 . '</p>';
                             echo '<p>' . $info3 . '</p>';
-                            echo '</div>';
+                            echo '</td><td>';
+                            echo '<div class="unvalid_msg">cette reference est en attente de validation</div>';
+                            echo '</td></tr></table></div>';
                             echo '</td>' ;
                         }
                     }
@@ -58,21 +87,23 @@
                         $info3 = $row[1]; // Troisième colonne du CSV
                         if ($row[6] == "validated") {
                             echo '<td>';
-                            echo '<div class="styled-box">';
-                            echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
+                            echo '<div class="validated"><table><tr><td>';
                             echo '<p>' . $info1 . '</p>';
                             echo '<p>' . $info2 . '</p>';
                             echo '<p>' . $info3 . '</p>';
-                            echo '</div>';
-                            echo '</td></tr>' ;
+                            echo '</td><td>';
+                            echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
+                            echo '</td></tr></table></div>';
+                            echo '</td>' ;
                         } else {
                             echo '<td>';
-                            echo '<div class="styled-box">';
-                            echo 'cette reference est en attente de validation';
-                            echo '<p>' . $info1 . '</p>';
-                            echo '<p>' . $info2 . '</p>';
-                            echo '<p>' . $info3 . '</p>';
-                            echo '</div>';
+                            echo '<div class="unvalidated"><table><tr><td>';
+                            echo '<p>' . $info1 . 'ses</p>';
+                            echo '<p>' . $info2 . 'ses</p>';
+                            echo '<p>' . $info3 . 'ses</p>';
+                            echo '</td><td>';
+                            echo '<div class="unvalid_msg">cette reference est en attente de validation</div>';
+                            echo '</td></tr></table></div>';
                             echo '</td></tr>' ;
                         }
                     }
