@@ -6,9 +6,7 @@
   border: 1px solid black;
 }*/
 
-a{
-  text-decoration: none;
-}
+
 
 * {
   
@@ -170,6 +168,10 @@ html, body {
   
 }
 
+#navbar a{
+  color: inherit;
+}
+
 
 #navbar td{
   font-size: 200%;
@@ -209,20 +211,34 @@ html, body {
 }
 
 
+#navbar .active div{
+  border-radius: 12px;
+  padding-left: 4px;
+  padding-right:4px;
+}
+
 #navbar td:nth-child(1).active div{
   color: var(--background);
   background:var(--jeune1);
-  border-radius: 12px;
+
   
 }
 
-#navbar table td:nth-child(2).active div{
+#navbar td:nth-child(2).active div{
+  color: var(--background);
+  background:var(--referent2);
+  
+  
+}
+
+#navbar td:nth-child(3).active div{
   color: var(--background);
   background:var(--consultant1);
+
   
 }
 
-#navbar table td:nth-child(3).active div{
+#navbar td:nth-child(4).active div{
   color: var(--background);
   background:var(--partenaire1);
   
