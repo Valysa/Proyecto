@@ -98,9 +98,9 @@
                         } else {
                             echo '<td>';
                             echo '<div class="unvalidated"><table><tr><td>';
-                            echo '<p>' . $info1 . 'ses</p>';
-                            echo '<p>' . $info2 . 'ses</p>';
-                            echo '<p>' . $info3 . 'ses</p>';
+                            echo '<p>' . $info1 . '</p>';
+                            echo '<p>' . $info2 . '</p>';
+                            echo '<p>' . $info3 . '</p>';
                             echo '</td><td>';
                             echo '<div class="unvalid_msg">cette reference est en attente de validation</div>';
                             echo '</td></tr></table></div>';
