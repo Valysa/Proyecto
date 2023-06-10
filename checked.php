@@ -7,7 +7,5 @@ $skill= $_POST['skill'];
         echo $b;
         $a[$b]=1;
     }
-    foreach ($a as $c){
-        echo $c."<br />";
-    }
+    //jsp pas comment mettre dans la BDD
 ?>
