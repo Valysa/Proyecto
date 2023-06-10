@@ -28,35 +28,18 @@
     }
     fclose($fp);
     // double chainage (insertion de l'id de la référence dans la table du jeune)
-    $mailj = $_SESSION['email'];
     $fpj = fopen("BDD/$mailj[0].csv", 'a+');
-    $i = substr($_SESSION['ID'], -1);
-    $j = 1;
-    echo $i;
-    fseek($fpj, 0);
-    $c=fgetc($fpj); 
-    while($j != 1){
-        while($c != PHP_EOL){
-            ++$count;
-            fseek($fpj, $count);
-            $c=fgetc($fpj); 
+    $line = $_SESSION['ID']; 
+    while($tab=fgetcsv($fpj,1024,',')){
+        $champs = count($tab);//nombre de champ dans la ligne en question
+        if(strcmp($tab[0], $_SESSION['ID']) == 0){
+            for($i=0; $i<$champs-1; $i ++) {
+                $line = $line.','.$tab[$i+1]; 
+            }
         }
-        ++$count;
-        ++$count;
-        fseek($fp, $count);
-        $c=fgetc($fp); 
-        if($c == $i){
-            $j = 1;
-        } 
     }
-    while($c != PHP_EOL){
-        ++$count;
-        fseek($fpj, $count);
-        $c=fgetc($fpj); 
-    }
-    --$count;
-    fseek($fpj, $count);
-    fwrite($fpj, ',' . $id[0]);
+    $newline = $line.','.$id[0]++;
+    file_put_contents("BDD/$mailj[0].csv", preg_replace('/'.$line.'/', $newline, file_get_contents("BDD/$mailj[0].csv"), 1));  
     fclose($fpj);
 
     // Genere le lien
@@ -74,17 +57,13 @@
     echo $url;
 
 
-
+    /*
     //part to sent an email to the referent
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
-    /*$name = $_POST["name"];
-    $email = $_POST["mailref"];
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];*/
     $subject="Demande de reference";
     $message="Vous avez reçu une demande de reference".$url;
     $email = $_POST["mailref"]; 
@@ -112,4 +91,5 @@
     }  catch (Exception $e) { 
         echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
     }
+    */
 ?>

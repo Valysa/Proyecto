@@ -20,36 +20,27 @@
         $list = array (
         array($fname, $name, $birthdate, $mail, $hasedPassword)
         );
+        
+        $ref = '';
+        //remplacement des informations dans la base de données
         $fp = fopen("BDD/$mail[0].csv", 'a+');
-        echo $_SESSION['fname'];
-        echo $_POST["fname"];
-        echo $_SESSION['ID'];
-        echo ".....";
-        $i = substr($_SESSION['ID'], -1);
-        echo $i;
-        fseek($fp, 0);
-        $c=fgetc($fp); 
-        while($j != 1){
-            while($c != PHP_EOL){
-                ++$count;
-                fseek($fp, $count);
-                $c=fgetc($fp); 
+        $line = $_SESSION['ID']; 
+        while($tab=fgetcsv($fp,1024,',')){
+            $champs = count($tab);//nombre de champ dans la ligne en question
+            if(strcmp($tab[0], $_SESSION['ID']) == 0){
+                for($i=0; $i<$champs-1; $i ++) {
+                    $line = $line.','.$tab[$i+1];
+                    if($i >= 5){
+                        $ref = $ref.','.$tab[$i+1];
+                    }  
+                }
             }
-            ++$count;
-            ++$count;
-            fseek($fp, $count);
-            $c=fgetc($fp); 
-            if($c == $i){
-                $j = 1;
-            } 
         }
-
-        //replacing information in the database 
-        file_put_contents("BDD/$mail[0].csv", preg_replace('/'.$_SESSION['fname'].'/', $_POST["fname"], file_get_contents("BDD/$mail[0].csv"), 1));
-        file_put_contents("BDD/$mail[0].csv", preg_replace('/'.$_SESSION['name'].'/', $_POST["name"], file_get_contents("BDD/$mail[0].csv"), 1));
-        file_put_contents("BDD/$mail[0].csv", preg_replace('/'.$_SESSION['birthday'].'/', $_POST["birthday"], file_get_contents("BDD/$mail[0].csv"), 1));
-        file_put_contents("BDD/$mail[0].csv", preg_replace('/'.$_SESSION['hidden_password'].'/', $hasedPassword, file_get_contents("BDD/$mail[0].csv"), 1));
-        fclose($fp);
+        echo "....";
+        echo $ref;
+        $newline = $_SESSION['ID'].','.$fname.','.$name.','.$birthdate.','.$mail.','.$hasedPassword.$ref; 
+        file_put_contents("BDD/$mail[0].csv", preg_replace('/'.$line.'/', $newline, file_get_contents("BDD/$mail[0].csv"), 1));
+        fclose($fp);        
 
         //info update
         $_SESSION['name'] = $_POST["name"];
