@@ -29,25 +29,27 @@
     fclose($file);
     foreach ($data as $row) {
         if ($row[0] == $_GET['ref']) {
-            if($_POST["password"] != hash("sha256", $row[5].$row[0])){
-                header("Location: referent.php?error=1&ref=".$row[0]);
+            if ($_POST["password"] != hash("sha256", $row[5] . $row[0])) {
+                header("Location: referent.php?error=1&ref=" . $row[0]);
                 exit;
             }
             $_SESSION["referentName"] = $row[3]; // Première colonne du CSV
             $_SESSION["referentfName"] = $row[2]; // Deuxième colonne du CSV
             $_SESSION["referenceName"] = $row[1]; // Troisième colonne du CSV
-            //$_SESSION["commentary"] = $row[8]; // le commentaire
-            for ($i = 0; $i < 4; $i++) {
-                if (isset($row[7])) {
-                    $_SESSION["$i"] = $row[7][$i];
+            
+            if (!empty($row[7])) {
+                $values = str_split($row[7]);
+                foreach ($values as $i => $value) {
+                    $_SESSION["$i"] = $value;
                 }
-            }            
+            }
             /*echo '<p>' . $_SESSION["referentName"] . '</p>';
             echo '<p>' . $_SESSION["referentfName"] . '</p>';
             echo '<p>' . $_SESSION["referenceName"] . '</p>';
             echo '</div>';*/
         }
     }
+    
     ?>
     <div id="wrapper" class="wrapper">
         <div id="page_head">
@@ -128,12 +130,13 @@
                                 9 => "Travail"
                             ];
                             
-                            for ($i = 0; $i < 4; $i++) {
-                                if (isset($_SESSION[$i])) {
+                            for ($i = 0; $i < count($_SESSION); $i++) {
+                                if (!empty($_SESSION[$i])) {
                                     echo $skills[$_SESSION[$i]];
                                     echo "<br>";
                                 }
                             }
+                            
                             echo $_SESSION["commentary"];                          
                             ?>
                             <div id="fourMax"></div>
