@@ -92,7 +92,7 @@ if (isset($row[7])) {
         $pdfContent .= "Coordonées : $col4\n";
         //$pdfContent .= "Colonne 5: $col5\n";
         //$pdfContent .= "Colonne 6: $col6\n";
-        $pdfContent .= "cela à permis de dévlopper : ". $skill;
+        $pdfContent .= "Cela à permis de développer : ". $skill;
         $pdfContent .= "\n";
     }
 
