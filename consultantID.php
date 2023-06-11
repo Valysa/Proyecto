@@ -42,7 +42,18 @@
                 header("Location: consultant.php");
                 exit;
             }
-
+            $skills= [
+                0 => "Ponctualité",
+                1 => "Confiance",
+                2 => "Sérieux",
+                3 => "Honnêteté",
+                4 => "Passionné",
+                5 => "Bienveillance",
+                6 => "Respect",
+                7 => "Juste",
+                8 => "Impartial",
+                9 => "Travail"
+            ];
             // Récupérer les références dans la base de données
             $file = fopen('BDD2/reference.csv', 'r');
             $data = [];
@@ -66,18 +77,27 @@
                             $idjeune = $row[5];
                             $test = 1;
                         }
+                        for($i=7; $i<10 ; $i++){
+                            if(isset($row[$i])){
+                                $info[$i] = $skills[$row[$i]];
+                            }
+                        }
                         $info1 = $row[3]; // Première colonne du CSV
                         $info2 = $row[2]; // Deuxième colonne du CSV
                         $info3 = $row[1]; // Troisième colonne du CSV
                         $info5 = $row[4]; // Cinquième colonne du CSV
                         $info0 = $row[0];
-
                         echo '<tr><td>';
                         echo '<div class="validated"><table><tr><td>';
                         echo '<p>' . $info1 . '</p>';
                         echo '<p>' . $info2 . '</p>';
                         echo '<p>' . $info3 . '</p>';
                         echo '</td><td>';
+                        for($i=7; $i<10 ; $i++){
+                            if(isset($row[$i])){
+                                echo ("$info[$i] ");
+                            }
+                        }
                         echo '</td></tr></table></div>';
                         echo '</td>';
                     }

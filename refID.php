@@ -12,7 +12,7 @@
         exit;
     }
     //test du mot de passe rentré par le référent
-    echo "REF = " . $_GET['ref'];
+    //echo "REF = " . $_GET['ref'];
     $file = fopen('BDD2/reference.csv', 'r');
     $data = [];
     $firstLineSkipped = false;
@@ -38,10 +38,10 @@
                     $_SESSION["$i"] = $row[$i];
                 }
             }
-            echo '<p>' . $_SESSION["referentName"] . '</p>';
+            /*echo '<p>' . $_SESSION["referentName"] . '</p>';
             echo '<p>' . $_SESSION["referentfName"] . '</p>';
             echo '<p>' . $_SESSION["referenceName"] . '</p>';
-            echo '</div>';
+            echo '</div>';*/
         }
     }
     ?>
@@ -117,7 +117,12 @@
                                 8 => "Impartial",
                                 9 => "Travail"
                             ];
-                            
+                            for($i=7; $i<10 ; $i++){
+                                if(isset($_SESSION["$i"])){
+                                   echo("$skills[$i]");
+                                   echo("<br>");
+                                }
+                            }
                             ?>
                             <div id="fourMax"></div>
                         </td>
