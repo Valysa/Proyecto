@@ -82,11 +82,13 @@
                         $info3 = $row[1]; // Troisième colonne du CSV
                         $info5 = $row[4]; // Cinquième colonne du CSV
                         $info0 = $row[0];
+                        $info8 = $row[8];
                         echo '<tr><td>';
                         echo '<div class="validated"><table><tr><td>';
                         echo '<p>' . $info1 . '</p>';
                         echo '<p>' . $info2 . '</p>';
                         echo '<p>' . $info3 . '</p>';
+                        echo '<p>' . $info8 . '</p>';
                         echo '</td><td>';
                         for ($i = 0; $i < 4; $i++) {
                             if (isset($row[7])) {
