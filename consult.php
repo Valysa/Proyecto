@@ -64,10 +64,15 @@ if (!isset($_SESSION["ID"])) {
             $data[] = $row;
         }
         fclose($file);
+        $firstLineSkipped = false;
         $i = 1;
         echo '<table id="references">';
         foreach ($data as $row) {
-            if ($row[5] == $_SESSION["ID"]) {
+            if (!$firstLineSkipped) {
+                $firstLineSkipped = true;
+                continue; // Ignore la première ligne du CSV
+            }
+            if ($row[5] == $_SESSION["ID"] || $firstLineSkipped == true) {
                 $i++;
                 if ($i % 2 == 0) {
                     $info1 = $row[3]; // Première colonne du CSV
