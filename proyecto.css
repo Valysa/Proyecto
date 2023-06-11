@@ -29,6 +29,10 @@
   --inactive: #9b9b9b;
 }
 
+a{
+  color: inherit;
+}
+
 * {
   margin: 0;
   font-family: sans-serif ;
@@ -111,6 +115,11 @@ html, body {
   --secondary: var(--jeune2)
 }
 
+
+#validRef{
+  --primary: var(--jeune1);
+  --secondary: var(--jeune2)
+}
 
 
 
@@ -924,9 +933,34 @@ img#partenaires {
 
 /*=========== Confirm Ref page================*/
 
-#confirm>p {
+
+#validRef{
+  text-align: end;
+}
+
+
+
+
+#validRef>p {
   color: var(--primary);
   font-size: 300%;
   margin-top:15%;
   text-align: center;
+}
+
+#validRef #a {
+  position:absolute;
+  right:0px;
+  border-radius: 15px;
+  background: linear-gradient(to right, var(--secondary), var(--primary) 50%);
+  color: var(--background);
+  font-size: 100%;
+
+  margin-top:10%;
+  width: 30%;
+  text-align: center;
+}
+
+#validRef #a:hover {
+  background: linear-gradient(to left, var(--secondary), var(--primary) 50%);
 }
