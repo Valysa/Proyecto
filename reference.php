@@ -59,7 +59,7 @@
 
     
     //part to sent an email to the referent
-    use PHPMailer\PHPMailer\PHPMailer;
+    /*use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
@@ -90,5 +90,7 @@
         echo 'Thank you! An email has been sent to the referent.'; 
     }  catch (Exception $e) { 
         echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
-    }
+    }*/
+    header("Location: validationref.html");
+    exit;   
 ?>

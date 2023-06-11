@@ -34,4 +34,8 @@ foreach ($lines as &$line) {
 
 // Réécrire le fichier CSV avec les modifications
 file_put_contents($csvFile, implode("\n", $lines));
+
+// Rediriger vers la page remerciement.php
+header("Location: remerciementr.html");
+exit;
 ?>
