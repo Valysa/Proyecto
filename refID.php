@@ -36,6 +36,7 @@
             $_SESSION["referentName"] = $row[3]; // Première colonne du CSV
             $_SESSION["referentfName"] = $row[2]; // Deuxième colonne du CSV
             $_SESSION["referenceName"] = $row[1]; // Troisième colonne du CSV
+            //$_SESSION["commentary"] = $row[8]; // le commentaire
             for ($i = 0; $i < 4; $i++) {
                 if (isset($row[7])) {
                     $_SESSION["$i"] = $row[7][$i];
@@ -128,7 +129,8 @@
                                     echo $skills[$_SESSION[$i]];
                                     echo "<br>";
                                 }
-                            }                            
+                            }
+                            echo $_SESSION["commentary"];                          
                             ?>
                             <div id="fourMax"></div>
                         </td>
