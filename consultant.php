@@ -34,7 +34,7 @@
                 <div>CONSULTANT</div>
             </td>
             <td>
-                <a href="./partenaires.html">PARTENAIRES</a>
+                <a href="./partenaires.php">PARTENAIRES</a>
             </td>
 
 
