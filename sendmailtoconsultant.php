@@ -46,8 +46,7 @@ if (!empty($_GET["ref1"])) {
     echo "Aucune référence n'a été spécifiée.";
     header('consult.php?error=1');
 }
-/*$email = $_POST["mailref"];*/
-$email = "jules.belletre@gmail.com";
+$email = $_POST["mailref"];
 $mail = new PHPMailer(true);
 $password = hash('sha256', $_SESSION['ID'].$_GET["ref".$n]);
 $message .= "  Veuillez vous identifier avec le mot de passe suivant : ".$password ;
