@@ -69,9 +69,21 @@
                             echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
                             echo '</td></tr></table></div>';
                             echo '</td>' ;
-                        } else {
+                        } 
+                        if ($row[6] == "invalid") {
                             echo '<tr><td>';
                             echo '<div class="unvalidated"><table><tr><td>';
+                            echo '<p>' . $info1 . '</p>';
+                            echo '<p>' . $info2 . '</p>';
+                            echo '<p>' . $info3 . '</p>';
+                            echo '</td><td>';
+                            echo '<div class="unvalid_msg">cette reference a été refusée</div>';
+                            echo '</td></tr></table></div>';
+                            echo '</td>' ;
+                        }
+                        else {
+                            echo '<tr><td>';
+                            echo '<div class="waiting"><table><tr><td>';
                             echo '<p>' . $info1 . '</p>';
                             echo '<p>' . $info2 . '</p>';
                             echo '<p>' . $info3 . '</p>';
@@ -95,9 +107,20 @@
                             echo '<input type="checkbox" name="selection[]" value="' . $row[0] . '">';
                             echo '</td></tr></table></div>';
                             echo '</td>' ;
-                        } else {
+                        } if ($row[6] == "invalid") {
                             echo '<td>';
                             echo '<div class="unvalidated"><table><tr><td>';
+                            echo '<p>' . $info1 . '</p>';
+                            echo '<p>' . $info2 . '</p>';
+                            echo '<p>' . $info3 . '</p>';
+                            echo '</td><td>';
+                            echo '<div class="unvalid_msg">cette reference a été refusée</div>';
+                            echo '</td></tr></table></div>';
+                            echo '</td></tr>' ;
+                        }
+                        else {
+                            echo '<td>';
+                            echo '<div class="waiting"><table><tr><td>';
                             echo '<p>' . $info1 . '</p>';
                             echo '<p>' . $info2 . '</p>';
                             echo '<p>' . $info3 . '</p>';

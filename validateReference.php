@@ -1,6 +1,12 @@
 <?php
 // Récupérer la valeur de $_GET['ref']
 $ref = $_GET['ref'];
+if($_GET['invalide'] == 1){
+    $valeur = "invalid";
+}
+else{
+    $valeur = "validated";
+}
 
 // Chemin vers le fichier CSV
 $csvFile = 'BDD2/reference.csv';
@@ -25,7 +31,7 @@ foreach ($lines as &$line) {
     // Vérifier si la première colonne correspond à la valeur de $_GET['ref']
     if ($data[0] == $ref) {
         // Modifier la valeur "waiting" par "validated"
-        $data[6] = 'validated';
+        $data[6] = $valeur;
     }
 
     // Reconstruire la ligne avec les colonnes modifiées

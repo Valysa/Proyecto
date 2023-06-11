@@ -835,6 +835,10 @@ button:hover{
 }
 
 #consult #references div.unvalidated{
+  background: radial-gradient(at top left, var(--background), var(--jeune1) 150%);
+}
+
+#consult #references div.waiting{
   background: radial-gradient(at top left, var(--background), var(--jeune1) 130%);
 }
 

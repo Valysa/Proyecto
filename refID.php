@@ -144,11 +144,14 @@
                                 </script>
                                 <br>
                             </form>
-                            <div id="fourMax"> *faire 4 choix maximum</div>
+                            <div id="fourMax"></div>
                         </td>
                     </tr>
                 </table>
                 <button type="submit" style="margin-left: 50%;">Valider</button>
+            </form>
+            <form id="info" class="main_input" action="validateReference.php?invalide=1&ref=<?php echo $_GET['ref']; ?>" method="POST">
+            <button type="submit" style="margin-right: 50%;">Invalider</button>
             </form>
         </div>
     </div>

@@ -7,6 +7,12 @@
 
 
 <body id="createRef">
+    <?php
+        if(!isset($_POST["selection"])){
+        header(header("Location: consult.php"));
+        exit;
+        } 
+    ?>
     <div id="page_head">
         <img id="logojeunes" src="./img/logojeunes.PNG">
         <p id="module">
