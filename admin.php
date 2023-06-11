@@ -9,11 +9,10 @@
 </head>
 <body>
     <?php
-        if($_GET["ID"] == "a1"){
+        if($_SESSION["ID"] == "a1" || !isset($_GET["ID"])){
             header("Location: accueil.html");
             exit;
         }
-        echo $_GET["ID"];
     ?>
     <h1>Page d'administration</h1>
 
