@@ -67,17 +67,17 @@ if(!isset($_SESSION["ID"])){
                     <fieldset>
                         <legend> Information du référent</legend>
                         <div class="input_text2">
-                            <label for="name" class="text_label">Nom</label>
+                            <label for="name" class="text_label">Nom:</label>
                             <input class="writing" type="text" name="name" placeholder="Nom" />
                             <br><br>
                         </div>
                         <div class="input_text2">
-                            <label for="fname" class="text_label">Prenom</label>
+                            <label for="fname" class="text_label">Prenom:</label>
                             <input class="writing" type="text" name="fname" placeholder="Prenom" />
                             <br><br>
                         </div>
                         <div class="input_text2">
-                            <label for="mailref" class="text_label">Mail</label>
+                            <label for="mailref" class="text_label">Mail:</label>
                             <input class="writing" type="email" name="mailref" placeholder="Mail" />
                             <br><br>
                         </div>
