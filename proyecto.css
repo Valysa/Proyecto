@@ -2,9 +2,9 @@
 
 
 
-table, th, td {
+/*table, th, td {
   border: 1px solid black;
-}
+}*/
 
 /* */
 
@@ -69,75 +69,6 @@ html, body {
 }*/
 
 
-#referent>* {
-  --primary:  var(--referent1);
-  --secondary: var(--referent2);
-  }
-
-#jeune_signup{
-  --primary:  var(--jeune1);
-  --secondary: var(--jeune2);
-}
-
-#intro{
-  --primary:  var(--jeune1);
-  --secondary: var(--jeune2);
-}
-
-#intro_consultant{
-
-  --primary:  var(--consultant1);
-  --secondary: var(--consultant2);
-}
-
-#jeune_signin{
-  --primary:  var(--jeune1);
-  --secondary: var(--jeune2);
-
-}
-
-#mySpace{
-  --primary:  var(--jeune1);
-  --secondary: var(--jeune2);
-
-}
-
-#intro_referent{
-  --primary:  var(--referent2);
-  --secondary: var(--referent1);
-}
-
-#consID{
-  --primary:  var(--consultant1);
-  --secondary: var(--consultant2);
-}
-
-#createRef{
-  --primary:  var(--jeune1);
-  --secondary: var(--jeune2);
-}
-
-
-#thanks{
-  --primary:  var(--referent1);
-  --secondary: var(--referent2);
-}
-
-#thanksc{
-  --primary:  var(--consultant1);
-  --secondary: var(--consultant2);
-}
-
-#confirm{
-  --primary: var(--jeune1);
-  --secondary: var(--jeune2)
-}
-
-
-#validRef{
-  --primary: var(--jeune1);
-  --secondary: var(--jeune2)
-}
 
 
 
@@ -481,7 +412,7 @@ html, body {
     color: transparent;
     z-index:1;
   }
-
+/*normal position*/
   .writing:placeholder-shown ~ label {
     position: absolute;
     font-size: 1.3rem;
@@ -491,7 +422,7 @@ html, body {
     z-index: 3;
   }
 
-
+/*up position*/
   .writing~ label {
   
   position: absolute;
@@ -570,6 +501,7 @@ html, body {
 
 
 
+
 /*=======================================button styling*/
 
 
@@ -637,36 +569,109 @@ button:hover, [type="submit"]:hover{
 
 
 
+#referent>* {
+  --primary:  var(--referent1);
+  --secondary: var(--referent2);
+  }
 
+#jeune_signup{
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+}
+
+
+
+
+
+#jeune_signin{
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+
+}
+
+
+
+
+
+#consID{
+  --primary:  var(--consultant1);
+  --secondary: var(--consultant2);
+}
+
+#createRef{
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+}
+
+
+#confirm{
+  --primary: var(--jeune1);
+  --secondary: var(--jeune2)
+}
+
+
+
+
+#intermediarer{
+  --primary:  var(--referent1);
+  --secondary: var(--referent2);
+}
+
+#intermediarec{
+  --primary:  var(--consultant1);
+  --secondary: var(--consultant2);
+}
 
 
 
 
 /*=========================== INTRO ==================================*/
 
+#intro{
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+}
+
+#intro_referent{
+  --primary:  var(--referent2);
+  --secondary: var(--referent1);
+}
+
+#intro_consultant{
+
+  --primary:  var(--consultant1);
+  --secondary: var(--consultant2);
+}
 
 
+
+
+/*Explaination text*/
 #speech{
   color:var(--inactive);
   margin: 10px;
   text-align: justify;
 }
+/*Explaination text last sentence*/
 #speech #punchline{
   font-weight: bold;
 }
-
+/*Explaination text is in a table to place it right*/
 #speech td{
   vertical-align:top;
   width: 30%;
   padding: 30px;
 }
+
+/*titles*/
+
 #intro h1{
   font-weight: normal;
   font-size: 200%;
   
 }
 
-
+/*Box you click to continue*/
 #step1{
   border: 3px solid var(--primary);
   margin-left:40%;
@@ -682,7 +687,7 @@ button:hover, [type="submit"]:hover{
 
 }
 
-
+/*top half*/
 #step1 a div{
   background: linear-gradient(to right, #fff, var(--primary) 50%);
   color: var(--background);
@@ -696,7 +701,7 @@ button:hover, [type="submit"]:hover{
 #step1 a div:active{
   background: linear-gradient(to left, #fff, var(--primary) 50%);
 }
-
+/*bottom half*/
 #step1 a div ~div{
   background: radial-gradient(at top left, #fff, var(--secondary) 300%);
   text-align: justify;
@@ -715,7 +720,7 @@ button:hover, [type="submit"]:hover{
 }
 
 /*============    HOME PAGE   ==========*/
-
+/*grey part*/
 #home #grey{
   color: #34157d;
   width:100%;
@@ -727,7 +732,7 @@ button:hover, [type="submit"]:hover{
   position: relative;
   width:30%;
 }
-
+/*table for positioning*/
 #home table{
   position:fixed;
   top:10%;
@@ -736,6 +741,7 @@ button:hover, [type="submit"]:hover{
   width:100%;
   background-color: transparent;
 }
+
 #home table tr:first-child{
   font-size: 200%;
 
@@ -753,7 +759,7 @@ button:hover, [type="submit"]:hover{
 #home table tr:nth-child(4) td{
   padding:20px;
 }
-
+/*Big 'Entrez' button*/
 #home a{
   color: red;
   font-size: 200%;
@@ -765,6 +771,7 @@ button:hover, [type="submit"]:hover{
   transition:0.2s;
 }
 
+/*little message in foot page*/
 #home #disclaimer{
   margin-top:20px;
   text-align: center;
@@ -776,6 +783,19 @@ button:hover, [type="submit"]:hover{
 
 /*====================MY SPACE==================*/
 
+#mySpace{
+  --primary:  var(--jeune1);
+  --secondary: var(--jeune2);
+  font-style: italic;
+  color: var(--jeune1);
+}
+/*just to change 'connected as' msg*/
+#mySpace * {
+  text-decoration: none;
+  font-style: normal;
+}
+
+/*positioning the buttons menu*/
 #mySpace #option{
   position:fixed;
   top:50%;
@@ -786,6 +806,7 @@ button:hover, [type="submit"]:hover{
   padding:10px;
   
 }
+/*animates the buttons*/
 #mySpace #option div{
   height: 100%;
   width: 100%;
@@ -852,7 +873,7 @@ button:hover, [type="submit"]:hover{
   --waiting: #9b9b9b;
 }
 
-
+/*div size*/
 #consult #references, #consult #references table {
   width:100%;
   min-height: 70px;
@@ -862,7 +883,7 @@ button:hover, [type="submit"]:hover{
   border-radius: 15px;
   padding:5px;
 }
-
+/*div color*/
 #consult #references div.validated{
   background: radial-gradient(at top left, var(--background), var(--validated) 90%);
 }
@@ -874,7 +895,7 @@ button:hover, [type="submit"]:hover{
 #consult #references div.waiting{
   background: radial-gradient(at top left, var(--background), var(--waiting) 130%);
 }
-
+/*msg 'en attente de validation'*/
 #consult .unvalid_msg{
   background: radial-gradient(at top left, var(--background), var(--secondary) );
   border-radius: 30px;
@@ -886,7 +907,7 @@ button:hover, [type="submit"]:hover{
 
 
 }
-
+/*change text alignement*/
 #consult #references td td {
   vertical-align:top;
   
@@ -899,6 +920,11 @@ button:hover, [type="submit"]:hover{
 }
 
 /*========== PARTENAIRE ===========*/
+
+#partenaire{
+  --primary:  var( --partenaire1);
+  --secondary: var(--partenaire2);
+}
 
 img#partenaires {
   width:80%;
@@ -917,6 +943,17 @@ img#partenaires {
 
 /*=============== thanking page ==============*/
 
+#thanks{
+  --primary:  var(--referent1);
+  --secondary: var(--referent2);
+}
+
+#thanksc{
+  --primary:  var(--consultant1);
+  --secondary: var(--consultant2);
+}
+
+/*thanking message styling*/
 #thanks>p {
   
   color: var(--secondary);
@@ -936,7 +973,12 @@ img#partenaires {
 }
 
 /*=========== Confirm Ref page================*/
+/*Confirm References are sent to Consultant*/
 
+#validRef{
+  --primary: var(--jeune1);
+  --secondary: var(--jeune2)
+}
 
 #validRef{
   text-align: end;
@@ -944,14 +986,14 @@ img#partenaires {
 
 
 
-
+/*confirm message*/
 #validRef>p {
   color: var(--primary);
   font-size: 300%;
   margin-top:15%;
   text-align: center;
 }
-
+/*button to leave*/
 #validRef #a {
   position:absolute;
   right:0px;
@@ -972,7 +1014,7 @@ img#partenaires {
 
 /*========== ConsultID ===========*/
 
-
+/*
 #consultID{
   --primary: var(--consultant1);
   --secondary: var(--consultant2);
@@ -1028,5 +1070,5 @@ img#partenaires {
   vertical-align:top;
   text-align: end;
   min-height: 70px;
-}
+}*/
 
