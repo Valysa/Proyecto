@@ -1,98 +1,114 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" type="text/css" href="proyecto.css">
-</head>
-
-<body id="intro_referent">
-    <div id="page_head">
-        <img id="logojeunes" src="./img/logojeunes.PNG">
-        <p id="module">
-            &nbsp;
-        </p>
-
-        <p id="tagline">
-            Pour Faire de l ’engagement
-        une valeur !
-        </p>
-    </div>
-
-    <table id="navbar" style="width: 50%;">
-        <tr>
-
-
-
-            <td>
-                <div><a href="./signup.php">JEUNE</a></div>
-            </td>
-            <td class="active"><div>RÉFÉRENT</div></td>
-            <td><a href="./consultant.php"><div>CONSULTANT</div></td>
-            <td >
-                <a href="./partenaires.html">PARTENAIRES</a>
-            </td>
-
-
-        </tr>
-    </table>
-    <img id="bg-image" src="./img/jeunesbg.PNG">
-
-    <table id="speech">
-        <tr>
-            <td>
-    <p>
-    <h1>De quoi s’agit-il ?</h1>
-    D’une opportunité : celle qu’un engagement quel qu’il soit puisse être
-    considérer à sa juste valeur ! <br>
-    Toute expérience est source d’enrichissement et doit d’être reconnu
-    largement.<br>
-    Elle révèle un potentiel, l’expression d’un savoir-être à concrétiser.</p>
-    </td>
-    <td>
-    <p>
-    <h1>A qui s’adresse-t’il ?</h1>
-    A vous, jeunes entre 16 et 30 ans, qui vous êtes investis spontanément
-    dans une association ou dans tout type d’action formelle ou informelle, et
-    qui avez partagé de votre temps, de votre énergie, pour apporter un
-    soutien, une aide, une compétence.<br> <br>
-    A vous, responsables de structures ou référents d’un jour, qui avez
-    croisé la route de ces jeunes et avez bénéficié même ponctuellement de
-    cette implication citoyenne ! <br>
-    C’est l’occasion de vous engager à votre tour pour ces jeunes en confir-
-    mant leur richesse pour en avoir été un temps les témoins mais aussi les
-    bénéficiaires !</p>
-    </td>
-    <td>
-        <h1>&nbsp;</h1>
-    <p>A vous, employeurs, recruteurs en ressources humaines, repré-
-        sentants d’organismes de formation, qui recevez ces jeunes, pour un
-        emploi, un stage, un cursus de qualification, pour qui le savoir-être consti-
-        tue le premier fondement de toute capacité humaine.<br> <br> </p>
-        <p id="punchline">
-        Cet engagement est une ressource à valoriser au fil d'un
-        parcours en 3 étapes :</p>
-
-    </td>
-    </tr>
-</table>
 <?php
-if (isset($_GET["error"])){
-    echo "attention le mot de passe n'est pas valide";
-}
-if (isset($_GET["ref"])){
-    echo '<div id="step1">
-    <a href=intermediairereferent.php?ref='.$_GET["ref"].'>
-    <div>
-        la confirmation
-    </div>
-    <div>
-    <p>Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune</p>
-    </div>
-    </a>
-</div>';
-}
+    session_start();
+    echo $_SESSION['ID']; 
+    $handle = fopen('BDD2/reference.csv', "a+");
+    $id = fgetcsv($handle, 1000, ",");
+    echo $id[0];
+    $id[0]++;
+    fclose($handle);
+    $handle = fopen('BDD2/reference.csv', "cÒ+");
+    fseek($handle, 0);
+    fwrite($handle, $id[0] . PHP_EOL);
+    fclose($handle);
+    echo $_POST["exp"];
+    // liste des champs à rentrer dans la database
+    $exp = $_POST["exp"];
+    $name = $_POST["name"];
+    $fname = $_POST["fname"];
+    $mailj = $_POST["mailref"];
+    if($exp == "" || $name == "" || $fname == "" || $mailj == ""){
+        header("Location: createRef.php");
+        exit;
+    }
+    $state = "waiting";
+    if($_POST['skill'] != null){
+        $skill= $_POST['skill'];
+        $count = 0;
+        foreach($skill as $a){
+            ++$count;
+        }
+    }
+    // insertion des champs dans BDD2
+    $fp = fopen('BDD2/reference.csv', 'a+');
+    $l = $id[0].','.$exp.','.$name.','.$fname.','.$mailj.','.$_SESSION['ID'].','.$state;
+    if($_POST['skill'] != null){
+        for ($i = 0; $i<$count; $i++){
+            $l = $l.','.$skill[$i];
+        }
+    }
+    $l = $l.PHP_EOL;
+    fwrite($fp, $l);
+    fclose($fp);
+    // double chainage (insertion de l'id de la référence dans la table du jeune)
+    $fpj = fopen("BDD/$mailj[0].csv", 'a+');
+    $line = $_SESSION['ID']; 
+    while($tab=fgetcsv($fpj,1024,',')){
+        $champs = count($tab);//nombre de champ dans la ligne en question
+        if(strcmp($tab[0], $_SESSION['ID']) == 0){
+            for($i=0; $i<$champs-1; $i ++) {
+                $line = $line.','.$tab[$i+1]; 
+            }
+        }
+    }
+    $newline = $line.','.$id[0]++;
+    file_put_contents("BDD/$mailj[0].csv", preg_replace('/'.$line.'/', $newline, file_get_contents("BDD/$mailj[0].csv"), 1));  
+    fclose($fpj);
 
+
+    $id[0]--;
+    // Genere le lien
+    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+    $url = "https://";   
+    else  
+    $url = "http://";   
+    // Append the host(domain name, ip) to the URL.   
+    $url.= $_SERVER['HTTP_HOST'];   
+
+    // Append the requested resource location to the URL   
+   // $url.= $_SERVER['REQUEST_URI'];    
+
+    $url .= "/referent.php?ref=".$id[0];
+    echo $url;
+    echo "                     ";
+    echo $_SESSION['ID'].$id[0];
+    $password = hash('sha256', $_SESSION['ID'].$id[0]);
+    
+    //part to sent an email to the referent
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    require 'PHPMailer/src/Exception.php';
+    require 'PHPMailer/src/PHPMailer.php';
+    require 'PHPMailer/src/SMTP.php';
+    $subject="Demande de reference";
+    $message="Vous avez reçu une demande de reference, connectez vous à ce lien : ".$url.
+    " Veuillez utiliser ce mot de passe une fois sur le site : ".$password;
+    $email = $_POST["mailref"]; 
+    $mail = new PHPMailer(true);
+    echo $message ; 
+    /*
+    try { 
+        $mail->isSMTP();
+        $mail->Host = 'smtp.office365.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'engagementjeunes64@outlook.fr';
+        $mail->Password = 'EngJeunes64&';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+        
+    // Set other email parameters (to, subject, message, headers)
+    $mail->setFrom('engagementjeunes64@outlook.fr');
+
+    //destination
+    $mail->addAddress($email);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+
+    // Send the email
+    $mail->send();
+        echo 'Thank you! An email has been sent to the referent.'; 
+    }  catch (Exception $e) { 
+        echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
+    }
+    /*header("Location: validationref.html");
+    exit;*/
 ?>
-</body>
-
-</html>
