@@ -8,6 +8,10 @@
 
 <body id="createRef">
 <?php
+if($_SERVER['QUERY_STRING'] == ""){
+    header("Location: consult.html".$_SERVER['QUERY_STRING']);
+exit;
+}
  function is_session_started()
  {
      if ( php_sapi_name() !== 'cli' ) {
@@ -21,10 +25,6 @@
  }
  
  if ( is_session_started() === FALSE ) session_start();
-    if(!isset($_SESSION["ID"])){
-    header("Location: accueil.html");
-    exit;
-}
 ?>
     <?php
         /*if(!isset($_POST["selection"])){

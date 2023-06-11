@@ -54,6 +54,10 @@ if (!empty($_GET["ref1"])) {
     header('consult.php?error=1');
 }
 $email = $_POST["mailref"];
+if($email == ""){
+    header("Location: inputconsultantname.php?".$_SERVER['QUERY_STRING']);
+    exit;
+}
 $mail = new PHPMailer(true);
 $password = hash('sha256', $_SESSION['ID'].$_GET["ref$n"]);
 $message .= "  Veuillez vous identifier avec le mot de passe suivant : ".$password ;
@@ -81,4 +85,6 @@ $mail->send();
     echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
 }*/
 echo $message;
+header("Location: validationcons.html");
+exit;
 ?>
