@@ -31,7 +31,7 @@
     </table>
     <img id="bg-image" src="./img/jeunesbg.PNG">
 <td>
-    <form action=<?php echo "consultantID.php?ref=".$_SERVER['QUERY_STRING']?> method="POST">
+    <form action=<?php echo "consultantID.php?".$_SERVER['QUERY_STRING']?> method="POST">
         <table id="ref"> <tr>
     <div class="input_text2">
         <label for="mailref" class="text_label">Mot de passe</label>

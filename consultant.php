@@ -86,7 +86,7 @@ if (isset($_GET["error"])){
 }
 if (isset($_GET["ref1"])){
     echo '<div id="step1">
-    <a href=intermediaireconsultant.php?ref='.$_SERVER['QUERY_STRING'].'>
+    <a href=intermediaireconsultant.php?'.$_SERVER['QUERY_STRING'].'>
     <div>
         la confirmation
     </div>
