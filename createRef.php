@@ -52,7 +52,7 @@ if(!isset($_SESSION["ID"])){
 
         </tr>
     </table>
-
+<img id="bg-image" src="./img/jeunesbg.PNG">
     <form id="main" class="main_input" action="reference.php" method="POST">
         <table id="ref">
             <tr>
