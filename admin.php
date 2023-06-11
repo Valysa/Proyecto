@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +9,6 @@
 </head>
 <body>
     <?php
-        session_start();
         if($_GET["ID"] == "a1"){
             header("Location: accueil.html");
             exit;
