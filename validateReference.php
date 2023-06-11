@@ -13,12 +13,12 @@ $csvFile = 'BDD2/reference.csv';
 
 // Lire le fichier CSV
 $lines = file($csvFile, FILE_IGNORE_NEW_LINES);
-
+$l = '';
 // Ignorer la première ligne
 $firstLineSkipped = false;
 
 // Parcourir chaque ligne du fichier
-foreach ($lines as &$line) {
+foreach ($lines as $line) {
     // Vérifier si c'est la première ligne
     if (!$firstLineSkipped) {
         $firstLineSkipped = true;
@@ -32,21 +32,28 @@ foreach ($lines as &$line) {
     if ($data[0] == $ref) {
         // Modifier la valeur "waiting" par "validated"
         $data[6] = $valeur;
-    }
-    //echo $data;
-    echo $_POST['comments'];
-    $newdata = $data.$_POST['comments'];
-    echo $newdata;
-    //file_put_contents("BDD2/reference.csv", preg_replace('/'.$data.'/', $newdata, file_get_contents("BDD2/reference.csv"), 1));
+        $champs = count($data); //compte le nombre de champs de la ligne
+        $l = $data[0];
+        for($i=1; $i<$champs; $i++){
+            $l = $l.','.$data[$i];    
+        }
 
+    }
     // Reconstruire la ligne avec les colonnes modifiées
     $line = implode(',', $data);
 }
+echo "...";
+echo $l;
+echo "...";
+echo $_POST['comments'];
+$newl = $l.','.$_POST['comments'];
+echo $newl;
+
 
 // Réécrire le fichier CSV avec les modifications
 file_put_contents($csvFile, implode("\n", $lines));
-
+file_put_contents("BDD2/reference.csv", preg_replace('/'.$l.'/', $newl, file_get_contents("BDD2/reference.csv"), 1));
 // Rediriger vers la page remerciement.php
-header("Location: remerciementr.html");
-exit;
+//header("Location: remerciementr.html");
+//exit;
 ?>
