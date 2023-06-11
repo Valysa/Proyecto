@@ -17,7 +17,7 @@
 
     <table id="navbar" style="width: 50%;">
         <tr>
-            <td ><a href="./signup">
+            <td ><a href="./signup.php">
                 <div > &nbsp; JEUNE &nbsp; </div></a>
             </td>
            <td class="active"><div>RÉFÉRENT</div></td>
