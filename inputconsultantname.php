@@ -27,10 +27,10 @@ if(!isset($_SESSION["ID"])){
 }
 ?>
     <?php
-        if(!isset($_POST["selection"])){
+        /*if(!isset($_POST["selection"])){
         header(header("Location: consult.php"));
         exit;
-        } 
+        }*/
     ?>
     <div id="page_head">
         <img id="logojeunes" src="./img/logojeunes.PNG">
@@ -58,19 +58,7 @@ if(!isset($_SESSION["ID"])){
     <form action=
     <?php
     //création de l'url spécial sendmailtoconsultant avec les refs 
-    echo"sendmailtoconsultant.php?ref1=";
-    $n = 2 ;
-    $selectedRows = $_POST["selection"];
-    $numSelected = count($selectedRows);
-    $count = 0;
-    foreach($selectedRows as $selectedRow) {
-        if ($count != 0){
-            echo '&ref'.$n.'=';
-            $n++;
-        }
-        $count++;
-        echo $selectedRow; // Afficher la valeur de $row[0]
-    }
+    echo"sendmailtoconsultant.php".$_SERVER['QUERY_STRING'];
     ?> method="POST">
         <table id="ref"> <tr>
     <div class="input_text2">

@@ -50,7 +50,7 @@ if (!isset($_SESSION["ID"])) {
     </tr>
 </table>
 
-<form action="inputconsultantname.php" method="POST">
+<form action="transition.php" method="POST">
     <div class="container">
         <?php
         $file = fopen('BDD2/reference.csv', 'r');
@@ -152,9 +152,4 @@ if (!isset($_SESSION["ID"])) {
         </div>
     </div>
 </form>
-
-<form action="referencetopdf.php" method="POST">
-    <div class="row">
-        <input type="submit" value="Générer PDF" style="float: right;">
-    </div>
 </form>
