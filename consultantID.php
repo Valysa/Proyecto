@@ -90,14 +90,17 @@
                         echo '<p>' . $info3 . '</p>';
                         echo '<p>' . $info8 . '</p>';
                         echo '</td><td>';
-                        for ($i = 0; $i < 4; $i++) {
-                            if (isset($row[7])) {
-                                echo $skills[$row[7][$i]];
+                        if (isset($row[7])) {
+                            $rowSkills = str_split($row[7]);
+                            echo '<td>';
+                            for ($i = 0; $i < count($rowSkills); $i++) {
+                                echo $skills[$rowSkills[$i]];
                                 echo "  ";
                             }
+                            echo '</td></tr></table></div>';
+                            echo '</td>';
                         }
-                        echo '</td></tr></table></div>';
-                        echo '</td>';
+                        
                     }
                 }
             }
