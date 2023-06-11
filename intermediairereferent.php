@@ -29,6 +29,7 @@
 
         </tr>
     </table>
+    <img id="bg-image" src="./img/jeunesbg.PNG">
 <td>
     <form action=<?php echo "refID.php?ref=".$_GET["ref"]?> method="POST">
         <table id="ref"> <tr>
