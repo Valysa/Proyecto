@@ -87,8 +87,8 @@ if (isset($row[7])) {
         // Ajouter la ligne au contenu du PDF
         //$pdfContent .= "ID: $id\n";
         $pdfContent .= "$col1\n";
-        $pdfContent .= "Sous la résponsabilité de $col3 $col2\n";
-        $pdfContent .= ": $col8\n";
+        $pdfContent .= "Sous la résponsabilité de $col3 $col2 : \n";
+        $pdfContent .= " $col8\n";
         $pdfContent .= "Coordonées : $col4\n";
         //$pdfContent .= "Colonne 5: $col5\n";
         //$pdfContent .= "Colonne 6: $col6\n";
