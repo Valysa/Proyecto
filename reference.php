@@ -37,8 +37,9 @@
             $s = $s.$skill[$i];
         }
     }
-    $l = $l.','.$s.PHP_EOL;
+    $l = $l.','.$s;
     fwrite($fp, $l);
+    fwrite($fp, "\n");
     fclose($fp);
     // double chainage (insertion de l'id de la référence dans la table du jeune)
     $fpj = fopen("BDD/$mailj[0].csv", 'a+');
