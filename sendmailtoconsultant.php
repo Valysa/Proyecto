@@ -34,6 +34,13 @@ $message = $_POST["message"];*/
 $subject = "Demande de reference";
 $message = "Un jeune souhaite partager ses références avec vous. Cliquez sur le lien suivant pour en savoir plus : ";
 $link = "localhost:8080/consultant.php?";
+
+// Genere le lien
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+$url = "https://";   
+else  
+$url = "http://";
+
 // Vérifier si au moins la premiere ref est présente dans l'url
 if (!empty($_GET["ref1"])) {
     $n = 1 ;
@@ -48,7 +55,7 @@ if (!empty($_GET["ref1"])) {
     $n--;
     $message = rtrim($message, "&");
     // Ajouter le lien au message
-    $message .= $link;
+    $message = $url.$link;
 } else {
     echo "Aucune référence n'a été spécifiée.";
     header('consult.php?error=1');
