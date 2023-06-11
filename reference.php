@@ -85,8 +85,7 @@
     " Veuillez utiliser ce mot de passe une fois sur le site : ".$password;
     $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
-    echo $message ; 
-    /*
+    //echo $message ; 
     try { 
         $mail->isSMTP();
         $mail->Host = 'smtp.office365.com';
@@ -110,6 +109,6 @@
     }  catch (Exception $e) { 
         echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
     }
-    /*header("Location: validationref.html");
-    exit;*/
+    header("Location: validationref.html");
+    exit;
 ?>

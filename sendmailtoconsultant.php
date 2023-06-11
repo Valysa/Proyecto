@@ -61,7 +61,7 @@ if($email == ""){
 $mail = new PHPMailer(true);
 $password = hash('sha256', $_SESSION['ID'].$_GET["ref$n"]);
 $message .= "  Veuillez vous identifier avec le mot de passe suivant : ".$password ;
-/*try { 
+try { 
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
@@ -83,8 +83,8 @@ $mail->send();
     echo 'Thank you! An email has been sent to the client.'; 
 }  catch (Exception $e) { 
     echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
-}*/
-echo $message;
-/*header("Location: validationcons.html");
-exit;*/
+}
+// echo $message ;
+header("Location: validationcons.html");
+exit;
 ?>
