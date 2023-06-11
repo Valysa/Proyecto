@@ -1,10 +1,19 @@
 
-/*variable depending on the page*/
+
 
 
 /*table, th, td {
   border: 1px solid black;
 }*/
+
+/*----------------------------------------------------------*/
+/*==================== DECLARATIONS ========================*/
+/*----------------------------------------------------------*/
+
+/*variables declarations and general styling*/
+
+
+
 
 
 
@@ -29,6 +38,8 @@
   --inactive: #9b9b9b;
 }
 
+
+/*making links' text stylable*/
 a{
   color: inherit;
 }
@@ -40,15 +51,14 @@ a{
 
 html, body {
   height: 100%;
+  padding-bottom: 5px;
 }
 .wrapper {
-  min-height: 100%;
-  height: auto;
+  min-height: 750px;
   height: 100%;
-  margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
-}
-.footer, .push {
-  height: 142px; /* .push must be the same height as .footer */
+  width: 100%;
+  min-width: 1500px;
+ 
 }
 
 
@@ -124,26 +134,26 @@ html, body {
 
 
 
-/*============================================Inputs pages style*/
+
+
+
+/*----------------------------------------------------------*/
+/*=================== General style ========================*/
+/*----------------------------------------------------------*/
+
+/* creating classes for all pages*/
+
+
+
 
 /*====================PAGE HEAD=====================*/
 
-
-
-
+/*head site image*/
 #logojeunes{
   position: absolute;
 }
 
 
-#description{
-
-  font-family: sans-serif;
-  color: var(--secondary);
-  font-size: 150%;
-  text-align: center;
-
-}
 
 #page_head {
 
@@ -155,7 +165,6 @@ html, body {
 }
 
 #module{
-
   text-align: end;
   font-family: sans-serif;
   color: var(--primary);
@@ -163,17 +172,34 @@ html, body {
   
 }
 
+/*big white message belox module title*/
 #tagline{
-  overflow:hidden;
+  
   font-family: sans-serif;
   color: white;
   font-size: 300%;
   text-align: right;
 }
 
+/* message below the navbar*/
+#description{
 
+  font-family: sans-serif;
+  color: var(--secondary);
+  font-size: 150%;
+  text-align: center;
+
+  font-size: 200%;
+  margin-left: 25%;
+  margin-right:25%;
+
+  padding:25px;
+
+}
 
 /*======== NAVBAR =======*/
+
+/*bar below the page's head to navigate between modules*/
 
 #navbar{
 
@@ -186,21 +212,12 @@ html, body {
   
 }
 
-#navbar a{
-  color: inherit;
-}
-
-
+/*navbar is a table*/
 #navbar td{
   font-size: 200%;
   text-align: center;
   padding-right: 5px;
   padding-left: 5px;
-}
-
-#navbar:first-child:hover{
-  font: var(--jeune1);
-  transition:0.1s;
 }
 
 
@@ -262,57 +279,18 @@ html, body {
   
 }
 
- a:link{
-  text-decoration: none;
-
- }
-
- #description{
-  font-size: 200%;
-  margin-left: 25%;
-  margin-right:25%;
-
-  padding:25px;
- }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*=================================================Inputs boxes*/
 
 
 /*========        MAIN INPUT        ==========*/
+
+/* main inputs are a form in a fieldset used in references signup and login*/
+
 .main_input{
-  /* position:fixed;
-  top:350px; */
   left:25%;
   right:25%;
 }
@@ -345,6 +323,9 @@ html, body {
 
 /*========        SKILLS INPUT        ==========*/
 
+/*Skills are checkboxes used in references*/
+
+
 #skills{
   border: 0;
   margin: auto;
@@ -356,12 +337,14 @@ html, body {
 }
 
 
-
+/*message outside the skills box*/
 #Be{
   text-align:center;
   font-size:150%;
   color: var(--secondary);
 }
+
+/*message inside the skills box with a different highligh*/
 
 #Be2{
   padding-left: 10px;
@@ -371,6 +354,7 @@ html, body {
   background: linear-gradient(to left, var(--secondary),var(--primary));
 }
 
+/*message saying you can only choose a maximum 4 answers below below the skills box*/
 #fourMax{
   
   font-size:150%;
@@ -385,12 +369,10 @@ html, body {
 
 /*========        COMMENT INPUT        ==========*/
 
+/*=====Used only in Reference======*/
+
 #comment_area{
-  /* position: fixed; */
   width:200px;
-  /* left:10px;
-  top:25%; */
-  
 
 }
 
@@ -416,6 +398,8 @@ html, body {
   height:480px;
 }
 
+/*resize when clicked or hover*/
+
 [name="comments"]:hover{
   resize: none;
   outline: none;
@@ -439,25 +423,6 @@ html, body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*=================================Special Styling==============================================*/
 
 
 
@@ -642,12 +607,14 @@ button:hover{
 
 
 
+/*----------------------------------------------------------*/
+/*=================== Specific Styling =====================*/
+/*----------------------------------------------------------*/
 
 
 
 
-
-
+/*Styling pages in particular*/
 
 
 
