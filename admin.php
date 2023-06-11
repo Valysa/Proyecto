@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        if($_SESSION["ID"] == "a1" || !isset($_GET["ID"])){
+        if($_SESSION["ID"] != "a1"){
             header("Location: accueil.html");
             exit;
         }
