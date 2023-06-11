@@ -54,13 +54,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $col6 = $row[6];
 
         // Ajouter la ligne au contenu du PDF
-        $pdfContent .= "ID: $id\n";
-        $pdfContent .= "Colonne 1: $col1\n";
-        $pdfContent .= "Colonne 2: $col2\n";
-        $pdfContent .= "Colonne 3: $col3\n";
-        $pdfContent .= "Colonne 4: $col4\n";
-        $pdfContent .= "Colonne 5: $col5\n";
-        $pdfContent .= "Colonne 6: $col6\n";
+        //$pdfContent .= "ID: $id\n";
+        $pdfContent .= "$col1\n";
+        $pdfContent .= "Sous la résponsabilité de $col3 $col2\n";
+        $pdfContent .= "Coordonées : $col4\n";
+        //$pdfContent .= "Colonne 5: $col5\n";
+        //$pdfContent .= "Colonne 6: $col6\n";
         $pdfContent .= "\n";
     }
 
