@@ -33,6 +33,11 @@ foreach ($lines as &$line) {
         // Modifier la valeur "waiting" par "validated"
         $data[6] = $valeur;
     }
+    //echo $data;
+    echo $_POST['comments'];
+    $newdata = $data.$_POST['comments'];
+    echo $newdata;
+    //file_put_contents("BDD2/reference.csv", preg_replace('/'.$data.'/', $newdata, file_get_contents("BDD2/reference.csv"), 1));
 
     // Reconstruire la ligne avec les colonnes modifiées
     $line = implode(',', $data);

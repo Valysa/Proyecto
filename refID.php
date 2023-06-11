@@ -34,7 +34,7 @@
             $_SESSION["referentfName"] = $row[2]; // Deuxième colonne du CSV
             $_SESSION["referenceName"] = $row[1]; // Troisième colonne du CSV
             for($i=6; $i<11 ; $i++){
-                if(isset(row[$i])){
+                if(isset($row[$i])){
                     $_SESSION["$i"] = $row[$i];
                 }
             }
@@ -81,10 +81,8 @@
                 <table id="infos" style="width: 100%;">
                     <tr>
                         <td style="width: 25%;">
-                            <form id="comment_area">
                                 <label for="comments">COMMENTAIRE</label> <br>
                                 <textarea type="text" name="comments"></textarea>
-                            </form>
                         </td>
                         <td>
                             <fieldset>

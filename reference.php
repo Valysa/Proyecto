@@ -78,7 +78,8 @@
     $subject="Demande de reference";
     $message="Vous avez reçu une demande de reference, connectez vous à ce lien : ".$url.
     " Veuillez utiliser ce mot de passe une fois sur le site : ".$password;
-    $email = $_POST["mailref"]; 
+    echo $message;
+    /*$email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
     echo $message ; 
     /*
