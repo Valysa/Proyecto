@@ -102,11 +102,12 @@
                                     <input class="writing" type="text" name="fname" value="<?php echo $_SESSION["referentfName"]; ?>" placeholder="PRENOM" />
                                     <br><br>
                                 </div>
-                                <div class="input_text2">
-                                    <label for="fname" class="text_label">Description:</label>
+                                <div class="input_text">
+                                    
                                         <input class="writing" type="text" name="referenceName"
                                             value="<?php echo $_SESSION["referenceName"]; ?>"
                                             placeholder="referenceName" />
+                                            <label for="fname" class="text_label">Description:</label>
                                         <br><br>
                                     </div>
                                 </fieldset>
@@ -139,6 +140,7 @@
                         </td>
                     </tr>
                 </table>
+                <
                 <button type="submit" >Valider</button>
             </form>
             <form id="info" class="main_input" action="validateReference.php?invalide=1&ref=<?php echo $_GET['ref']; ?>" method="POST"><br>
