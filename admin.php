@@ -1,4 +1,5 @@
 <?php
+    // GESTION DE LA PAGE ADMIN 
     session_start();
 ?>
 <!DOCTYPE html>

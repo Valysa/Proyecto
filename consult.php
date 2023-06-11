@@ -7,6 +7,7 @@
 </head>
 <body id="consult">
 <?php
+// Permet à un utilisateur de consulter ses références
 function is_session_started()
 {
     if (php_sapi_name() !== 'cli') {
