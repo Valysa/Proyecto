@@ -1,2 +1,2 @@
 # Proyecto
-Un site qui fait des trucs
+Un site permettant au jeunes de se mettre en valeur
