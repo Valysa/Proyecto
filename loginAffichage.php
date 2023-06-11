@@ -60,7 +60,7 @@
             <label for="email" class="text_label">Mail</label><br><br>
         </div>
         <div class="input_text">
-            <input class="writing" type="text" name="password" placeholder="Mot de passse" />
+            <input class="writing" type="password" name="password" placeholder="Mot de passse" />
             <label for="password" class="text_label">Mot de passe</label><br><br>
         </div>
            
