@@ -31,7 +31,7 @@
     </table>
     <img id="bg-image" src="./img/jeunesbg.PNG">
 <td>
-    <form action=<?php echo "consultantID.php?ref=".$_GET["ref"]?> method="POST">
+    <form action=<?php echo "refID.php?ref=".$_GET["ref"]?> method="POST">
         <table id="ref"> <tr>
     <div class="input_text2">
         <label for="mailref" class="text_label">Mot de passe</label>

@@ -33,6 +33,11 @@
             $_SESSION["referentName"] = $row[3]; // Première colonne du CSV
             $_SESSION["referentfName"] = $row[2]; // Deuxième colonne du CSV
             $_SESSION["referenceName"] = $row[1]; // Troisième colonne du CSV
+            for($i=6; $i<11 ; $i++){
+                if(isset(row[$i])){
+                    $_SESSION["$i"] = $row[$i];
+                }
+            }
             echo '<p>' . $_SESSION["referentName"] . '</p>';
             echo '<p>' . $_SESSION["referentfName"] . '</p>';
             echo '<p>' . $_SESSION["referenceName"] . '</p>';
@@ -101,59 +106,21 @@
                         </td>
                         <td style="width: 25%;">
                             <div id="Be">SES SAVOIRS ETRE</div>
-                            <form id="skills" action="validateReference.php" method="POST">
-                                <div id="Be2">Je confirme sa(son)*</div>
-                               <div id="sglcheckbox" action="checked.php" method="POST">
-                            <input type="checkbox" name="skill[]" value="0">
-                            <label for="0">Ponctualité</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="1">
-                            <label for="1">Confiance</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="2">
-                            <label for="2">Sérieux</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="3">
-                            <label for="3">Honnêteté</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="4">
-                            <label for="4">Passionné</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="5">
-                            <label for="5">Bienveillance</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="6">
-                            <label for="6">Respect</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="7">
-                            <label for="7e">Juste</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="8">
-                            <label for="8">Impartial</label>
-                            <br>
-                            <input type="checkbox" name="skill[]" value="9">
-                            <label for="9">Travail</label>
-                        </div>
-                                <script>
-                                    function limitCheckBox() {
-                                        var checkboxgroup = document.getElementById('sglcheckbox').getElementsByTagName("input");
-                                        var limit = 4;
-                                        for (var i = 0; i < checkboxgroup.length; i++) {
-                                            checkboxgroup[i].onclick = function () {
-                                                var checkedcount = 0;
-                                                for (var i = 0; i < checkboxgroup.length; i++) {
-                                                    checkedcount += (checkboxgroup[i].checked) ? 1 : 0;
-                                                }
-                                                if (checkedcount > limit) {
-                                                    this.checked = false;
-                                                }
-                                            }
-                                        }
-                                    }
-                                    limitCheckBox()
-                                </script>
-                                <br>
-                            </form>
+                            <?php 
+                            $skills= [
+                                0 => "Ponctualité",
+                                1 => "Confiance",
+                                2 => "Sérieux",
+                                3 => "Honnêteté",
+                                4 => "Passionné",
+                                5 => "Bienveillance",
+                                6 => "Respect",
+                                7 => "Juste",
+                                8 => "Impartial",
+                                9 => "Travail"
+                            ];
+                            
+                            ?>
                             <div id="fourMax"></div>
                         </td>
                     </tr>

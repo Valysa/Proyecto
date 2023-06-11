@@ -68,7 +68,7 @@
     echo "                     ";
     echo $_SESSION['ID'].$id[0];
     $password = hash('sha256', $_SESSION['ID'].$id[0]);
-    /*
+    
     //part to sent an email to the referent
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
@@ -81,6 +81,7 @@
     $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
     echo $message ; 
+    /*
     try { 
         $mail->isSMTP();
         $mail->Host = 'smtp.office365.com';
@@ -89,7 +90,7 @@
         $mail->Password = 'EngJeunes64&';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
-
+        
     // Set other email parameters (to, subject, message, headers)
     $mail->setFrom('engagementjeunes64@outlook.fr');
 
