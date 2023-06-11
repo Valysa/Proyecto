@@ -7,6 +7,10 @@
 
 <body id="referent">
     <?php
+    if(!isset($_SERVER['QUERY_STRING'])){
+        header("Location: referent.php");
+        exit;
+    }
     //test du mot de passe rentré par le référent
     echo "REF = " . $_GET['ref'];
     $file = fopen('BDD2/reference.csv', 'r');

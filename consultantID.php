@@ -42,6 +42,10 @@
     <form action="inputconsultantname.php" method="POST">
         <div class="container">
             <?php
+            if(!isset($_SERVER['QUERY_STRING'])){
+                header("Location: consultant.php");
+                exit;
+            }
             //récupere les références dans la base de donnée 
             $file = fopen('BDD2/reference.csv', 'r');
             $data = [];
