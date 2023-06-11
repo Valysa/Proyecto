@@ -18,7 +18,7 @@ $l = '';
 $firstLineSkipped = false;
 
 // Parcourir chaque ligne du fichier
-foreach ($lines as $line) {
+foreach ($lines as &$line) {
     // Vérifier si c'est la première ligne
     if (!$firstLineSkipped) {
         $firstLineSkipped = true;
@@ -37,26 +37,22 @@ foreach ($lines as $line) {
         for($i=1; $i<$champs; $i++){
             $l = $l.','.$data[$i];    
         }
-
+        $line = implode(',', $data);
     }
-    // Reconstruire la ligne avec les colonnes modifiées
-    $line = implode(',', $data);
 }
-echo "...";
-echo $l;
-echo "...";
-if(($_POST['comments'] == "")){
+
+if($_POST['comments'] == ""){
     header("Location: refID.php?".$_SERVER['QUERY_STRING']);
     exit;
 }
-echo $_POST['comments'];
-$newl = $l.','.$_POST['comments'];
-echo $newl;
 
+// Ajouter le champ des commentaires à la ligne modifiée
+$newl = $l.','.$_POST['comments'];
 
 // Réécrire le fichier CSV avec les modifications
 file_put_contents($csvFile, implode("\n", $lines));
 file_put_contents("BDD2/reference.csv", preg_replace('/'.$l.'/', $newl."\n", file_get_contents("BDD2/reference.csv"), 1));
+
 // Rediriger vers la page remerciement.php
 header("Location: remerciementr.html");
 exit;
