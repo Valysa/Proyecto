@@ -23,7 +23,7 @@
     foreach ($data as $row) {
         if ($row[0] == $_GET['ref']) {
             if($_POST["password"] != hash("sha256", $row[5].$row[0])){
-                header("Location: referent.php?error=1");
+                header("Location: referent.php?error=1&ref=".$row[0]);
                 exit;
             }
             $_SESSION["referentName"] = $row[3]; // Première colonne du CSV

@@ -74,8 +74,13 @@
     </td>
     </tr>
 </table>
-<div id="step1">
-    <a href=<?php echo "intermediairereferent.php?ref=".$_GET["ref"]?>>
+<?php
+if (isset($_GET["error"])){
+    echo "attention le mot de passe n'est pas valide";
+}
+if (isset($_GET["ref"])){
+    echo '<div id="step1">
+    <a href=intermediairereferent.php?ref='.$_GET["ref"].'>
     <div>
         la confirmation
     </div>
@@ -83,7 +88,10 @@
     <p>Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune</p>
     </div>
     </a>
-</div>
+</div>';
+}
+
+?>
 </body>
 
 </html>
