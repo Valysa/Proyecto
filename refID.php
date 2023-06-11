@@ -136,10 +136,10 @@
                         </td>
                     </tr>
                 </table>
-                <button type="submit" style="margin-left: 50%;">Valider</button>
+                <button type="submit" >Valider</button>
             </form>
             <form id="info" class="main_input" action="validateReference.php?invalide=1&ref=<?php echo $_GET['ref']; ?>" method="POST">
-            <button type="submit" style="margin-right: 50%;">Invalider</button>
+            <button type="submit" name="invalidate">Invalider</button>
             </form>
         </div>
     </div>
