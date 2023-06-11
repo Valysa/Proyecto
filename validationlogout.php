@@ -42,9 +42,9 @@
 <p>
     Vous vous êtes bien déconnecté
 </p>
-<a href="./monEspace.php">
+<a href="./accueil.html">
 <div id="a">
-    Retour à mon espace
+    Retour à l'accueil
 </div>
 </a>
 
