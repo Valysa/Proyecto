@@ -2,6 +2,22 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+function is_session_started()
+     {
+         if ( php_sapi_name() !== 'cli' ) {
+             if ( version_compare(phpversion(), '5.4.0', '>=') ) {
+                 return session_status() === PHP_SESSION_ACTIVE ? TRUE : FALSE;
+             } else {
+                 return session_id() === '' ? FALSE : TRUE;
+             }
+         }
+         return FALSE;
+     }
+
+     /*if(!isset($_SESSION["ID"])){
+        header("Location: accueil.html");
+        exit;
+    }*/
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
@@ -34,7 +50,8 @@ if (!empty($_GET["ref1"])) {
 $email = "jules.belletre@gmail.com";
 $mail = new PHPMailer(true);
 $password = hash('sha256', $_SESSION['ID'].$_GET["ref".$n]);
-/*try { 
+$message .= "  Veuillez vous identifier avec le mot de passe suivant : ".$password ;
+try { 
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
@@ -56,6 +73,6 @@ $mail->send();
     echo 'Thank you! An email has been sent to the client.'; 
 }  catch (Exception $e) { 
     echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
-}*/
-echo $message;
+}
+//echo $message;
 ?>
