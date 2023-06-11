@@ -50,13 +50,13 @@ if(($_POST['comments'] == "")){
     exit;
 }
 echo $_POST['comments'];
-$newl = $l.','.$_POST['comments'].PHP_EOL;
+$newl = $l.','.$_POST['comments'];
 echo $newl;
 
 
 // Réécrire le fichier CSV avec les modifications
 file_put_contents($csvFile, implode("\n", $lines));
-file_put_contents("BDD2/reference.csv", preg_replace('/'.$l.'/', $newl, file_get_contents("BDD2/reference.csv"), 1));
+file_put_contents("BDD2/reference.csv", preg_replace('/'.$l.'/', $newl."\n", file_get_contents("BDD2/reference.csv"), 1));
 // Rediriger vers la page remerciement.php
 header("Location: remerciementr.html");
 exit;
