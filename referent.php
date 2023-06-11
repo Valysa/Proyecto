@@ -24,7 +24,7 @@
 
 
             <td>
-                <div><a href="./signup.html">JEUNE</a></div>
+                <div><a href="./signup.php">JEUNE</a></div>
             </td>
             <td class="active"><div>RÉFÉRENT</div></td>
             <td><div>CONSULTANT</div></td>

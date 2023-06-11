@@ -79,33 +79,24 @@
             </td>
         </tr>
     </table>
-    <div id="step1">
-        <a href="<?php
-        $link = "localhost:8080/consultantID.php?";
-        // Vérifier si au moins la première ref est présente dans l'url
-        if (!empty($_GET["ref1"])) {
-            $n = 1;
-            // Création du lien
-            while (!empty($_GET["ref" . $n])) {
-                if ($n != 1) {
-                    $link .= "&";
-                }
-                $link .= "ref" . $n . "=" . $_GET["ref" . $n];
-                $n++;
-            }
-            echo $link;
-        } else {
-            echo 'consultant.php?error=1';
-        }
-        ?>">
-            <div>
-                la consultation
-            </div>
-            <div>
-                <p>Validez cet engagement en prenant en compte sa valeur</p>
-            </div>
-        </a>
+    <?php
+if (isset($_GET["error"])){
+    echo "attention le mot de passe n'est pas valide";
+}
+if (isset($_GET["ref"])){
+    echo '<div id="step1">
+    <a href=intermediairereferent.php?ref='.$_SERVER['QUERY_STRING'].'>
+    <div>
+        la confirmation
     </div>
+    <div>
+    <p>Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune</p>
+    </div>
+    </a>
+</div>';
+}
+
+?>
 </body>
 
 </html>

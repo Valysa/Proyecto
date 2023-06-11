@@ -33,6 +33,7 @@ if (!empty($_GET["ref1"])) {
 /*$email = $_POST["mailref"];*/
 $email = "jules.belletre@gmail.com";
 $mail = new PHPMailer(true);
+$password = hash('sha256', $_SESSION['ID'].$_GET["ref".$n]);
 /*try { 
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
