@@ -80,10 +80,12 @@
         <form id="info" class="main_input" action="validateReference.php?ref=<?php echo $_GET['ref']; ?>" method="POST">
                 <table id="infos" style="width: 100%;">
                     <tr>
+                    <form id=comment_area action="validateReference.php?ref=<?php echo $_GET['ref']; ?>" method="POST" >
                         <td style="width: 25%;">
                                 <label for="comments">COMMENTAIRE</label> <br>
                                 <textarea type="text" name="comments"></textarea>
                         </td>
+                    </form>
                         <td>
                             <fieldset>
                                 <div class="input_text">
