@@ -13,6 +13,12 @@
     
     if ( is_session_started() === FALSE ) session_start();
 ?>
+<?php 
+if(!isset($_SESSION["ID"])){
+    header("Location: accueil.html");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html id="jeune">
 

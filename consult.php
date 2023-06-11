@@ -8,6 +8,25 @@
 </head>
 
 <body id="consult">
+<?php
+ function is_session_started()
+ {
+     if ( php_sapi_name() !== 'cli' ) {
+         if ( version_compare(phpversion(), '5.4.0', '>=') ) {
+             return session_status() === PHP_SESSION_ACTIVE ? TRUE : FALSE;
+         } else {
+             return session_id() === '' ? FALSE : TRUE;
+         }
+     }
+     return FALSE;
+ }
+ 
+ if ( is_session_started() === FALSE ) session_start();
+if(!isset($_SESSION["ID"])){
+    header("Location: accueil.html");
+    exit;
+}
+?>
 <div id="page_head">
         <img id="logojeunes" src="./img/logojeunes.PNG">
         <p id="module">
@@ -38,7 +57,6 @@
     <form action="inputconsultantname.php" method="POST">
         <div class="container">
             <?php
-            session_start();
             $file = fopen('BDD2/reference.csv', 'r');
             $data = [];
             $firstLineSkipped = false;

@@ -13,6 +13,12 @@
     
     if ( is_session_started() === FALSE ) session_start();
 ?>
+<?php 
+if(!isset($_SESSION["ID"])){
+    header("Location: accueil.html");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -50,12 +56,14 @@
     </tr>
 </table>
 <br><br>
-
+<?php 
+echo "connecté en tant que". $_SESSION["email"];
+?>
 <table id="option" style="width: 100%;">
     <tr>
         <td></td>
     <td>
-    <a href="./createRef.html">
+    <a href="./createRef.php">
         <div>Créer une demande de référence</div>
     </a>
     </td>
