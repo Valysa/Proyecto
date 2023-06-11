@@ -31,12 +31,13 @@
     // insertion des champs dans BDD2
     $fp = fopen('BDD2/reference.csv', 'a+');
     $l = $id[0].','.$exp.','.$name.','.$fname.','.$mailj.','.$_SESSION['ID'].','.$state;
+    $s = ''; 
     if($_POST['skill'] != null){
         for ($i = 0; $i<$count; $i++){
-            $l = $l.','.$skill[$i];
+            $s = $s.$skill[$i];
         }
     }
-    $l = $l.PHP_EOL;
+    $l = $l.','.$s.PHP_EOL;
     fwrite($fp, $l);
     fclose($fp);
     // double chainage (insertion de l'id de la référence dans la table du jeune)

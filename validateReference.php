@@ -46,7 +46,7 @@ echo "...";
 echo $l;
 echo "...";
 echo $_POST['comments'];
-$newl = $l.','.$_POST['comments'];
+$newl = $l.','.$_POST['comments'].PHP_EOL;
 echo $newl;
 
 
