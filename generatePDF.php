@@ -94,6 +94,7 @@ if (isset($row[7])) {
         //$pdfContent .= "Colonne 6: $col6\n";
         $pdfContent .= "Cela à permis de développer : ". $skill;
         $pdfContent .= "\n";
+        $pdfContent .= "\n";
     }
 
     // Générer le fichier PDF

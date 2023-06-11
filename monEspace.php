@@ -88,7 +88,7 @@ echo "connecté en tant que ". $_SESSION["email"];
 </tr>
     <td></td>
     <td>
-    <a href="./logout.php">
+    <a href="./validationlogout.php">
         <div>Se déconnecter</div>
     </a>
     </td>
