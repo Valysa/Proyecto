@@ -65,6 +65,7 @@
                 
             </tr>
         </table>
+        <img id="bg-image" src="./img/referentsbg.PNG">
         <table style="width: 100%;">
             <p id="description">
                 Confirmez cette expérience et ce que vous avez
