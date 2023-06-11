@@ -27,7 +27,7 @@
                 <div><a href="./signup.php">JEUNE</a></div>
             </td>
             <td class="active"><div>RÉFÉRENT</div></td>
-            <td><div>CONSULTANT</div></td>
+            <td><a href="./consultant.php"><div>CONSULTANT</div></td>
             <td >
                 <a href="./partenaires.html">PARTENAIRES</a>
             </td>
