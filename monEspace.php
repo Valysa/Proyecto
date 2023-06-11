@@ -55,6 +55,7 @@ if(!isset($_SESSION["ID"])){
         
     </tr>
 </table>
+    <img id="bg-image" src="./img/jeunesbg.PNG">
 <br><br>
 <?php 
 echo "connecté en tant que". $_SESSION["email"];
