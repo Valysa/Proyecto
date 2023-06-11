@@ -94,17 +94,17 @@
                             <fieldset>
                                 <div class="input_text2">
                                      <label for="name" class="text_label">Nom:</label>
-                                    <input class="writing" type="text" name="name" value="<?php echo $_SESSION["referentName"]; ?>" placeholder="Nom" />
+                                    <input readonly class="writing" type="text" name="name" value="<?php echo $_SESSION["referentName"]; ?>" placeholder="Nom" />
                                    <br><br>
                                 </div>
                                 <div class="input_text2">
                                     <label for="fname" class="text_label">Prenom:</label>
-                                    <input class="writing" type="text" name="fname" value="<?php echo $_SESSION["referentfName"]; ?>" placeholder="PRENOM" />
+                                    <input readonly class="writing" type="text" name="fname" value="<?php echo $_SESSION["referentfName"]; ?>" placeholder="PRENOM" />
                                     <br><br>
                                 </div>
                                 <div class="input_text">
                                     
-                                        <input class="writing" type="text" name="referenceName"
+                                        <input readonly class="writing" type="text" name="referenceName"
                                             value="<?php echo $_SESSION["referenceName"]; ?>"
                                             placeholder="referenceName" />
                                             <label for="fname" class="text_label">Description:</label>
