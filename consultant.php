@@ -84,7 +84,7 @@
 if (isset($_GET["error"])){
     echo "attention le mot de passe n'est pas valide";
 }
-if (isset($_GET["ref"])){
+if (isset($_GET["ref1"])){
     echo '<div id="step1">
     <a href=intermediairereferent.php?ref='.$_SERVER['QUERY_STRING'].'>
     <div>
