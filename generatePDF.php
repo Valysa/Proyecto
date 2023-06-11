@@ -3,10 +3,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les IDs sélectionnés
     $n = 1;
     $selectedIDs = array(); 
-    while (isset($_POST["ref" . $n])) {
-        $selectedIDs[$n-1] = $_POST["ref" . $n];
+    while (isset($_GET["ref" . $n])) {
+        $selectedIDs[] = $_GET["ref" . $n];
         $n++;
     }
+
 
     // Chemin vers le fichier CSV
     $csvFile = 'BDD2/reference.csv';
@@ -15,19 +16,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $outputFile = __DIR__ . '/references.pdf';
 
     // Lecture du fichier CSV
-    $csvData = file($csvFile);
+    $file = fopen($csvFile, 'r');
+    $data = [];
+    $firstLineSkipped = false;
+    while (($row = fgetcsv($file, 1000, ',')) !== false) {
+        if (!$firstLineSkipped) {
+            $firstLineSkipped = true;
+            continue; // Ignore la première ligne du CSV
+        }
+        $data[] = $row;
+    }
+    fclose($file);
 
     // Tableau pour stocker les lignes sélectionnées
     $selectedRows = [];
 
-    // Parcourir les lignes du CSV
-    foreach ($csvData as $csvLine) {
-        $lineData = str_getcsv($csvLine);
-
-        // Vérifier si l'ID de la ligne est sélectionné
-        if (in_array($lineData[0], $selectedIDs)) {
-            // Ajouter la ligne au tableau des lignes sélectionnées
-            $selectedRows[] = $lineData;
+    // Filtrer les lignes du CSV en fonction des ID sélectionnées
+    foreach ($selectedIDs as $selectedID) {
+        echo $selectedI ;
+        foreach ($data as $row) {
+            if ($row[0] == $selectedID) {
+                $selectedRows[] = $row;
+            }
         }
     }
 
@@ -55,10 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Générer le fichier PDF
-    // Ici, vous devez utiliser une bibliothèque pour générer le PDF, telle que TCPDF ou FPDF
-    // Voici un exemple en utilisant TCPDF :
     require_once('tcpdf/tcpdf.php');
-
+    echo "pdf content is ". $pdfContent;
     $pdf = new TCPDF();
     $pdf->SetMargins(10, 10, 10);
     $pdf->AddPage();
@@ -68,24 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Afficher un lien vers le fichier PDF généré
     echo "Le fichier PDF a été généré avec succès. <a href='references.pdf'>Télécharger le PDF</a>";
-} elseif ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_SERVER['QUERY_STRING'])) {
-    // Récupérer les valeurs depuis $_SERVER['QUERY_STRING']
-    parse_str($_SERVER['QUERY_STRING'], $queryParams);
-
-    // Récupérer les IDs sélectionnés
-    $selectedIDs = explode(",", $queryParams["selection"]);
-
-    // Effectuer une redirection POST vers la même page
-    $redirectURL = $_SERVER['PHP_SELF'];
-    echo "<html>";
-    echo "<body onload='document.forms[0].submit()'>";
-    echo "<form action='$redirectURL' method='POST'>";
-    foreach ($selectedIDs as $id) {
-        echo "<input type='hidden' name='ref' value='$id'>";
-    }
-    echo "</form>";
-    echo "</body>";
-    echo "</html>";
-    exit;
 }
+
+// Le reste du code pour gérer la redirection GET reste inchangé
 ?>
