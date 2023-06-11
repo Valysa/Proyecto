@@ -73,7 +73,7 @@ if (!isset($_SESSION["ID"])) {
                 $firstLineSkipped = true;
                 continue; // Ignore la première ligne du CSV
             }
-            if ($row[5] == $_SESSION["ID"] || $firstLineSkipped == true) {
+            if ($row[5] == $_SESSION["ID"]) {
                 $i++;
                 if ($i % 2 == 0) {
                     $info1 = $row[3]; // Première colonne du CSV
