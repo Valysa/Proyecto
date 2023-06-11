@@ -29,6 +29,7 @@
 
         </tr>
     </table>
+    <img id="bg-image" src="./img/jeunesbg.PNG">
 <td>
     <form action=<?php echo "consultantID.php?ref=".$_SERVER['QUERY_STRING']?> method="POST">
         <table id="ref"> <tr>
