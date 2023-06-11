@@ -612,12 +612,12 @@ button:hover, [type="submit"]:hover{
 
 
 
-#intermediarer{
+#intermediairer{
   --primary:  var(--referent1);
   --secondary: var(--referent2);
 }
 
-#intermediarec{
+#intermediairec{
   --primary:  var(--consultant1);
   --secondary: var(--consultant2);
 }
