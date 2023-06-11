@@ -36,12 +36,11 @@
             $_SESSION["referentName"] = $row[3]; // Première colonne du CSV
             $_SESSION["referentfName"] = $row[2]; // Deuxième colonne du CSV
             $_SESSION["referenceName"] = $row[1]; // Troisième colonne du CSV
-            for($i=0; $i<4 ; $i++){
-                list($b,$c,$d,$e)=str_split($row[7]);
-                if(isset($row[$i])){
-                    $_SESSION["$i"] = $list[$i];
+            for ($i = 0; $i < 4; $i++) {
+                if (isset($row[7])) {
+                    $_SESSION["$i"] = $row[7][$i];
                 }
-            }
+            }            
             /*echo '<p>' . $_SESSION["referentName"] . '</p>';
             echo '<p>' . $_SESSION["referentfName"] . '</p>';
             echo '<p>' . $_SESSION["referenceName"] . '</p>';
@@ -111,7 +110,7 @@
                         <td style="width: 25%;">
                             <div id="Be">SES SAVOIRS ETRE</div>
                             <?php 
-                            $skills= [
+                            $skills = [
                                 0 => "Ponctualité",
                                 1 => "Confiance",
                                 2 => "Sérieux",
@@ -123,12 +122,13 @@
                                 8 => "Impartial",
                                 9 => "Travail"
                             ];
-                            for($i=7; $i<10 ; $i++){
-                                if(isset($_SESSION["$i"])){
-                                   echo("$skills[$i]");
-                                   echo("<br>");
+                            
+                            for ($i = 0; $i < 4; $i++) {
+                                if (isset($_SESSION[$i])) {
+                                    echo $skills[$_SESSION[$i]];
+                                    echo "<br>";
                                 }
-                            }
+                            }                            
                             ?>
                             <div id="fourMax"></div>
                         </td>
