@@ -5,6 +5,14 @@
     <title>Page d'administration</title>
 </head>
 <body>
+    <?php
+        session_start();
+        if($_GET["ID"] == "a1"){
+            header("Location: accueil.html");
+            exit;
+        }
+        echo $_GET["ID"];
+    ?>
     <h1>Page d'administration</h1>
 
     <!-- Formulaire de modification de reference.csv -->
