@@ -72,7 +72,7 @@ $numSelected = count($selectedRows);
 ?> method="POST">
     <div class="container">
         <div class="row">
-            <input type="submit" name="valider" value="Valider" style="float: left;">
+            <input type="submit" name="valider" value="Valider" >
         </div>
     </div>
 </form>
@@ -95,7 +95,7 @@ $numSelected = count($selectedRows);
  method="POST">
 <div class="container">
         <div class="row">
-            <input type="submit" name="generer_pdf" value="Générer PDF" style="float: right;">
+            <input type="submit" name="generer_pdf" value="Générer PDF" >
         </div>
     </div>
 </body>
