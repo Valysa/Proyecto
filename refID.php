@@ -33,9 +33,10 @@
             $_SESSION["referentName"] = $row[3]; // Première colonne du CSV
             $_SESSION["referentfName"] = $row[2]; // Deuxième colonne du CSV
             $_SESSION["referenceName"] = $row[1]; // Troisième colonne du CSV
-            for($i=6; $i<11 ; $i++){
+            for($i=0; $i<4 ; $i++){
+                list($b,$c,$d,$e)=str_split($row[7]);
                 if(isset($row[$i])){
-                    $_SESSION["$i"] = $row[$i];
+                    $_SESSION["$i"] = $list[$i];
                 }
             }
             /*echo '<p>' . $_SESSION["referentName"] . '</p>';
