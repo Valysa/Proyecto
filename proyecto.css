@@ -101,6 +101,10 @@ html, body {
   --secondary: var(--jeune2)
 }
 
+#thanks{
+  --primary:  var(--referent1);
+  --secondary: var(--referent2);
+}
 
 
 
@@ -611,6 +615,33 @@ button:hover{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*=========================== INTRO ==================================*/
 
 
@@ -873,4 +904,15 @@ img#partenaires {
 
 #referent [ name="referenceName"]{
   width:200%;
+}
+
+/*=============== thanking page ==============*/
+
+#thanks>p {
+  
+  color: var(--secondary);
+  font-size: 300%;
+  margin-top:15%;
+  text-align: center;
+
 }
