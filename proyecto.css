@@ -2,9 +2,13 @@
 
 
 
-/*table, th, td {
+table, th, td {
   border: 1px solid black;
-}*/
+}
+
+/* */
+
+
 
 /*----------------------------------------------------------*/
 /*==================== DECLARATIONS ========================*/
@@ -42,6 +46,7 @@
 /*making links' text stylable*/
 a{
   color: inherit;
+  text-decoration: none;
 }
 
 * {
@@ -53,13 +58,15 @@ html, body {
   height: 100%;
   padding-bottom: 5px;
 }
+
+/*
 .wrapper {
   min-height: 750px;
   height: 100%;
   width: 100%;
   min-width: 1500px;
  
-}
+}*/
 
 
 #referent>* {
@@ -110,14 +117,15 @@ html, body {
   --secondary: var(--jeune2);
 }
 
-#consult{
-  --primary: var(--jeune1);
-  --secondary: var(--jeune2)
-}
 
 #thanks{
   --primary:  var(--referent1);
   --secondary: var(--referent2);
+}
+
+#thanksc{
+  --primary:  var(--consultant1);
+  --secondary: var(--consultant2);
 }
 
 #confirm{
@@ -241,6 +249,14 @@ html, body {
   color: var(--jeune2);
 }
 
+#navbar td:nth-child(2):hover{
+  color: var(--referent1);
+}
+
+#navbar td:nth-child(3):hover{
+  color: var(--consultant2);
+}
+
 #navbar td:nth-child(4):hover{
   color: var(--partenaire2);
 }
@@ -293,6 +309,7 @@ html, body {
 .main_input{
   left:25%;
   right:25%;
+  
 }
 
 .main_input fieldset {
@@ -301,7 +318,7 @@ html, body {
   padding:16px;
   box-shadow: -10px 10px 3px rgba(94, 94, 94, 0.25);
   margin:52px;
-  
+  background-color: var(--background);
 }
 
 #infos tr:nth-child(2){
@@ -331,7 +348,7 @@ html, body {
   margin: auto;
   margin-left: 20%;
   padding: 5px;
-  background: linear-gradient(120deg, transparent,var(--primary));
+  background: linear-gradient(120deg, var(--background),var(--primary));
   accent-color: var(--secondary);
   font-size:150%;
 }
@@ -376,6 +393,8 @@ html, body {
 
 }
 
+/*Label*/
+
 [for="comments"]{
   background: radial-gradient(at top left, var(--background), var(--primary));
   
@@ -384,10 +403,12 @@ html, body {
   font-size: 20px;
 }
 
+/*Textarea Comments*/
+
 [name="comments"]{
   margin-right:20%;
-  resize: none;
-  outline: none;
+  resize: none; /* user cannot resize textarea*/
+  outline: none;/* reset style*/
   background: radial-gradient(at top left, var(--background), var(--primary));
   border-radius: 2px;
   border: 0;
@@ -427,12 +448,12 @@ html, body {
 
 
 
-/*===========================inputs text style*/
+/*===========================inputs text style=============================*/
 
 
 
-
-
+/*======first Model=====*/
+/*div*/
 .input_text {
   position: relative;
   padding: 15px 0 0;
@@ -442,10 +463,10 @@ html, body {
 
 
 /*Style Input Text*/
+
 .writing{  
   font-family: inherit;
   width: 100%;
-  /*border: 0;*/
   border: 2px solid var(--inactive);
   outline: 0;
   font-size: 1.3rem;
@@ -456,15 +477,10 @@ html, body {
 
 /*placeholders are used to detect if something is written in the input*/
 
-.writing{
-  z-index: 2;
-}
-
 .writing::placeholder {
     color: transparent;
     z-index:1;
   }
-
 
   .writing:placeholder-shown ~ label {
     position: absolute;
@@ -488,7 +504,8 @@ html, body {
   background-color: var(--background);
 }
 
-.writing:hover {
+/*hover: grow and change color*/
+.writing:hover, .writing:focus {
 
   padding-bottom: 6px;  
   border-width: 3px;
@@ -496,8 +513,8 @@ html, body {
   border-image-slice: 1;
 }
 
-
-.writing ~ label:hover {
+/*hover: label goes up*/
+.writing ~ label:hover, .writing:hover ~ label {
   position: absolute;
   top: 4px;
   display: block;
@@ -507,23 +524,7 @@ html, body {
   background-color: var(--background);  
 }
 
-.writing:hover ~ label {
-    position: absolute;
-    top: 4px;
-    display: block;
-    font-size: 1rem;
-    color: var(--secondary);
-    font-weight:700;  
-    background-color: var(--background);  
-  }
-
-.writing:focus {
-
-  padding-bottom: 6px;  
-  border-width: 3px;
-  border-image: linear-gradient(to left, var(--primary),var(--secondary));
-  border-image-slice: 1;
-}
+/*stay like hover when on focus*/
 
 .writing:focus ~ label {
     position: absolute;
@@ -541,13 +542,16 @@ html, body {
 
 /*=========================== DOTTED INPUTS ============================*/
 
+
 .input_text2 .writing {
   border: 0;
   border-bottom: 4px dotted var(--primary);
-  width:auto;
+  width: 75%;
   height:auto;
   font-size:120%;
+  padding: 7px 0;
   font-family: "Lucida Handwriting";
+
 
 }
 .input_text2 .writing::placeholder{
@@ -569,28 +573,43 @@ html, body {
 /*=======================================button styling*/
 
 
-button {
+button, [type="submit"] {
   background-color: var(--secondary);
   padding: 5px;
 	border-width: 3px;
   border-image: linear-gradient(to right, var(--primary),var(--secondary));
   border-image-slice: 1;
-	font-family: "Montserrat", sans-serif;
+	font-family: sans-serif;
 	font-size: 20px;
   transition: 0.2s;
   color: var(--background);
   margin-left:75%;
 }
-button:hover{
+button:hover, [type="submit"]:hover{
   transition: 0.3s;
   border-width: 4px;
   background-image: linear-gradient(to right, var(--primary),var(--secondary));
 }
 
 
-[type="submit"]{
-  margin-left:75%;
+
+
+
+/*==========BACKGROUND IMAGE==========*/
+
+#bg-image{
+  position:absolute;
+  z-index: -1;
+  height:33%;
+
+  top:50%;
+  right:33%;
+  left:33%;
+
 }
+
+
+
 
 
 
@@ -825,6 +844,15 @@ button:hover{
 
 /*============= CONSULT REFERENCES ============*/
 
+#consult{
+  --primary: var(--jeune1);
+  --secondary: var(--jeune2);
+  --validated: #98ff58;
+  --unvalidated: #e4006e;
+  --waiting: #9b9b9b;
+}
+
+
 #consult #references, #consult #references table {
   width:100%;
   min-height: 70px;
@@ -836,15 +864,15 @@ button:hover{
 }
 
 #consult #references div.validated{
-  background: radial-gradient(at top left, var(--background), var(--inactive) 90%);
+  background: radial-gradient(at top left, var(--background), var(--validated) 90%);
 }
 
 #consult #references div.unvalidated{
-  background: radial-gradient(at top left, var(--background), var(--jeune1) 150%);
+  background: radial-gradient(at top left, var(--background), var(--unvalidated) 150%);
 }
 
 #consult #references div.waiting{
-  background: radial-gradient(at top left, var(--background), var(--jeune1) 130%);
+  background: radial-gradient(at top left, var(--background), var(--waiting) 130%);
 }
 
 #consult .unvalid_msg{
@@ -898,6 +926,15 @@ img#partenaires {
 
 }
 
+#thanksc>p {
+  
+  color: var(--secondary);
+  font-size: 300%;
+  margin-top:15%;
+  text-align: center;
+
+}
+
 /*=========== Confirm Ref page================*/
 
 
@@ -931,3 +968,65 @@ img#partenaires {
 #validRef #a:hover {
   background: linear-gradient(to left, var(--secondary), var(--primary) 50%);
 }
+
+
+/*========== ConsultID ===========*/
+
+
+#consultID{
+  --primary: var(--consultant1);
+  --secondary: var(--consultant2);
+
+}
+
+#consultID fieldset{
+  --primary: var(--jeune1);
+  --secondary: var(--jeune2);
+}
+
+#consultID #references, #consultID #references table {
+  width:100%;
+  min-height: 70px;
+}
+
+#consultID #references div{
+  border-radius: 15px;
+  padding:5px;
+}
+
+#consultID #references{
+  --primary: var(--referent1);
+  --secondary: var(--referent2);
+}
+
+#consultID #references .validated p{
+  color: var(--primary);
+  margin: 0;
+  padding:1px;
+  border-bottom: 2px dotted var(--referent1);
+
+}
+
+#consultID .validated{
+  background-color: var(--background);
+  border: 2px solid var(--primary);
+}
+
+#consultID .validated p~p{
+  color: black;
+  margin: 0;
+  padding:1px;
+  border-bottom: 2px dotted var(--referent1);
+
+}
+#consultID #references td td {
+  vertical-align:top;
+  
+}
+
+#consultID #references td td:last-child {
+  vertical-align:top;
+  text-align: end;
+  min-height: 70px;
+}
+
