@@ -16,6 +16,10 @@
     $name = $_POST["name"];
     $fname = $_POST["fname"];
     $mailj = $_POST["mailref"];
+    if($exp == "" || $name == "" || $fname == "" || $mailj == ""){
+        header("Location: createRef.php");
+        exit;
+    }
     $state = "waiting";
     if($_POST['skill'] != null){
         $skill= $_POST['skill'];
@@ -78,8 +82,7 @@
     $subject="Demande de reference";
     $message="Vous avez reçu une demande de reference, connectez vous à ce lien : ".$url.
     " Veuillez utiliser ce mot de passe une fois sur le site : ".$password;
-    echo $message;
-    /*$email = $_POST["mailref"]; 
+    $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
     echo $message ; 
     /*
