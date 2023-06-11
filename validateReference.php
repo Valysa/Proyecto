@@ -1,7 +1,7 @@
 <?php
 // Récupérer la valeur de $_GET['ref']
 $ref = $_GET['ref'];
-if($_GET['invalide'] == 1){
+if(isset($_GET['invalid'])){
     $valeur = "invalid";
 }
 else{
@@ -45,6 +45,10 @@ foreach ($lines as $line) {
 echo "...";
 echo $l;
 echo "...";
+if(($_POST['comments'] == "")){
+    header("Location: refID.php?".$_SERVER['QUERY_STRING']);
+    exit;
+}
 echo $_POST['comments'];
 $newl = $l.','.$_POST['comments'].PHP_EOL;
 echo $newl;
@@ -54,6 +58,6 @@ echo $newl;
 file_put_contents($csvFile, implode("\n", $lines));
 file_put_contents("BDD2/reference.csv", preg_replace('/'.$l.'/', $newl, file_get_contents("BDD2/reference.csv"), 1));
 // Rediriger vers la page remerciement.php
-//header("Location: remerciementr.html");
-//exit;
+header("Location: remerciementr.html");
+exit;
 ?>
