@@ -55,6 +55,10 @@ if (!isset($_SESSION["ID"])) {
 echo "inputconsultantname.php?ref1=";
 $n=2 ;
 $selectedRows = $_POST["selection"];
+if ($selectedRows == ""){
+    header("Location: consult.php");
+    exit;
+}
 $numSelected = count($selectedRows);
     $count = 0;
     foreach($selectedRows as $selectedRow) {
