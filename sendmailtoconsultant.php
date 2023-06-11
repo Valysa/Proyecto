@@ -13,7 +13,13 @@ function is_session_started()
          }
          return FALSE;
      }
-
+     if (is_session_started() === false) {
+        session_start();
+    }
+    if (!isset($_SESSION["ID"])) {
+        header("Location: accueil.html");
+        exit;
+    }
      /*if(!isset($_SESSION["ID"])){
         header("Location: accueil.html");
         exit;
@@ -39,6 +45,7 @@ if (!empty($_GET["ref1"])) {
         $link .= "ref"."$n"."=".$_GET["ref".$n];
         $n++;
     }
+    $n--;
     $message = rtrim($message, "&");
     // Ajouter le lien au message
     $message .= $link;
@@ -48,9 +55,9 @@ if (!empty($_GET["ref1"])) {
 }
 $email = $_POST["mailref"];
 $mail = new PHPMailer(true);
-$password = hash('sha256', $_SESSION['ID'].$_GET["ref".$n]);
+$password = hash('sha256', $_SESSION['ID'].$_GET["ref$n"]);
 $message .= "  Veuillez vous identifier avec le mot de passe suivant : ".$password ;
-try { 
+/*try { 
     $mail->isSMTP();
     $mail->Host = 'smtp.office365.com';
     $mail->SMTPAuth = true;
@@ -72,6 +79,6 @@ $mail->send();
     echo 'Thank you! An email has been sent to the client.'; 
 }  catch (Exception $e) { 
     echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
-}
-//echo $message;
+}*/
+echo $message;
 ?>
