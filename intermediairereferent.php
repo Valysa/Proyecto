@@ -20,8 +20,8 @@
             <td class="active">
                 <div > &nbsp; JEUNE &nbsp; </div>
             </td>
-            <td >RÉFÉRENT</td>
-            <td >CONSULTANT</td>
+           <td><a href="./referent.php"><div>RÉFÉRENT</div></a></td>
+            <td><a href="./consultant.php"><div>CONSULTANT</div></td>
             <td >
                 <a href="./partenaires.html">PARTENAIRES</a>
             </td>
