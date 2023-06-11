@@ -35,6 +35,7 @@
 
         </tr>
     </table>
+    <img id="bg-image" src="./img/jeunesbg.PNG">
 
     <table id="speech">
         <tr>
