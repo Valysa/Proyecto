@@ -54,6 +54,7 @@ if(!isset($_SESSION["ID"])){
 
         </tr>
     </table>
+    <img id="bg-image" src="./img/jeunesbg.PNG">
 <td>
     <form action=
     <?php
