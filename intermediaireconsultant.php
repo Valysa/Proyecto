@@ -10,18 +10,18 @@
     <div id="page_head">
         <img id="logojeunes" src="./img/logojeunes.PNG">
         <p id="module">
-            JEUNE
+            CONSULTANT
         </p>
        
     </div>
 
     <table id="navbar" style="width: 50%;">
         <tr>
-            <td class="active">
-                <div > &nbsp; JEUNE &nbsp; </div>
+            <td ><a href="./signup.php">
+                <div > &nbsp; JEUNE &nbsp; </div></a>
             </td>
             <td><a href="./referent.php"><div>RÉFÉRENT</div></a></td>
-            <td><a href="./consultant.php"><div>CONSULTANT</div></td>
+            <td class="active"><div>CONSULTANT</div></td>
             <td >
                 <a href="./partenaires.html">PARTENAIRES</a>
             </td>
