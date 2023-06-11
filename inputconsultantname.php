@@ -21,7 +21,7 @@
  }
  
  if ( is_session_started() === FALSE ) session_start();
-if(!isset($_SESSION["ID"])){
+    if(!isset($_SESSION["ID"])){
     header("Location: accueil.html");
     exit;
 }
@@ -54,12 +54,11 @@ if(!isset($_SESSION["ID"])){
 
         </tr>
     </table>
-    <img id="bg-image" src="./img/jeunesbg.PNG">
 <td>
     <form action=
     <?php
     //création de l'url spécial sendmailtoconsultant avec les refs 
-    echo"sendmailtoconsultant.php".$_SERVER['QUERY_STRING'];
+    echo"sendmailtoconsultant.php?".$_SERVER['QUERY_STRING'];
     ?> method="POST">
         <table id="ref"> <tr>
     <div class="input_text2">
