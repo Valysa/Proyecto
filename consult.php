@@ -49,7 +49,7 @@ if (!isset($_SESSION["ID"])) {
         </td>
     </tr>
 </table>
-<img id="bg-image" src="./img/consultantsbg.PNG">
+
 <form action="transition.php" method="POST">
     <div class="container">
         <?php

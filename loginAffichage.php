@@ -50,7 +50,7 @@
 
         </tr>
     </table>
-<img id="bg-image" src="./img/jeunesbg.PNG">
+
      <br><br>
 
 <form id="main" class="main_input" action="login.php" method="POST">

@@ -49,7 +49,7 @@ if (!isset($_SESSION["ID"])) {
         </td>
     </tr>
 </table>
-<img id="bg-image" src="./img/jeunesbg.PNG">
+
 <form action=
 <?php 
 echo "inputconsultantname.php?ref1=";

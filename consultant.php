@@ -40,7 +40,7 @@
         </tr>
     </table>
     
-    <img id="bg-image" src="./img/consultantsbg.PNG">
+    
 
     <table id="speech">
         <tr>

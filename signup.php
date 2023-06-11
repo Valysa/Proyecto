@@ -38,7 +38,7 @@
 
         </tr>
     </table>
-<img id="bg-image" src="./img/jeunesbg.PNG">
+
     <br><br>
 
     <form id="info" class="main_input" action="data.php" method="POST">

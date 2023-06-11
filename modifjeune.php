@@ -67,7 +67,7 @@ if(!isset($_SESSION["ID"])){
 
     </tr>
 </table>
-<img id="bg-image" src="./img/jeunesbg.PNG">
+
      <br><br>
 
     <form id="main" class="main_input" action="modifjeune2.php" method="POST">

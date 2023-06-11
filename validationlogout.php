@@ -38,7 +38,7 @@
 
         </tr>
     </table>
-<img id="bg-image" src="./img/jeunesbg.PNG">
+
 <p>
     Vous vous êtes bien déconnecté
 </p>
