@@ -25,9 +25,9 @@
 
 
             <td class="active">
-                <a href="./signup.php">
+                
                 <div>JEUNE</div>
-                </a>
+               
             </td>
             <td><div>RÉFÉRENT</div></td>
             <td><div>CONSULTANT</div></td>
@@ -43,29 +43,34 @@
 
     <form id="info" class="main_input" action="data.php" method="POST">
         <fieldset>
-            <div class="input_text2">
-            <label for="name" class="text_label">Nom:</label>
+            <div class="input_text">
+            
                 <input class="writing" type="text" name="name" placeholder="Nom" />
+                <label for="name" class="text_label">Nom:</label>
                 <br><br>
             </div>
-            <div class="input_text2">
-            <label for="fname" class="text_label">Prenom:</label>
+            <div class="input_text">
+           
                 <input class="writing" type="text" name="fname" placeholder="PRENOM" />
+                 <label for="fname" class="text_label">Prenom:</label>
                 <br><br>
             </div>
-            <div class="input_text2">
-            <label for="birthday" class="text_label">Date de naissance:</label>
+            <div class="input_text">
+            
                 <input class="writing" type="date" name="birthday" placeholder="Date de naissance" />
+                <label for="birthday" class="text_label">Date de naissance:</label>
                 <br><br>
             </div>
-            <div class="input_text2">
-            <label for="email" class="text_label">Mail:</label>
+            <div class="input_text">
+           
                 <input class="writing" type="email" name="email" placeholder="Mail" />
+                 <label for="email" class="text_label">Mail:</label>
                 <br><br>
             </div>
-            <div class="input_text2">
-            <label for="password" class="text_label">Mot de passe:</label>
+            <div class="input_text">
+           
                 <input class="writing" type="password" name="password" placeholder="Mot de passe" />
+                 <label for="password" class="text_label">Mot de passe:</label>
                 <br><br>
             </div>
             <?php 
