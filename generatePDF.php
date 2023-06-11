@@ -33,17 +33,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Filtrer les lignes du CSV en fonction des ID sélectionnées
     foreach ($selectedIDs as $selectedID) {
-        echo $selectedI ;
+        echo $selectedID ;
         foreach ($data as $row) {
             if ($row[0] == $selectedID) {
                 $selectedRows[] = $row;
             }
         }
     }
+    $skills = [
+        0 => "Ponctualité",
+        1 => "Confiance",
+        2 => "Sérieux",
+        3 => "Honnêteté",
+        4 => "Passionné",
+        5 => "Bienveillance",
+        6 => "Respect",
+        7 => "Juste",
+        8 => "Impartial",
+        9 => "Travail"
+    ];
+    for ($i = 0; $i < 4; $i++) {
+        if (isset($_SESSION[$i])) {
+            echo $skills[$_SESSION[$i]];
+            echo "<br>";
+        }
+    }
 
     // Générer le contenu du fichier PDF
     $pdfContent = '';
     foreach ($selectedRows as $row) {
+        $skill = "";
+if (isset($row[7])) {
+    $skillsIndices = str_split($row[7]);
+    foreach ($skillsIndices as $index) {
+        if (isset($skills[$index])) {
+            $skill .= $skills[$index];
+            $skill .= "  ";
+        }
+    }
+}
+
         // Récupérer les valeurs de chaque colonne
         $id = $row[0];
         $col1 = $row[1];
@@ -52,14 +81,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $col4 = $row[4];
         $col5 = $row[5];
         $col6 = $row[6];
+        $col7 = $row[7];
+        $col8 = $row[8];
 
         // Ajouter la ligne au contenu du PDF
         //$pdfContent .= "ID: $id\n";
         $pdfContent .= "$col1\n";
         $pdfContent .= "Sous la résponsabilité de $col3 $col2\n";
+        $pdfContent .= ": $col8\n";
         $pdfContent .= "Coordonées : $col4\n";
         //$pdfContent .= "Colonne 5: $col5\n";
         //$pdfContent .= "Colonne 6: $col6\n";
+        $pdfContent .= "cela à permis de dévlopper : ". $skill;
         $pdfContent .= "\n";
     }
 
