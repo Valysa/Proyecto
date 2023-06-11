@@ -596,27 +596,20 @@ button {
 	font-size: 20px;
   transition: 0.2s;
   color: var(--background);
+  margin-left:75%;
 }
 button:hover{
   transition: 0.3s;
+  border-width: 4px;
   background-image: linear-gradient(to right, var(--primary),var(--secondary));
 }
 
 
-
-
-
-
-
-/*========================== SIGNUP ==============================*/
- button{
-  margin-left:75%;
-
-}
-
 [type="submit"]{
   margin-left:75%;
 }
+
+
 
 /*=========================== INTRO ==================================*/
 
@@ -876,3 +869,8 @@ img#partenaires {
 
 }
 
+/*===============REF ID================*/
+
+#referent [ name="referenceName"]{
+  width:200%;
+}
