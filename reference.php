@@ -72,8 +72,8 @@
     " Veuillez utiliser ce mot de passe une fois sur le site : ".$password;
     $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
-    //echo $message ; 
-    try { 
+    echo $message ; 
+    /*try { 
         $mail->isSMTP();
         $mail->Host = 'smtp.office365.com';
         $mail->SMTPAuth = true;
