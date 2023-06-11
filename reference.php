@@ -17,15 +17,23 @@
     $fname = $_POST["fname"];
     $mailj = $_POST["mailref"];
     $state = "waiting";
-    $list = array(
-        array($exp, $name, $fname, $mailj, $_SESSION['ID'], $state)
-    );
+    if($_POST['skill'] != null){
+        $skill= $_POST['skill'];
+        $count = 0;
+        foreach($skill as $a){
+            ++$count;
+        }
+    }
     // insertion des champs dans BDD2
     $fp = fopen('BDD2/reference.csv', 'a+');
-    fwrite($fp, $id[0] . ',');
-    foreach ($list as $fields) {
-        fputcsv($fp, $fields);
+    $l = $id[0].','.$exp.','.$name.','.$fname.','.$mailj.','.$_SESSION['ID'].','.$state;
+    if($_POST['skill'] != null){
+        for ($i = 0; $i<$count; $i++){
+            $l = $l.','.$skill[$i];
+        }
     }
+    $l = $l.PHP_EOL;
+    fwrite($fp, $l);
     fclose($fp);
     // double chainage (insertion de l'id de la référence dans la table du jeune)
     $fpj = fopen("BDD/$mailj[0].csv", 'a+');
@@ -60,7 +68,7 @@
     echo "                     ";
     echo $_SESSION['ID'].$id[0];
     $password = hash('sha256', $_SESSION['ID'].$id[0]);
-    
+    /*
     //part to sent an email to the referent
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
@@ -73,7 +81,7 @@
     $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
     echo $message ; 
-    /*try { 
+    try { 
         $mail->isSMTP();
         $mail->Host = 'smtp.office365.com';
         $mail->SMTPAuth = true;

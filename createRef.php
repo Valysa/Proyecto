@@ -90,7 +90,7 @@ if(!isset($_SESSION["ID"])){
 
                         <div id="Be2">Je suis*</div>
 
-                        <div id="sglcheckbox" action="checked.php" method="POST">
+                        <div id="sglcheckbox" action="reference.php" method="POST">
                             <input type="checkbox" name="skill[]" value="0">
                             <label for="0">Autonome</label>
                             <br>
