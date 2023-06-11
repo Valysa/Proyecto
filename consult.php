@@ -153,7 +153,7 @@ if (!isset($_SESSION["ID"])) {
         echo '</table>';
         ?>
         <div class="row">
-            <input type="submit" value="Valider" style="float: right;">
+            <input type="submit" value="Valider" >
         </div>
     </div>
 </form>

@@ -138,7 +138,7 @@
                 </table>
                 <button type="submit" >Valider</button>
             </form>
-            <form id="info" class="main_input" action="validateReference.php?invalide=1&ref=<?php echo $_GET['ref']; ?>" method="POST">
+            <form id="info" class="main_input" action="validateReference.php?invalide=1&ref=<?php echo $_GET['ref']; ?>" method="POST"><br>
             <button type="submit" name="invalidate">Invalider</button>
             </form>
         </div>
