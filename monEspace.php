@@ -92,6 +92,18 @@ echo "connecté en tant que". $_SESSION["email"];
     </a>
     </td>
     <td></td>
+    <?php
+            if($_SESSION["ID"] == "a1"){
+                echo '</tr>
+                <td></td>
+                <td>
+                    <a href="./admin.php">
+                        <div>Admin</div>
+                    </a>
+                </td>
+                <td></td>';
+            }
+        ?>
 </table>
 </body>
 
