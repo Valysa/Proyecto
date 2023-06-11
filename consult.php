@@ -35,7 +35,7 @@
         </tr>
     </table>
 
-    <form action="sendmailtoreferent.php" method="POST">
+    <form action="inputconsultantname.php" method="POST">
         <div class="container">
             <?php
             session_start();

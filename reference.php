@@ -15,10 +15,10 @@
     $exp = $_POST["exp"];
     $name = $_POST["name"];
     $fname = $_POST["fname"];
-    $mail = $_POST["mailref"];
+    $mailj = $_POST["mailref"];
     $state = "waiting";
     $list = array(
-        array($exp, $name, $fname, $mail, $_SESSION['ID'], $state)
+        array($exp, $name, $fname, $mailj, $_SESSION['ID'], $state)
     );
     // insertion des champs dans BDD2
     $fp = fopen('BDD2/reference.csv', 'a+');
@@ -57,7 +57,7 @@
     echo $url;
 
 
-    /*
+    
     //part to sent an email to the referent
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
@@ -91,5 +91,4 @@
     }  catch (Exception $e) { 
         echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
     }
-    */
 ?>

@@ -30,7 +30,23 @@
         </tr>
     </table>
 <td>
-    <form action="sendmailtoreferent.php" method="POST">
+    <form action=
+    <?php
+    //création de l'url spécial sendmailtoconsultant avec les refs 
+    echo"sendmailtoconsultant.php?ref1=";
+    $n = 2 ;
+    $selectedRows = $_POST["selection"];
+    $numSelected = count($selectedRows);
+    $count = 0;
+    foreach($selectedRows as $selectedRow) {
+        if ($count != 0){
+            echo '&ref'.$n.'=';
+            $n++;
+        }
+        $count++;
+        echo $selectedRow; // Afficher la valeur de $row[0]
+    }
+    ?> method="POST">
         <table id="ref"> <tr>
     <div class="input_text2">
         <label for="mailref" class="text_label">Mail</label>
