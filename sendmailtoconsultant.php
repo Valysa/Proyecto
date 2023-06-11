@@ -85,6 +85,6 @@ $mail->send();
     echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
 }*/
 echo $message;
-header("Location: validationcons.html");
-exit;
+/*header("Location: validationcons.html");
+exit;*/
 ?>
