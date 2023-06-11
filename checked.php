@@ -7,5 +7,5 @@ $skill= $_POST['skill'];
         echo $b;
         $a[$b]=1;
     }
-    //jsp pas comment mettre dans la BDD
+    
 ?>
