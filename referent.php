@@ -75,7 +75,7 @@
     </tr>
 </table>
 <div id="step1">
-    <a href=<?php echo "refID.php?ref=".$_GET["ref"]?>>
+    <a href=<?php echo "intermediairereferent.php?ref=".$_GET["ref"]?>>
     <div>
         la confirmation
     </div>

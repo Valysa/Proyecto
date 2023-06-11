@@ -7,6 +7,7 @@
 
 <body id="referent">
     <?php
+    //test du mot de passe rentré par le référent
     echo "REF = " . $_GET['ref'];
     $file = fopen('BDD2/reference.csv', 'r');
     $data = [];
@@ -21,6 +22,10 @@
     fclose($file);
     foreach ($data as $row) {
         if ($row[0] == $_GET['ref']) {
+            if($_POST["password"] != hash("sha256", $row[5].$row[0])){
+                header("Location: referent.php?error=1");
+                exit;
+            }
             $_SESSION["referentName"] = $row[3]; // Première colonne du CSV
             $_SESSION["referentfName"] = $row[2]; // Deuxième colonne du CSV
             $_SESSION["referenceName"] = $row[1]; // Troisième colonne du CSV

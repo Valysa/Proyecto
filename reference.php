@@ -42,6 +42,8 @@
     file_put_contents("BDD/$mailj[0].csv", preg_replace('/'.$line.'/', $newline, file_get_contents("BDD/$mailj[0].csv"), 1));  
     fclose($fpj);
 
+
+    $id[0]--;
     // Genere le lien
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
     $url = "https://";   
@@ -55,20 +57,23 @@
 
     $url .= "/referent.php?ref=".$id[0];
     echo $url;
-
-
+    echo "                     ";
+    echo $_SESSION['ID'].$id[0];
+    $password = hash('sha256', $_SESSION['ID'].$id[0]);
     
     //part to sent an email to the referent
-    /*use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
     $subject="Demande de reference";
-    $message="Vous avez reçu une demande de reference".$url;
+    $message="Vous avez reçu une demande de reference, connectez vous à ce lien : ".$url.
+    " Veuillez utiliser ce mot de passe une fois sur le site : ".$password;
     $email = $_POST["mailref"]; 
     $mail = new PHPMailer(true);
-    try { 
+    echo $message ; 
+    /*try { 
         $mail->isSMTP();
         $mail->Host = 'smtp.office365.com';
         $mail->SMTPAuth = true;
@@ -90,7 +95,7 @@
         echo 'Thank you! An email has been sent to the referent.'; 
     }  catch (Exception $e) { 
         echo 'Oops! An error occurred while sending the email: ' . $mail->ErrorInfo; 
-    }*/
+    }
     header("Location: validationref.html");
-    exit;   
+    exit;*/
 ?>
